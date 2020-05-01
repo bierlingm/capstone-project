@@ -1,22 +1,12 @@
-import React from 'react';
-import GlobalStyles from './GlobalStyles';
+import React from 'react'
+// import GlobalStyles from './GlobalStyles';
 import styled from 'styled-components/macro'
+import Canvas from './Canvas'
 
 export default function App() {
   return (
-    <BodyStyled>
-      <CanvasStyled id="canvas"/>
-    </BodyStyled>
+    <Canvas>
+
+    </Canvas>
   );
 }
-
-const BodyStyled = styled.div`
-  height: 100vh;
-  width: 100vw;
-  margin: 0;
-`
-
-const CanvasStyled = styled.canvas`
-  height: 100vh;
-  width: 100vw;
-`
