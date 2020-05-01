@@ -9,8 +9,11 @@ export default function Canvas({ children }) {
     )
 }
 
-const CanvasStyled = styled.div`
-  height: 100vh;
-  width: 100vw;
+const CanvasStyled = styled.canvas`
+  height: 5%;
+  width: 50%;
+  margin: 0;
   background: teal;
+  align-self: center;
+  outline: 3px solid;
 `
