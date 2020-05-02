@@ -1,19 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export default function Canvas({ children }) {
+export default function ({children}) {
+    
     return (
-        <CanvasStyled>
-            {children}
-        </CanvasStyled>
+        <DivStyled>{children}</DivStyled>
     )
 }
 
-const CanvasStyled = styled.canvas`
-  height: 5%;
-  width: 50%;
-  margin: 0;
-  background: teal;
-  align-self: center;
-  outline: 3px solid;
+const DivStyled = styled.div`
+height: 100vh;
+width: 100vw;
+background: teal;
+display: grid;
+grid-template-columns: 50% 50%;
 `
