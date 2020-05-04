@@ -1,0 +1,1 @@
+export const ctime = '60s'

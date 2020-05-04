@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { ctime } from './utils'
 
 export default function WordStream() {
     return (
@@ -11,11 +12,10 @@ const InputStyled = styled.input`
   height: 10%;
   margin: 0;
   background: transparent;
-  color: yellow;
+  color: teal;
   align-self: center;
   border: none;
- border-right: 2px solid;
   padding-left: 24px;
   font-size: 40px;
-  animation: timer 10s;
+  animation: timer ${ctime};
 `

@@ -4,10 +4,10 @@ export default createGlobalStyle`
 
 @keyframes timer {
   0% {
-    background-color: teal;
+    background-color: white;
   }
   100% {
-    background-color: #400080;
+    background-color: black;
   }
 }
 `
