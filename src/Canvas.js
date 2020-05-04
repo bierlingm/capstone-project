@@ -14,4 +14,5 @@ width: 100vw;
 background: teal;
 display: grid;
 grid-template-columns: 50% 50%;
+animation: timer 10s;
 `

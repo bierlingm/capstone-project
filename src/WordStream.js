@@ -14,7 +14,8 @@ const InputStyled = styled.input`
   color: yellow;
   align-self: center;
   border: none;
-//  border-right: 2px solid;
+ border-right: 2px solid;
   padding-left: 24px;
   font-size: 40px;
+  animation: timer 10s;
 `
