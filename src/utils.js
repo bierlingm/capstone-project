@@ -1,1 +1,1 @@
-export const ctime = '60s'
+export const ctime = '90s' // Color fade time

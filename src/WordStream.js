@@ -12,10 +12,10 @@ const InputStyled = styled.input`
   height: 10%;
   margin: 0;
   background: transparent;
-  color: teal;
+  color: yellow;
   align-self: center;
   border: none;
   padding-left: 24px;
   font-size: 40px;
-  animation: timer ${ctime};
+//   animation: timer ${ctime};
 `

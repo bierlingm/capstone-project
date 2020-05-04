@@ -1,5 +1,6 @@
 import React from 'react'
 import Canvas from '../Canvas'
+import GlobalStyles from '../GlobalStyles'
 
 export default {
   title: 'Canvas',
@@ -9,5 +10,15 @@ export default {
 export const Default = () => <Canvas></Canvas>
 
 Default.story = {
-  name: 'Default',
+  name: 'Default'
+}
+
+export const WithTimer = () =>
+  <>
+  <GlobalStyles />
+  <Canvas></Canvas>
+  </>
+
+WithTimer.story = {
+  name: 'WithTimer'
 }

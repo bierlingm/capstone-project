@@ -17,6 +17,3 @@ display: grid;
 grid-template-columns: 50% 50%;
 animation: timer ${ctime};
 `
-
-// #400080
-// teal
