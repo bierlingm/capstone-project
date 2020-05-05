@@ -7,7 +7,7 @@ export default {
   component: WordStream
 };
 
-export const Default = () => <WordStream></WordStream>
+export const Default = () => <WordStream />
 
 Default.story = {
   name: 'Default',
@@ -16,7 +16,7 @@ Default.story = {
 export const WithTimer = () =>
   <>
   <GlobalStyles />
-  <WordStream></WordStream>
+  <WordStream />
   </>
 
 WithTimer.story = {

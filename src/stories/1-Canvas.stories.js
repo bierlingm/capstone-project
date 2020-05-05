@@ -7,7 +7,7 @@ export default {
   component: Canvas
 };
 
-export const Default = () => <Canvas></Canvas>
+export const Default = () => <Canvas />
 
 Default.story = {
   name: 'Default'
@@ -16,7 +16,7 @@ Default.story = {
 export const WithTimer = () =>
   <>
   <GlobalStyles />
-  <Canvas></Canvas>
+    <Canvas />
   </>
 
 WithTimer.story = {
