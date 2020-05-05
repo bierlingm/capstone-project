@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { ctime } from './utils'
 
 export default function ({children}) {
     
@@ -11,7 +12,8 @@ export default function ({children}) {
 const DivStyled = styled.div`
 height: 100vh;
 width: 100vw;
-background: teal;
+background: black;
 display: grid;
 grid-template-columns: 50% 50%;
+animation: timer ${ctime};
 `
