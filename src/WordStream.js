@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 
 export default function WordStream() {
     return (
@@ -9,7 +9,7 @@ export default function WordStream() {
 
 const InputStyled = styled.input`
   height: 10%;
-  margin: 0;
+  margin: 0 auto;
   background: transparent;
   color: yellow;
   align-self: center;
