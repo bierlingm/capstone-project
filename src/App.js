@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
 import Canvas from './Canvas';
-import LinkButton from './LinkButton';
 import WordStream from './WordStream';
 
 export default function App() {
@@ -12,11 +11,9 @@ export default function App() {
         <Switch>
           <Route exact path="/">
             <Canvas>
-              <LinkButton>
-                <Link to="/write">
-                  start
-                </Link>
-              </LinkButton>
+              <Link to="/write" style={{alignSelf: 'center', paddingLeft: '24px'}}>
+                write now
+              </Link>
             </Canvas>
           </Route>
           <Route path="/write">

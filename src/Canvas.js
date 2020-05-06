@@ -10,7 +10,7 @@ export default function Canvas ({children}) {
 
 const DivStyled = styled.div`
 height: 100vh;
-width: 100vw;
+margin: 0;
 background: black;
 display: grid;
 grid-template-columns: 50% 50%;

@@ -3,13 +3,13 @@ import styled from 'styled-components/macro'
 
 export default function WordStream() {
     return (
-        <InputStyled autofocus type="text"></InputStyled>
+        <InputStyled type="text"></InputStyled>
     )
 }
 
 const InputStyled = styled.input`
   height: 10%;
-  margin: 0 auto;
+  margin: 0;
   background: transparent;
   color: yellow;
   align-self: center;
