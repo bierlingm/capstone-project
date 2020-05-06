@@ -2,11 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 import { ctime } from './utils'
 
-export default function ({children}) {
-    
-    return (
-        <DivStyled>{children}</DivStyled>
-    )
+export default function Canvas ({children}) {
+  return (
+    <DivStyled>{children}</DivStyled>
+  )
 }
 
 const DivStyled = styled.div`

@@ -1,10 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import { ctime } from './utils'
 
 export default function WordStream() {
     return (
-        <InputStyled type="text"></InputStyled>
+        <InputStyled autofocus type="text"></InputStyled>
     )
 }
 
@@ -17,5 +16,4 @@ const InputStyled = styled.input`
   border: none;
   padding-left: 24px;
   font-size: 40px;
-//   animation: timer ${ctime};
 `
