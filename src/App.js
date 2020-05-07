@@ -4,22 +4,23 @@ import styled from 'styled-components'
 import WritingCanvas from './WritingCanvas'
 import WordStream from './WordStream'
 import { writingSessionMachine } from './WritingSessionMachine'
+import Canvas from './Canvas'
 
 export default function App() {
   const [current, send] = useMachine(writingSessionMachine)
 
   return current.matches('ready') ? (
-    <WritingCanvas>
+    <Canvas>
       <ButtonStyled onClick={() => send('START')}>write</ButtonStyled>
-    </WritingCanvas>
+    </Canvas>
   ) : current.matches('writing') ? (
     <WritingCanvas>
       <WordStream />
     </WritingCanvas>
   ) : (
-    <WritingCanvas>
+    <Canvas>
       <ButtonStyled onClick={() => send('START')}>write</ButtonStyled>
-    </WritingCanvas>
+    </Canvas>
   )
 }
 

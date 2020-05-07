@@ -14,7 +14,7 @@ export const writingSessionMachine = Machine({
         STOP: 'ready',
       },
       after: {
-        5000: 'ready',
+        90000: 'ready',
       },
     },
   },
