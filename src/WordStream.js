@@ -3,7 +3,7 @@ import styled from 'styled-components/macro'
 
 export default function WordStream() {
     return (
-        <InputStyled type="text"></InputStyled>
+        <InputStyled autoFocus type="text"></InputStyled>
     )
 }
 
