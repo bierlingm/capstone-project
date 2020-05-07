@@ -1,17 +1,20 @@
-import React from 'react';
-import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
-import Canvas from './Canvas';
-import WordStream from './WordStream';
+import React from 'react'
+import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom'
+import history from './utils/history'
+import Canvas from './Canvas'
+import WordStream from './WordStream'
 
 export default function App() {
   return (
-    
-    <Router>
+    <Router history={history}>
       <>
         <Switch>
           <Route exact path="/">
             <Canvas>
-              <Link to="/write" style={{alignSelf: 'center', paddingLeft: '24px'}}>
+              <Link
+                to="/write"
+                style={{ alignSelf: 'center', paddingLeft: '24px' }}
+              >
                 write now
               </Link>
             </Canvas>
@@ -24,6 +27,5 @@ export default function App() {
         </Switch>
       </>
     </Router>
-
-  );
+  )
 }
