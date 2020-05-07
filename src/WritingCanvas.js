@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { ctime } from './utils/utils'
 
-export default function Canvas({ children }) {
+export default function WritingCanvas({ children }) {
   return <DivStyled>{children}</DivStyled>
 }
 

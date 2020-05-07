@@ -1,31 +1,35 @@
+import { useMachine } from '@xstate/react'
 import React from 'react'
-import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom'
-import Canvas from './Canvas'
-import history from './utils/history'
+import styled from 'styled-components'
+import WritingCanvas from './WritingCanvas'
 import WordStream from './WordStream'
+import { writingSessionMachine } from './WritingSessionMachine'
 
 export default function App() {
-  return (
-    <Router history={history}>
-      <>
-        <Switch>
-          <Route exact path="/">
-            <Canvas>
-              <Link
-                to="/write"
-                style={{ alignSelf: 'center', paddingLeft: '24px' }}
-              >
-                write now
-              </Link>
-            </Canvas>
-          </Route>
-          <Route path="/write">
-            <Canvas>
-              <WordStream />
-            </Canvas>
-          </Route>
-        </Switch>
-      </>
-    </Router>
+  const [current, send] = useMachine(writingSessionMachine)
+
+  return current.matches('ready') ? (
+    <WritingCanvas>
+      <ButtonStyled onClick={() => send('START')}>write</ButtonStyled>
+    </WritingCanvas>
+  ) : current.matches('writing') ? (
+    <WritingCanvas>
+      <WordStream />
+    </WritingCanvas>
+  ) : (
+    <WritingCanvas>
+      <ButtonStyled onClick={() => send('START')}>write</ButtonStyled>
+    </WritingCanvas>
   )
 }
+
+const ButtonStyled = styled.button`
+  height: 10%;
+  margin: 0;
+  background: transparent;
+  color: yellow;
+  align-self: center;
+  border: none;
+  padding-left: 24px;
+  font-size: 40px;
+`

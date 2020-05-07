@@ -2,9 +2,7 @@ import React from 'react'
 import styled from 'styled-components/macro'
 
 export default function WordStream() {
-    return (
-        <InputStyled autoFocus type="text"></InputStyled>
-    )
+  return <InputStyled autoFocus type="text"></InputStyled>
 }
 
 const InputStyled = styled.input`
