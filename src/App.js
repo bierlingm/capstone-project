@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom'
-import history from './utils/history'
 import Canvas from './Canvas'
+import history from './utils/history'
 import WordStream from './WordStream'
 
 export default function App() {
