@@ -1,10 +1,9 @@
 import { useMachine } from '@xstate/react'
 import React from 'react'
 import styled from 'styled-components'
-import WritingCanvas from './WritingCanvas'
 import WordStream from './WordStream'
 import { writingSessionMachine } from './WritingSessionMachine'
-import Canvas from './Canvas'
+import { Canvas, CanvasWriting } from './Canvas'
 
 export default function App() {
   const [current, send] = useMachine(writingSessionMachine)
@@ -14,9 +13,9 @@ export default function App() {
       <ButtonStyled onClick={() => send('START')}>write</ButtonStyled>
     </Canvas>
   ) : current.matches('writing') ? (
-    <WritingCanvas>
+    <CanvasWriting>
       <WordStream />
-    </WritingCanvas>
+    </CanvasWriting>
   ) : (
     <Canvas>
       <ButtonStyled onClick={() => send('START')}>write</ButtonStyled>
