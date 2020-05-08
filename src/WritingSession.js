@@ -1,20 +1,20 @@
 import { useMachine } from '@xstate/react'
 import React from 'react'
 import styled from 'styled-components'
-import { Canvas, CanvasWriting } from './Canvas'
+import { Backdrop, BackdropAnimated } from './Backdrop'
 import WordStream from './WordStream'
 
 export default function WritingSession() {
   const [current, send] = useMachine(writingSessionMachine)
 
   return current.matches('writing') ? (
-    <CanvasWriting>
+    <BackdropAnimated>
       <WordStream />
-    </CanvasWriting>
+    </BackdropAnimated>
   ) : (
-    <Canvas>
+    <Backdrop>
       <ButtonStyled onClick={() => send('START')}>write</ButtonStyled>
-    </Canvas>
+    </Backdrop>
   )
 }
 

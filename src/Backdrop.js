@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { ctime } from './utils/utils'
 
-export function Canvas({ children }) {
+export function Backdrop({ children }) {
   return <DivStyled>{children}</DivStyled>
 }
 
@@ -14,11 +14,11 @@ const DivStyled = styled.div`
   grid-template-columns: 50% 50%;
 `
 
-export function CanvasWriting({ children }) {
-  return <WritingCanvas>{children}</WritingCanvas>
+export function BackdropAnimated({ children }) {
+  return <DivAnimated>{children}</DivAnimated>
 }
 
-const WritingCanvas = styled.div`
+const DivAnimated = styled.div`
   height: 100vh;
   margin: 0;
   background: teal;
