@@ -1,6 +1,9 @@
+import { render } from '@testing-library/react'
 import React from 'react'
-import Canvas from './Canvas'
+import App from './App'
 
-test('shows a monochrome background', () => {
-  expect(1 + 2).toBe(3)
+test('renders backdrop', () => {
+  const { getByText } = render(<App />)
+  const backdrop = getByText('div')
+  expect(backdrop).toBeInTheDocument()
 })
