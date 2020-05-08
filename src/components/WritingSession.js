@@ -2,14 +2,13 @@ import { useMachine } from '@xstate/react'
 import React from 'react'
 import styled from 'styled-components'
 import { Backdrop, BackdropTimed } from './Backdrop'
-import WordStream from './WordStream'
 
 export default function WritingSession() {
   const [current, send] = useMachine(writingSessionMachine)
 
   return current.matches('writing') ? (
     <BackdropTimed>
-      <WordStream />
+      <InputStyled autoFocus type="text" />
     </BackdropTimed>
   ) : (
     <Backdrop>
@@ -40,7 +39,18 @@ const writingSessionMachine = Machine({
   },
 })
 
-const ButtonStyled = styled.button`
+export const ButtonStyled = styled.button`
+  height: 10%;
+  margin: 0;
+  background: transparent;
+  color: yellow;
+  align-self: center;
+  border: none;
+  padding-left: 24px;
+  font-size: 40px;
+`
+
+const InputStyled = styled.input`
   height: 10%;
   margin: 0;
   background: transparent;

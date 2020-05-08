@@ -1,6 +1,9 @@
+import { render } from '@testing-library/react'
 import React from 'react'
-import Canvas from './Canvas'
+import { Backdrop } from './Backdrop'
 
-test('shows a monochrome background', () => {
-  expect(1 + 2).toBe(3)
+describe('Backdrop', () => {
+  it('Renders without error', () => {
+    render(<Backdrop />)
+  })
 })
