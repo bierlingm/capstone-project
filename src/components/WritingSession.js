@@ -8,7 +8,7 @@ export default function WritingSession() {
 
   return current.matches('writing') ? (
     <BackdropTimed>
-      <InputStyled autoFocus type="text" />
+      <InputStyled data-testid="wordStream" autoFocus type="text" />
     </BackdropTimed>
   ) : (
     <Backdrop>

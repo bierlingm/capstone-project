@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react'
+import { render, fireEvent, getByText } from '@testing-library/react'
 import React from 'react'
 import App from './App'
 
@@ -9,7 +9,14 @@ describe('App', () => {
 
   it('Renders ready screen', () => {
     const { getByText } = render(<App />)
-    const writingSession = getByText(/write/i)
-    expect(writingSession).toBeInTheDocument()
+    const writeButton = getByText(/write/i)
+    expect(writeButton).toBeInTheDocument()
+  })
+
+  it('Renders writing screen', () => {
+    const getByTestId = render(<App />)
+    fireEvent.click(getByText('write'))
+    const inputField = getByTestId('wordStream')
+    expect(inputField).toBeVisible()
   })
 })
