@@ -1,6 +1,6 @@
 import { useMachine } from '@xstate/react'
 import React from 'react'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 import { Backdrop, BackdropTimed } from './Backdrop'
 
 export default function WritingSession() {

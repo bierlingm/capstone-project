@@ -6,6 +6,7 @@ describe('WritingSession', () => {
   it('Renders without error', () => {
     render(<WritingSession />)
   })
+
   it('Renders button write upon startup', () => {
     const { getByText } = render(<WritingSession />)
     const button = getByText(/write/i)
