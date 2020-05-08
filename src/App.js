@@ -1,11 +1,6 @@
-import React from 'react';
-import Canvas from './Canvas';
-import WordStream from './WordStream';
+import React from 'react'
+import WritingSession from './WritingSession'
 
 export default function App() {
-  return (
-      <Canvas>
-        <WordStream />
-      </Canvas>
-  );
+  return <WritingSession />
 }
