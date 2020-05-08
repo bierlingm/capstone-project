@@ -4,6 +4,20 @@ import styled from 'styled-components'
 import { Canvas, CanvasWriting } from './Canvas'
 import WordStream from './WordStream'
 
+export default function WritingSession() {
+  const [current, send] = useMachine(writingSessionMachine)
+
+  return current.matches('writing') ? (
+    <CanvasWriting>
+      <WordStream />
+    </CanvasWriting>
+  ) : (
+    <Canvas>
+      <ButtonStyled onClick={() => send('START')}>write</ButtonStyled>
+    </Canvas>
+  )
+}
+
 const { Machine } = require('xstate')
 
 const writingSessionMachine = Machine({
@@ -25,20 +39,6 @@ const writingSessionMachine = Machine({
     },
   },
 })
-
-export default function WritingSession() {
-  const [current, send] = useMachine(writingSessionMachine)
-
-  return current.matches('writing') ? (
-    <CanvasWriting>
-      <WordStream />
-    </CanvasWriting>
-  ) : (
-    <Canvas>
-      <ButtonStyled onClick={() => send('START')}>write</ButtonStyled>
-    </Canvas>
-  )
-}
 
 const ButtonStyled = styled.button`
   height: 10%;
