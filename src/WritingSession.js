@@ -29,11 +29,7 @@ const writingSessionMachine = Machine({
 export default function WritingSession() {
   const [current, send] = useMachine(writingSessionMachine)
 
-  return current.matches('ready') ? (
-    <Canvas>
-      <ButtonStyled onClick={() => send('START')}>write</ButtonStyled>
-    </Canvas>
-  ) : current.matches('writing') ? (
+  return current.matches('writing') ? (
     <CanvasWriting>
       <WordStream />
     </CanvasWriting>
