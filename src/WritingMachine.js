@@ -1,0 +1,21 @@
+import { Machine } from 'xstate'
+
+export const writingSessionMachine = Machine({
+  id: 'writingSession',
+  initial: 'ready',
+  states: {
+    ready: {
+      on: {
+        START: 'writing',
+      },
+    },
+    writing: {
+      on: {
+        STOP: 'ready',
+      },
+      after: {
+        90000: 'ready',
+      },
+    },
+  },
+})
