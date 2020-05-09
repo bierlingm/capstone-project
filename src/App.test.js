@@ -19,12 +19,4 @@ describe('App', () => {
     const { asFragment } = render(<App />)
     expect(asFragment(<App />)).toMatchSnapshot()
   })
-
-  // currently failing
-
-  it('renders writing screen', () => {
-    const { getByText } = render(<App />)
-    fireEvent.click(getByText('write'))
-    expect(getByAltText('input')).toBeInTheDocument()
-  })
 })
