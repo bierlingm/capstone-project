@@ -5,24 +5,24 @@ import App from './App'
 afterEach(cleanup)
 
 describe('App', () => {
-  it('Renders without error', () => {
+  it('renders without error', () => {
     render(<App />)
   })
 
-  it('Renders ready screen', () => {
+  it('renders ready screen', () => {
     const { getByText } = render(<App />)
     const writeButton = getByText(/write/i)
     expect(writeButton).toBeInTheDocument()
   })
 
-  it('Should take a snapshot', () => {
+  it('should take a snapshot', () => {
     const { asFragment } = render(<App />)
     expect(asFragment(<App />)).toMatchSnapshot()
   })
 
   // currently failing
 
-  it('Renders writing screen', () => {
+  it('renders writing screen', () => {
     const { getByText } = render(<App />)
     fireEvent.click(getByText('write'))
     expect(getByAltText('input')).toBeInTheDocument()
