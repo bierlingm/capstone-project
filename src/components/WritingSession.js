@@ -1,36 +1,10 @@
-import { useMachine } from '@xstate/react'
 import React from 'react'
 import styled from 'styled-components/macro'
-import { Machine } from 'xstate'
 import { Backdrop, BackdropTimed } from './Backdrop'
-
-// State Machine - the 'brain'
-
-const writingSessionMachine = Machine({
-  id: 'writingSession',
-  initial: 'ready',
-  states: {
-    ready: {
-      on: {
-        START: 'writing',
-      },
-    },
-    writing: {
-      on: {
-        STOP: 'ready',
-      },
-      after: {
-        90000: 'ready',
-      },
-    },
-  },
-})
 
 // React Component - the 'body'
 
-export default function WritingSession() {
-  const [current, send] = useMachine(writingSessionMachine)
-
+export default function WritingSession({ current, send }) {
   return current.matches('writing') ? (
     <BackdropTimed>
       <InputStyled autoFocus type="text" alt="input" />
