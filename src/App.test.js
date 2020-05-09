@@ -15,14 +15,16 @@ describe('App', () => {
     expect(writeButton).toBeInTheDocument()
   })
 
-  it('Renders writing screen', () => {
-    const { getByText } = render(<App />)
-    fireEvent.click(getByText('write'))
-    expect(getByText('input')).toBeInTheDocument()
-  })
-
   it('Should take a snapshot', () => {
     const { asFragment } = render(<App />)
     expect(asFragment(<App />)).toMatchSnapshot()
+  })
+
+  // currently failing
+
+  it('Renders writing screen', () => {
+    const { getByText } = render(<App />)
+    fireEvent.click(getByText('write'))
+    expect(getByAltText('input')).toBeInTheDocument()
   })
 })
