@@ -1,30 +1,30 @@
 import { useMachine } from '@xstate/react'
 import React from 'react'
 import { Machine } from 'xstate'
-import WritingSession from './components/WritingSession'
+import PromptWriting from './components/PromptWriting'
 
-const writingSessionMachine = Machine({
-  id: 'writingSession',
-  initial: 'ready',
+const promptWritingMachine = Machine({
+  id: 'promptWriting',
+  initial: 'prompt',
   states: {
-    ready: {
+    prompt: {
       on: {
         START: 'writing',
       },
     },
     writing: {
       on: {
-        STOP: 'ready',
+        STOP: 'prompt',
       },
       after: {
-        90000: 'ready',
+        90000: 'prompt',
       },
     },
   },
 })
 
 export default function App() {
-  const [current, send] = useMachine(writingSessionMachine)
+  const [current, send] = useMachine(promptWritingMachine)
 
-  return <WritingSession current={current} send={send} />
+  return <PromptWriting current={current} send={send} />
 }

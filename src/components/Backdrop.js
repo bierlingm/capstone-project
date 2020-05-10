@@ -1,6 +1,6 @@
-import { ctime } from '../utils/utils'
 import React from 'react'
 import styled from 'styled-components/macro'
+import { defaultFade } from '../utils/utils'
 
 export function Backdrop({ children }) {
   return <DivStyled>{children}</DivStyled>
@@ -19,11 +19,11 @@ const DivStyled = styled.div`
   margin: 0;
   background: teal;
   display: grid;
-  grid-template-columns: 50% 50%;
 `
 
 const BackdropWrapper = styled.div`
   .timed {
-    animation: timer ${ctime};
+    grid-template-columns: 50% 50%;
+    animation: timer ${defaultFade};
   }
 `

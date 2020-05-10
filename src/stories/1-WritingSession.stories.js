@@ -1,12 +1,12 @@
 import React from 'react'
-import WritingSession from '../components/WritingSession'
+import PromptWriting from '../components/PromptWriting'
 
 export default {
-  title: 'WritingSession',
-  component: WritingSession,
+  title: 'PromptWriting',
+  component: PromptWriting,
 }
 
-export const Default = () => <WritingSession />
+export const Default = () => <PromptWriting />
 
 Default.story = {
   name: 'Default',
