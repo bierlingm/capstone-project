@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 import Prompt from '../components/Prompt'
-import lotus_woman from '../img/lotus_woman.png'
+import lotusWoman from '../img/lotus_woman.png'
 import { Backdrop, BackdropTimed } from './Backdrop'
 
 export default function PromptWriting({ current, send }) {
@@ -13,7 +13,7 @@ export default function PromptWriting({ current, send }) {
     <Backdrop>
       <img
         style={{ justifySelf: 'center' }}
-        src={lotus_woman}
+        src={lotusWoman}
         alt="Woman in lotus position"
       />
       <Prompt />

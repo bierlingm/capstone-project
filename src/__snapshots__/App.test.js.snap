@@ -3,13 +3,27 @@
 exports[`App should take a snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="Backdrop__DivStyled-t2gny5-0 ioWaZg"
+    class="Backdrop__BackdropWrapper-t2gny5-1 cIOdHa"
   >
-    <button
-      class="PromptWriting__ButtonStyled-e8y31h-0 hjQsgf"
+    <div
+      class="Backdrop__DivStyled-t2gny5-0 jMbugt default"
     >
-      "A nuke goes off in 5 minutes."
-    </button>
+      <img
+        alt="Woman in lotus position"
+        src="lotus_woman.png"
+        style="justify-self: center;"
+      />
+      <p
+        class="sc-AxjAm gJLJES"
+      >
+        Do you love yourself?
+      </p>
+      <button
+        class="PromptWriting__ButtonStyled-e8y31h-0 isqA-DS"
+      >
+        start
+      </button>
+    </div>
   </div>
 </DocumentFragment>
 `;
