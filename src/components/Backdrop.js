@@ -29,7 +29,8 @@ const BackdropWrapper = styled.div`
   .default {
     display: grid;
     align-content: center;
-    padding: 10% 10% 10% 10%;
+    justify-content: space-between;
+    padding: 0 10% 10% 10%;
   }
 
   .timed {

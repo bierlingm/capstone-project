@@ -1,12 +1,8 @@
 import React from 'react'
 import styled from 'styled-components/macro'
-import Prompts from '../Prompts.json'
-import { getRandomInt } from '../utils/utils'
+import Prompt from '../components/Prompt'
+import lotus_woman from '../img/lotus_woman.png'
 import { Backdrop, BackdropTimed } from './Backdrop'
-
-const prompt = JSON.stringify(
-  Prompts[getRandomInt(Prompts.length - 1)]['prompt']
-)
 
 export default function PromptWriting({ current, send }) {
   return current.matches('writing') ? (
@@ -15,23 +11,16 @@ export default function PromptWriting({ current, send }) {
     </BackdropTimed>
   ) : (
     <Backdrop>
-      <p>
-        Meditate on this
-        <br />
-        <span role="img" aria-label="Finger pointing down to prompt">
-          👇
-        </span>
-      </p>
-      <PromptStyled>{prompt.slice(1, prompt.length - 1)}</PromptStyled>
+      <img
+        style={{ justifySelf: 'center' }}
+        src={lotus_woman}
+        alt="Woman in lotus position"
+      />
+      <Prompt />
       <ButtonStyled onClick={() => send('START')}>start</ButtonStyled>
     </Backdrop>
   )
 }
-
-const PromptStyled = styled.p`
-  margin-top: 20px;
-  margin-bottom: 20px;
-`
 
 const ButtonStyled = styled.button`
   margin: 24px;
