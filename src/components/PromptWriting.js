@@ -15,19 +15,35 @@ export default function PromptWriting({ current, send }) {
     </BackdropTimed>
   ) : (
     <Backdrop>
-      <ButtonStyled onClick={() => send('START')}>{prompt}</ButtonStyled>
+      <p>
+        Meditate on this
+        <br />
+        <span role="img" aria-label="Finger pointing down to prompt">
+          👇
+        </span>
+      </p>
+      <PromptStyled>{prompt.slice(1, prompt.length - 1)}</PromptStyled>
+      <ButtonStyled onClick={() => send('START')}>start</ButtonStyled>
     </Backdrop>
   )
 }
 
+const PromptStyled = styled.p`
+  margin-top: 20px;
+  margin-bottom: 20px;
+`
+
 const ButtonStyled = styled.button`
   margin: 24px;
-  padding: 8px;
-  border: 2px yellow solid;
-  background: transparent;
+  padding: 24px;
   color: yellow;
+  justify-self: center;
   align-self: center;
   font-size: 36px;
+  border: transparent;
+  border-radius: 10px;
+  background: transparent;
+  box-shadow: 20px 20px 60px #489dcf, -20px -20px 60px #62d5ff;
 `
 
 const InputStyled = styled.input`
