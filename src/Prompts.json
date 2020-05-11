@@ -1,7 +1,7 @@
 [
   {
     "id": 0,
-    "prompt": "You will die."
+    "prompt": "You will die and so will everyone you love."
   },
   {
     "id": 1,
@@ -13,11 +13,11 @@
   },
   {
     "id": 3,
-    "prompt": "Do you love yourself?"
+    "prompt": "Do you love yourself enough?"
   },
   {
     "id": 4,
-    "prompt": "God is dead."
+    "prompt": "God is dead. Or is he really?"
   },
   {
     "id": 5,
@@ -33,7 +33,7 @@
   },
   {
     "id": 8,
-    "prompt": "Empty yourself."
+    "prompt": "Empty yourself of guilt for a moment."
   },
   {
     "id": 9,
