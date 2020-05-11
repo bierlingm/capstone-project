@@ -2,8 +2,6 @@ import React from 'react'
 import styled from 'styled-components/macro'
 import { Backdrop, BackdropTimed } from './Backdrop'
 
-// React Component - the 'body'
-
 export default function WritingSession({ current, send }) {
   return current.matches('writing') ? (
     <BackdropTimed>
