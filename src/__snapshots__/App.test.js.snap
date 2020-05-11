@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should take a snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="Backdrop__DivStyled-t2gny5-0 dvwDYw"
+  >
+    <button
+      class="WritingSession__ButtonStyled-sc-1nq2uy5-0 dNmeuL"
+    >
+      write
+    </button>
+  </div>
+</DocumentFragment>
+`;

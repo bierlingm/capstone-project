@@ -1,14 +1,11 @@
-import { useMachine } from '@xstate/react'
 import React from 'react'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 import { Backdrop, BackdropTimed } from './Backdrop'
 
-export default function WritingSession() {
-  const [current, send] = useMachine(writingSessionMachine)
-
+export default function WritingSession({ current, send }) {
   return current.matches('writing') ? (
     <BackdropTimed>
-      <InputStyled autoFocus type="text" />
+      <InputStyled autoFocus type="text" alt="input" />
     </BackdropTimed>
   ) : (
     <Backdrop>
@@ -16,28 +13,6 @@ export default function WritingSession() {
     </Backdrop>
   )
 }
-
-const { Machine } = require('xstate')
-
-const writingSessionMachine = Machine({
-  id: 'writingSession',
-  initial: 'ready',
-  states: {
-    ready: {
-      on: {
-        START: 'writing',
-      },
-    },
-    writing: {
-      on: {
-        STOP: 'ready',
-      },
-      after: {
-        90000: 'ready',
-      },
-    },
-  },
-})
 
 export const ButtonStyled = styled.button`
   height: 10%;
