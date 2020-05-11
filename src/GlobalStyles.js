@@ -1,24 +1,31 @@
 import { createGlobalStyle } from 'styled-components'
-import { bd_color, fade_color } from './utils/colors'
+import {
+  backdropColor,
+  backgroundColor,
+  fadeColor,
+  textColor,
+} from './utils/colors'
+import { defaultFont, defaultFontSize, defaultMargin } from './utils/utils'
 
 export default createGlobalStyle`
 
 * {
-  margin: 0;
-  font-family: 'Zilla Slab';
-  font-size: 36px;
-  color: yellow;
+  margin: ${defaultMargin};
+  font-family: ${defaultFont};
+  font-size: ${defaultFontSize};
+  background: ${backgroundColor};
+  color: ${textColor};
+  overflow: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-decoration: none;
 }
 
 @keyframes timer {
   0% {
-    background-color: ${bd_color};
+    background-color: ${backdropColor};
   }
   100% {
-    background-color: ${fade_color};
+    background-color: ${fadeColor};
   }
 }
 `

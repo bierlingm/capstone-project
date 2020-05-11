@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components/macro'
-import { defaultFade } from '../utils/utils'
-import { bd_color } from '../utils/colors'
+import { defaultFade, fullHeight } from '../utils/utils'
+import { backdropColor } from '../utils/colors'
 
 export function Backdrop({ children }) {
   return (
@@ -20,17 +20,41 @@ export function BackdropTimed({ children }) {
 }
 
 const DivStyled = styled.div`
-  height: 100vh;
+  height: ${fullHeight};
   text-align: center;
-  background: ${bd_color};
+  background: ${backdropColor};
 `
 
 const BackdropWrapper = styled.div`
   .default {
     display: grid;
-    align-content: center;
-    justify-content: space-between;
-    padding: 0 10% 10% 10%;
+    grid-template-columns:
+      [left-space-start] 10vw
+      [left-space-end main-start] 80vw
+      [main-end right-space-start] 10vw
+      [right-space-end];
+    grid-template-rows:
+      [top-space-start] 10vh
+      [top-space-end icon-start] 25vh
+      [icon-end prompt-start] 30vh
+      [prompt-end button-start] 25vh
+      [button-end bottom-space-start] 10vh
+      [bottom-end];
+
+    .icon {
+      grid-column: main-start / main-end;
+      grid-row: icon-start / icon-end;
+    }
+
+    .prompt {
+      grid-column: main-start / main-end;
+      grid-row: prompt-start / prompt-end;
+    }
+
+    .button {
+      grid-column: main-start / main-end;
+      grid-row: button-start / button-end;
+    }
   }
 
   .timed {

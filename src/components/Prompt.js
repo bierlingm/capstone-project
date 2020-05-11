@@ -8,12 +8,18 @@ const prompt = JSON.stringify(
 )
 
 export default function Prompt() {
-  return <PromptStyled>{prompt.slice(1, prompt.length - 1)}</PromptStyled>
+  return (
+    <PromptStyled className="prompt">
+      {prompt.slice(1, prompt.length - 1)}
+    </PromptStyled>
+  )
 }
 
 const PromptStyled = styled.p`
   margin-top: 20px;
   margin-bottom: 20px;
+  justify-self: center;
+  align-self: center;
   -shadow: 20px 20px 60px #489dcf, -20px -20px 60px #62d5ff;
 `
 

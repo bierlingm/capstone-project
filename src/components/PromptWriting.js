@@ -11,16 +11,19 @@ export default function PromptWriting({ current, send }) {
     </BackdropTimed>
   ) : (
     <Backdrop>
-      <img
-        style={{ justifySelf: 'center' }}
-        src={lotusWoman}
-        alt="Woman in lotus position"
-      />
+      <Icon className="icon" src={lotusWoman} alt="Woman in lotus position" />
       <Prompt />
-      <ButtonStyled onClick={() => send('START')}>start</ButtonStyled>
+      <ButtonStyled className="button" onClick={() => send('START')}>
+        start
+      </ButtonStyled>
     </Backdrop>
   )
 }
+
+const Icon = styled.img`
+  justify-self: center;
+  align-self: center;
+`
 
 const ButtonStyled = styled.button`
   margin: 24px;
