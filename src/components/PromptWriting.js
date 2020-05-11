@@ -31,7 +31,7 @@ const ButtonStyled = styled.button`
   font-size: 36px;
   border: transparent;
   border-radius: 10px;
-  background: transparent;
+  background: linear-gradient(145deg, #4da7db, #5bc6ff);
   box-shadow: 20px 20px 60px #489dcf, -20px -20px 60px #62d5ff;
 `
 
