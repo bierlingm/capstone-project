@@ -11,27 +11,33 @@ export default function PromptWriting({ current, send }) {
     </BackdropTimed>
   ) : (
     <Backdrop>
-      <img
-        style={{ justifySelf: 'center' }}
-        src={lotusWoman}
-        alt="Woman in lotus position"
-      />
+      <Icon className="icon" src={lotusWoman} alt="Woman in lotus position" />
       <Prompt />
-      <ButtonStyled onClick={() => send('START')}>start</ButtonStyled>
+      <ButtonStyled className="button1" onClick={() => send('SHUFFLE')}>
+        shuffle
+      </ButtonStyled>
+      <ButtonStyled className="button2" onClick={() => send('START')}>
+        start
+      </ButtonStyled>
     </Backdrop>
   )
 }
 
+const Icon = styled.img`
+  justify-self: center;
+  align-self: center;
+`
+
 const ButtonStyled = styled.button`
-  margin: 24px;
-  padding: 24px;
+  width: 80%;
+  padding: 20px;
   color: yellow;
   justify-self: center;
   align-self: center;
-  font-size: 36px;
+  font-size: 28px;
   border: transparent;
   border-radius: 10px;
-  background: transparent;
+  background: linear-gradient(145deg, #4da7db, #5bc6ff);
   box-shadow: 20px 20px 60px #489dcf, -20px -20px 60px #62d5ff;
 `
 

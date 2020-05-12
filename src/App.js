@@ -3,13 +3,19 @@ import React from 'react'
 import { Machine } from 'xstate'
 import PromptWriting from './components/PromptWriting'
 
-const promptWritingMachine = Machine({
+export const promptWritingMachine = Machine({
   id: 'promptWriting',
   initial: 'prompt',
   states: {
     prompt: {
       on: {
         START: 'writing',
+        SHUFFLE: 'shuffle',
+      },
+    },
+    shuffle: {
+      after: {
+        0: 'prompt',
       },
     },
     writing: {

@@ -1,2 +1,4 @@
-export const bd_color = '#55b9f3'
-export const fade_color = 'black'
+export const backgroundColor = '#55b9f3'
+export const textColor = 'yellow'
+export const backdropColor = '#55b9f3'
+export const fadeColor = 'black'

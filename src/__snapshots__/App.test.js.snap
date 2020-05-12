@@ -3,23 +3,29 @@
 exports[`App should take a snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="Backdrop__BackdropWrapper-t2gny5-1 cIOdHa"
+    class="Backdrop__BackdropWrapper-t2gny5-1 liVDOw"
   >
     <div
-      class="Backdrop__DivStyled-t2gny5-0 jMbugt default"
+      class="Backdrop__DivStyled-t2gny5-0 hCmRwe default"
     >
       <img
         alt="Woman in lotus position"
+        class="PromptWriting__Icon-e8y31h-0 dVVqPl icon"
         src="lotus_woman.png"
-        style="justify-self: center;"
       />
       <p
-        class="sc-AxjAm gJLJES"
+        class="sc-AxjAm bBIDZl prompt"
+        data-testid="prompt"
       >
-        You will die and so will everyone you love.
+        Do you have a highest value?
       </p>
       <button
-        class="PromptWriting__ButtonStyled-e8y31h-0 isqA-DS"
+        class="PromptWriting__ButtonStyled-e8y31h-1 bSCCMm button1"
+      >
+        shuffle
+      </button>
+      <button
+        class="PromptWriting__ButtonStyled-e8y31h-1 bSCCMm button2"
       >
         start
       </button>
