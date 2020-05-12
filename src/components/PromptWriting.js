@@ -13,7 +13,10 @@ export default function PromptWriting({ current, send }) {
     <Backdrop>
       <Icon className="icon" src={lotusWoman} alt="Woman in lotus position" />
       <Prompt />
-      <ButtonStyled className="button" onClick={() => send('START')}>
+      <ButtonStyled className="button1" onClick={() => send('SHUFFLE')}>
+        shuffle
+      </ButtonStyled>
+      <ButtonStyled className="button2" onClick={() => send('START')}>
         start
       </ButtonStyled>
     </Backdrop>
@@ -26,12 +29,12 @@ const Icon = styled.img`
 `
 
 const ButtonStyled = styled.button`
-  margin: 24px;
-  padding: 24px;
+  width: 80%;
+  padding: 20px;
   color: yellow;
   justify-self: center;
   align-self: center;
-  font-size: 36px;
+  font-size: 28px;
   border: transparent;
   border-radius: 10px;
   background: linear-gradient(145deg, #4da7db, #5bc6ff);

@@ -3,11 +3,11 @@ import styled from 'styled-components'
 import Prompts from '../Prompts.json'
 import { getRandomInt } from '../utils/utils'
 
-const prompt = JSON.stringify(
-  Prompts[getRandomInt(Prompts.length - 1)]['prompt']
-)
-
 export default function Prompt() {
+  const prompt = JSON.stringify(
+    Prompts[getRandomInt(Prompts.length - 1)]['prompt']
+  )
+
   return (
     <PromptStyled className="prompt">
       {prompt.slice(1, prompt.length - 1)}

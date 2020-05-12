@@ -30,7 +30,8 @@ const BackdropWrapper = styled.div`
     display: grid;
     grid-template-columns:
       [left-space-start] 10vw
-      [left-space-end main-start] 80vw
+      [left-space-end main-start] 40vw
+      [left-half right-half] 40vw
       [main-end right-space-start] 10vw
       [right-space-end];
     grid-template-rows:
@@ -51,8 +52,13 @@ const BackdropWrapper = styled.div`
       grid-row: prompt-start / prompt-end;
     }
 
-    .button {
-      grid-column: main-start / main-end;
+    .button1 {
+      grid-column: main-start / left-half;
+      grid-row: button-start / button-end;
+    }
+
+    .button2 {
+      grid-column: right-half / main-end;
       grid-row: button-start / button-end;
     }
   }

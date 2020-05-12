@@ -10,7 +10,12 @@ const promptWritingMachine = Machine({
     prompt: {
       on: {
         START: 'writing',
-        SHUFFLE: 'prompt',
+        SHUFFLE: 'shuffle',
+      },
+    },
+    shuffle: {
+      after: {
+        0: 'prompt',
       },
     },
     writing: {
