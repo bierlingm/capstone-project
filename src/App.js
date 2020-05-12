@@ -3,7 +3,7 @@ import React from 'react'
 import { Machine } from 'xstate'
 import PromptWriting from './components/PromptWriting'
 
-const promptWritingMachine = Machine({
+export const promptWritingMachine = Machine({
   id: 'promptWriting',
   initial: 'prompt',
   states: {

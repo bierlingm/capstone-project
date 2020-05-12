@@ -9,7 +9,7 @@ export default function Prompt() {
   )
 
   return (
-    <PromptStyled className="prompt">
+    <PromptStyled className="prompt" data-testid="prompt">
       {prompt.slice(1, prompt.length - 1)}
     </PromptStyled>
   )

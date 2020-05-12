@@ -15,6 +15,7 @@ exports[`App should take a snapshot 1`] = `
       />
       <p
         class="sc-AxjAm bBIDZl prompt"
+        data-testid="prompt"
       >
         Do you have a highest value?
       </p>
