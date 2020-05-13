@@ -17,7 +17,7 @@ exports[`App should take a snapshot 1`] = `
         class="sc-AxjAm bBIDZl prompt"
         data-testid="prompt"
       >
-        Do you have a highest value?
+        You could leave life right now.
       </p>
       <button
         class="PromptWriting__ButtonStyled-e8y31h-1 bSCCMm button1"

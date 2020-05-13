@@ -5,7 +5,7 @@ import { getRandomInt } from '../utils/utils'
 
 export default function Prompt() {
   const prompt = JSON.stringify(
-    Prompts[getRandomInt(Prompts.length - 1)]['prompt']
+    Prompts[getRandomInt(Prompts.length - 1)]['promptText']
   )
 
   return (
