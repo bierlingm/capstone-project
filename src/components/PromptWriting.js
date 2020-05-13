@@ -13,6 +13,9 @@ export default function PromptWriting({ current, send }) {
   ) : current.matches('notes') ? (
     <BackdropNotes>
       <NoteField />
+      <ButtonStyled className="button1" onClick={() => send('REDO')}>
+        retry
+      </ButtonStyled>
       <ButtonStyled className="button2" onClick={() => send('NEW')}>
         new
       </ButtonStyled>

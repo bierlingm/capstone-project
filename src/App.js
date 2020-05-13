@@ -28,6 +28,7 @@ export const promptWritingMachine = Machine({
     },
     notes: {
       on: {
+        REDO: 'writing',
         NEW: 'prompt',
       },
     },
