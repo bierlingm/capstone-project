@@ -2,13 +2,21 @@ import React from 'react'
 import styled from 'styled-components/macro'
 import Prompt from '../components/Prompt'
 import lotusWoman from '../img/lotus_woman.png'
-import { Backdrop, BackdropTimed } from './Backdrop'
+import { Backdrop, BackdropTimed, BackdropNotes } from './Backdrop'
+import NoteField from './NoteField'
 
 export default function PromptWriting({ current, send }) {
   return current.matches('writing') ? (
     <BackdropTimed>
       <InputStyled autoFocus type="text" alt="input" />
     </BackdropTimed>
+  ) : current.matches('notes') ? (
+    <BackdropNotes>
+      <NoteField />
+      <ButtonStyled className="button2" onClick={() => send('NEW')}>
+        new
+      </ButtonStyled>
+    </BackdropNotes>
   ) : (
     <Backdrop>
       <Icon className="icon" src={lotusWoman} alt="Woman in lotus position" />

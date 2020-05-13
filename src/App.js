@@ -23,7 +23,12 @@ export const promptWritingMachine = Machine({
         STOP: 'prompt',
       },
       after: {
-        90000: 'prompt',
+        90000: 'notes',
+      },
+    },
+    notes: {
+      on: {
+        NEW: 'prompt',
       },
     },
   },

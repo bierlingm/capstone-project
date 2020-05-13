@@ -2,19 +2,18 @@ import React from 'react'
 import styled from 'styled-components'
 
 export default function NoteField() {
-  return <TextAreaStyled></TextAreaStyled>
+  return <TextAreaStyled className="notefield"></TextAreaStyled>
 }
 
 const TextAreaStyled = styled.textarea`
   type: text;
-  margin: 100px;
+  margin: 0;
   padding: 30px;
   overflow: scroll;
   resize: none;
   background: transparent;
   color: yellow;
-  align-self: center;
-  font-size: 28px;
+  font-size: 20px;
   border: transparent;
   border-radius: 10px;
   background: #55b9f3;
