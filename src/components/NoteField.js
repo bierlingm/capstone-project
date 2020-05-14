@@ -47,6 +47,7 @@ export default function NoteField() {
       onChange={handleSave}
       placeholder="Write your session notes in here..."
       className="notefield"
+      data-testid="noteField"
     />
   )
 }
