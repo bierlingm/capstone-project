@@ -7,7 +7,7 @@ import NoteField from './components/NoteField'
 import Prompt from './components/Prompt'
 import lotusWoman from './img/lotus_woman.png'
 
-export const promptWritingMachine = Machine({
+const promptWritingMachine = Machine({
   id: 'promptWriting',
   initial: 'prompt',
   states: {

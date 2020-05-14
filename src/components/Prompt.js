@@ -19,5 +19,4 @@ const PromptStyled = styled.p`
   margin: 20px 0 20px 0;
   justify-self: center;
   align-self: center;
-  -shadow: 20px 20px 60px #489dcf, -20px -20px 60px #62d5ff;
 `
