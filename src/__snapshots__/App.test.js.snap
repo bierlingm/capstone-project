@@ -14,10 +14,10 @@ exports[`App should take a snapshot 1`] = `
         src="lotus_woman.png"
       />
       <p
-        class="sc-AxirZ dUQxWr prompt"
+        class="sc-AxirZ cuzbHi prompt"
         data-testid="prompt"
       >
-        Do you love yourself enough?
+        What triggers you in an unreasonable way?
       </p>
       <button
         class="App__ButtonStyled-sc-3vbase-1 gSaLlo buttonLeft"

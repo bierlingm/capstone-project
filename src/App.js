@@ -27,7 +27,7 @@ const promptWritingMachine = Machine({
         STOP: 'prompt',
       },
       after: {
-        2000: 'notes',
+        90000: 'notes',
       },
     },
     notes: {
