@@ -52,12 +52,12 @@ const BackdropWrapper = styled.div`
       grid-row: prompt-start / prompt-end;
     }
 
-    .button1 {
+    .buttonLeft {
       grid-column: main-start / left-half;
       grid-row: button-start / button-end;
     }
 
-    .button2 {
+    .buttonRight {
       grid-column: right-half / main-end;
       grid-row: button-start / button-end;
     }

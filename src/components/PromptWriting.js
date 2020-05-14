@@ -13,10 +13,10 @@ export default function PromptWriting({ current, send }) {
     <Backdrop>
       <Icon className="icon" src={lotusWoman} alt="Woman in lotus position" />
       <Prompt />
-      <ButtonStyled className="button1" onClick={() => send('SHUFFLE')}>
+      <ButtonStyled className="buttonLeft" onClick={() => send('SHUFFLE')}>
         shuffle
       </ButtonStyled>
-      <ButtonStyled className="button2" onClick={() => send('START')}>
+      <ButtonStyled className="buttonRight" onClick={() => send('START')}>
         start
       </ButtonStyled>
     </Backdrop>
