@@ -17,7 +17,7 @@ exports[`App should take a snapshot 1`] = `
         class="sc-AxirZ dUQxWr prompt"
         data-testid="prompt"
       >
-        Do you love yourself enough?
+        Where would you rather be right now?
       </p>
       <button
         class="App__ButtonStyled-sc-3vbase-1 gSaLlo buttonLeft"

@@ -1,27 +1,39 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
-import notes from '../notes.json'
+import initialNotes from '../notes.json'
+import { nanoid } from 'nanoid'
 
 export default function NoteField() {
-  localStorage.getItem('notes')
-    ? console.log('Notes are in localStorage')
-    : localStorage.setItem('notes', JSON.stringify(notes))
+  const localNotes = localStorage.getItem('notes')
+  const [notesWasAdded, setNotesWasAdded] = useState(false)
+  const [notes, setNotes] = useState(
+    localNotes !== null ? localNotes : initialNotes
+  )
 
-  const localNotes = JSON.parse(localStorage.getItem('notes'))
+  useEffect(() => {
+    localStorage.setItem('notes', JSON.stringify(notes))
+  }, [notes])
 
   function handleSave(event) {
-    return localStorage.setItem(
-      'notes',
-      JSON.stringify([
-        ...localNotes,
-        {
-          noteId: localNotes.length,
-          noteCreationDate: Date(),
-          noteSet: 'user',
-          noteText: event.target.value,
-        },
-      ])
-    )
+    const newNote = {
+      noteId: nanoid(),
+      noteCreationDate: Date(),
+      noteSet: 'user',
+      noteText: event.target.value,
+    }
+
+    console.log(notesWasAdded)
+
+    if (notesWasAdded) {
+      setNotes(
+        notes.map((note, index) =>
+          index === notes.length - 1 ? newNote : note
+        )
+      )
+    } else {
+      setNotes([...notes, newNote])
+      setNotesWasAdded(true)
+    }
   }
 
   return (
