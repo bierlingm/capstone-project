@@ -16,20 +16,8 @@ export default function Prompt() {
 }
 
 const PromptStyled = styled.p`
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 20px 0 20px 0;
   justify-self: center;
   align-self: center;
   -shadow: 20px 20px 60px #489dcf, -20px -20px 60px #62d5ff;
-`
-
-export const ButtonStyled = styled.button`
-  height: 10%;
-  margin: 0;
-  background: transparent;
-  color: yellow;
-  align-self: center;
-  border: none;
-  padding-left: 24px;
-  font-size: 40px;
 `

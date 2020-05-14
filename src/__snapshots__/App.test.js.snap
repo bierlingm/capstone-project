@@ -3,29 +3,29 @@
 exports[`App should take a snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="Backdrop__BackdropWrapper-t2gny5-1 liVDOw"
+    class="Backdrop__BackdropWrapper-t2gny5-1 gDUmoH"
   >
     <div
       class="Backdrop__DivStyled-t2gny5-0 hCmRwe default"
     >
       <img
         alt="Woman in lotus position"
-        class="PromptWriting__Icon-e8y31h-0 dVVqPl icon"
+        class="App__Icon-sc-3vbase-0 icSXeb icon"
         src="lotus_woman.png"
       />
       <p
-        class="sc-AxjAm bBIDZl prompt"
+        class="sc-AxirZ dUQxWr prompt"
         data-testid="prompt"
       >
-        Love is the will to extend yourself for the spiritual growth of another.
+        You could leave life right now.
       </p>
       <button
-        class="PromptWriting__ButtonStyled-e8y31h-1 bSCCMm button1"
+        class="App__ButtonStyled-sc-3vbase-1 gSaLlo buttonLeft"
       >
         shuffle
       </button>
       <button
-        class="PromptWriting__ButtonStyled-e8y31h-1 bSCCMm button2"
+        class="App__ButtonStyled-sc-3vbase-1 gSaLlo buttonRight"
       >
         start
       </button>
