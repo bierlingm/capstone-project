@@ -28,8 +28,6 @@ export default function NoteField() {
       noteText: event.target.value,
     }
 
-    console.log(notesWasAdded)
-
     if (notesWasAdded) {
       setNotes(
         notes.map((note, index) =>
