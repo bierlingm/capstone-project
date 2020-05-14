@@ -3,13 +3,33 @@
 exports[`App should take a snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="Backdrop__DivStyled-t2gny5-0 dvwDYw"
+    class="Backdrop__BackdropWrapper-t2gny5-1 hHlNnk"
   >
-    <button
-      class="WritingSession__ButtonStyled-sc-1nq2uy5-0 dNmeuL"
+    <div
+      class="Backdrop__DivStyled-t2gny5-0 hCmRwe default"
     >
-      write
-    </button>
+      <img
+        alt="Woman in lotus position"
+        class="PromptWriting__Icon-e8y31h-0 dVVqPl icon"
+        src="lotus_woman.png"
+      />
+      <p
+        class="sc-AxjAm hHUydW prompt"
+        data-testid="prompt"
+      >
+        What triggers you in an unreasonable way?
+      </p>
+      <button
+        class="PromptWriting__ButtonStyled-e8y31h-1 bSCCMm buttonLeft"
+      >
+        shuffle
+      </button>
+      <button
+        class="PromptWriting__ButtonStyled-e8y31h-1 bSCCMm buttonRight"
+      >
+        start
+      </button>
+    </div>
   </div>
 </DocumentFragment>
 `;

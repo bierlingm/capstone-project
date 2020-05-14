@@ -1,27 +1,31 @@
 import { createGlobalStyle } from 'styled-components'
+import {
+  backdropColor,
+  backgroundColor,
+  fadeColor,
+  textColor,
+} from './utils/colors'
+import { defaultFont, defaultFontSize, defaultMargin } from './utils/utils'
 
 export default createGlobalStyle`
 
 * {
-  margin: 0;
-  font-family: 'Roboto Mono';
-  font-size: 40px;
+  margin: ${defaultMargin};
+  font-family: ${defaultFont};
+  font-size: ${defaultFontSize};
+  background: ${backgroundColor};
+  color: ${textColor};
+  overflow: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-decoration: none;
-}
-
-a {
-  color: yellow;
-  text-decoration: none;
 }
 
 @keyframes timer {
   0% {
-    background-color: teal;
+    background-color: ${backdropColor};
   }
   100% {
-    background-color: black;
+    background-color: ${fadeColor};
   }
 }
 `
