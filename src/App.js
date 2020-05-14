@@ -53,7 +53,7 @@ export default function App() {
         retry
       </ButtonStyled>
       <ButtonStyled className="buttonRight" onClick={() => send('NEW')}>
-        new
+        save
       </ButtonStyled>
     </BackdropNotes>
   ) : (

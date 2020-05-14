@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
-import Notes from '../Notes.json'
+import notes from '../notes.json'
 
 export default function NoteField() {
   localStorage.getItem('notes')
     ? console.log('Notes are in localStorage')
-    : localStorage.setItem('notes', JSON.stringify(Notes))
+    : localStorage.setItem('notes', JSON.stringify(notes))
 
   const localNotes = JSON.parse(localStorage.getItem('notes'))
 
