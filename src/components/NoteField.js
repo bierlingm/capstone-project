@@ -4,7 +4,13 @@ import initialNotes from '../notes.json'
 import { nanoid } from 'nanoid'
 
 export default function NoteField() {
-  const localNotes = localStorage.getItem('notes')
+  let localNotes
+  try {
+    localNotes = JSON.parse(localStorage.getItem('notes'))
+  } catch {
+    console.error('Something bad happened...')
+  }
+
   const [notesWasAdded, setNotesWasAdded] = useState(false)
   const [notes, setNotes] = useState(
     localNotes !== null ? localNotes : initialNotes
