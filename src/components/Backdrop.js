@@ -6,7 +6,7 @@ import { backdropColor } from '../utils/colors'
 export function Backdrop({ children }) {
   return (
     <BackdropWrapper>
-      <DivStyled className="default">{children}</DivStyled>
+      <Container className="default">{children}</Container>
     </BackdropWrapper>
   )
 }
@@ -14,12 +14,20 @@ export function Backdrop({ children }) {
 export function BackdropTimed({ children }) {
   return (
     <BackdropWrapper>
-      <DivStyled className="timed">{children}</DivStyled>
+      <Container className="timed">{children}</Container>
     </BackdropWrapper>
   )
 }
 
-const DivStyled = styled.div`
+export function BackdropNotes({ children }) {
+  return (
+    <BackdropWrapper>
+      <Container className="notes">{children}</Container>
+    </BackdropWrapper>
+  )
+}
+
+const Container = styled.div`
   height: ${fullHeight};
   text-align: center;
   background: ${backdropColor};
@@ -67,5 +75,36 @@ const BackdropWrapper = styled.div`
     display: grid;
     grid-template-columns: 50% 50%;
     animation: timer ${defaultFade};
+  }
+
+  .notes {
+    display: grid;
+    grid-template-columns:
+      [left-space-start] 10vw
+      [left-space-end main-start] 40vw
+      [left-half right-half] 40vw
+      [main-end right-space-start] 10vw
+      [right-space-end];
+    grid-template-rows:
+      [top-space-start] 10vh
+      [top-space-end notes-start] 55vh
+      [notes-end button-start] 25vh
+      [button-end bottom-space-start] 10vh
+      [bottom-end];
+
+    .notefield {
+      grid-column: main-start / main-end;
+      grid-row: notes-start / notes-end;
+    }
+
+    .buttonLeft {
+      grid-column: main-start / left-half;
+      grid-row: button-start / button-end;
+    }
+
+    .buttonRight {
+      grid-column: right-half / main-end;
+      grid-row: button-start / button-end;
+    }
   }
 `

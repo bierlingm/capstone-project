@@ -1,17 +1,16 @@
 import React from 'react'
-import App from '../App'
-import PromptWriting from '../components/PromptWriting'
 import GlobalStyles from '../GlobalStyles'
+import NoteField from '../components/NoteField'
 
 export default {
-  title: 'PromptWriting',
-  component: PromptWriting,
+  title: 'NoteField',
+  component: NoteField,
 }
 
 export const Default = () => (
   <React.StrictMode>
     <GlobalStyles />
-    <App />
+    <NoteField />
   </React.StrictMode>
 )
 
