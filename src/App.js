@@ -9,11 +9,16 @@ import lotusWoman from './img/lotus_woman.png'
 
 const promptWritingMachine = Machine({
   id: 'promptWriting',
-  initial: 'prompt',
+  initial: 'home',
   states: {
+    home: {
+      on: {
+        START: 'prompt',
+      },
+    },
     prompt: {
       on: {
-        START: 'writing',
+        WRITE: 'writing',
         SHUFFLE: 'shuffle',
       },
     },
@@ -33,7 +38,7 @@ const promptWritingMachine = Machine({
     notes: {
       on: {
         RETRY: 'writing',
-        NEW: 'prompt',
+        SAVE: 'home',
       },
     },
   },
@@ -52,19 +57,27 @@ export default function App() {
       <ButtonStyled className="buttonLeft" onClick={() => send('RETRY')}>
         retry
       </ButtonStyled>
-      <ButtonStyled className="buttonRight" onClick={() => send('NEW')}>
+      <ButtonStyled className="buttonRight" onClick={() => send('SAVE')}>
         save
       </ButtonStyled>
     </BackdropNotes>
-  ) : (
+  ) : current.matches('prompt') ? (
     <Backdrop>
       <Icon className="icon" src={lotusWoman} alt="Woman in lotus position" />
       <Prompt />
       <ButtonStyled className="buttonLeft" onClick={() => send('SHUFFLE')}>
         shuffle
       </ButtonStyled>
-      <ButtonStyled className="buttonRight" onClick={() => send('START')}>
+      <ButtonStyled className="buttonRight" onClick={() => send('WRITE')}>
         start
+      </ButtonStyled>
+    </Backdrop>
+  ) : (
+    <Backdrop>
+      <Icon className="icon" src={lotusWoman} alt="Woman in lotus position" />
+      <ButtonStyled className="buttonLeft">notes</ButtonStyled>
+      <ButtonStyled className="buttonRight" onClick={() => send('START')}>
+        write
       </ButtonStyled>
     </Backdrop>
   )

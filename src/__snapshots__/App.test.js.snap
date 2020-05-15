@@ -13,21 +13,15 @@ exports[`App should take a snapshot 1`] = `
         class="App__Icon-sc-3vbase-0 icSXeb icon"
         src="lotus_woman.png"
       />
-      <p
-        class="sc-AxjAm dLXRdF prompt"
-        data-testid="prompt"
-      >
-        Do you love yourself enough?
-      </p>
       <button
         class="App__ButtonStyled-sc-3vbase-1 bZOBEr buttonLeft"
       >
-        shuffle
+        notes
       </button>
       <button
         class="App__ButtonStyled-sc-3vbase-1 bZOBEr buttonRight"
       >
-        start
+        write
       </button>
     </div>
   </div>
