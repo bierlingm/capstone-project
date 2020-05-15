@@ -9,16 +9,16 @@ describe('App', () => {
     render(<App />)
   })
 
-  it('renders shuffle button screen', () => {
+  it('renders notes button', () => {
     const { getByText } = render(<App />)
-    const shuffleButton = getByText(/shuffle/i)
-    expect(shuffleButton).toBeInTheDocument()
+    const notesButton = getByText(/notes/i)
+    expect(notesButton).toBeInTheDocument()
   })
 
-  it('renders start button screen', () => {
+  it('renders write button', () => {
     const { getByText } = render(<App />)
-    const startButton = getByText(/start/i)
-    expect(startButton).toBeInTheDocument()
+    const writeButton = getByText(/write/i)
+    expect(writeButton).toBeInTheDocument()
   })
 
   it('should take a snapshot', () => {

@@ -6,6 +6,7 @@ import { Backdrop, BackdropNotes, BackdropTimed } from './components/Backdrop'
 import NoteField from './components/NoteField'
 import Prompt from './components/Prompt'
 import lotusWoman from './img/lotus_woman.png'
+import electricLightBulb from './img/electric_light_bulb.png'
 
 const promptWritingMachine = Machine({
   id: 'promptWriting',
@@ -13,7 +14,13 @@ const promptWritingMachine = Machine({
   states: {
     home: {
       on: {
+        NOTES: 'noteLog',
         START: 'prompt',
+      },
+    },
+    noteLog: {
+      on: {
+        HOME: 'home',
       },
     },
     prompt: {
@@ -63,7 +70,7 @@ export default function App() {
     </BackdropNotes>
   ) : current.matches('prompt') ? (
     <Backdrop>
-      <Icon className="icon" src={lotusWoman} alt="Woman in lotus position" />
+      <Icon className="icon" src={electricLightBulb} alt="Writing prompt" />
       <Prompt />
       <ButtonStyled className="buttonLeft" onClick={() => send('SHUFFLE')}>
         shuffle
@@ -72,10 +79,18 @@ export default function App() {
         start
       </ButtonStyled>
     </Backdrop>
+  ) : current.matches('noteLog') ? (
+    <Backdrop>
+      <ButtonStyled className="buttonLeft" onClick={() => send('HOME')}>
+        home
+      </ButtonStyled>
+    </Backdrop>
   ) : (
     <Backdrop>
       <Icon className="icon" src={lotusWoman} alt="Woman in lotus position" />
-      <ButtonStyled className="buttonLeft">notes</ButtonStyled>
+      <ButtonStyled className="buttonLeft" onClick={() => send('NOTES')}>
+        notes
+      </ButtonStyled>
       <ButtonStyled className="buttonRight" onClick={() => send('START')}>
         write
       </ButtonStyled>
