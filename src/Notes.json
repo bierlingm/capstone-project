@@ -1,8 +1,8 @@
 [
   {
-    "notesId": 0,
-    "noteCreationDate": "Thu May 14 2020 14:46:00 GMT+0200 (Central European Summer Time)",
-    "noteSet": "default",
-    "noteText": "This is an example note. Edit me!"
+    "id": 0,
+    "creationDate": "Thu May 14 2020 14:46:00 GMT+0200 (Central European Summer Time)",
+    "set": "default",
+    "text": "This is an example note. Edit me!"
   }
 ]

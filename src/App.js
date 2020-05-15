@@ -3,10 +3,13 @@ import React from 'react'
 import styled from 'styled-components/macro'
 import { Machine } from 'xstate'
 import { Backdrop, BackdropNotes, BackdropTimed } from './components/Backdrop'
+import ItemList from './components/ItemList'
 import NoteField from './components/NoteField'
 import Prompt from './components/Prompt'
-import lotusWoman from './img/lotus_woman.png'
 import electricLightBulb from './img/electric_light_bulb.png'
+import gameDie from './img/game_die.png'
+import lotusWoman from './img/lotus_woman.png'
+import notes from './notes.json'
 
 const promptWritingMachine = Machine({
   id: 'promptWriting',
@@ -39,7 +42,7 @@ const promptWritingMachine = Machine({
         STOP: 'prompt',
       },
       after: {
-        90000: 'notes',
+        1000: 'notes',
       },
     },
     notes: {
@@ -79,8 +82,13 @@ export default function App() {
         start
       </ButtonStyled>
     </Backdrop>
+  ) : current.matches('shuffle') ? (
+    <Backdrop>
+      <Icon className="main" src={gameDie} alt="Die throw" />
+    </Backdrop>
   ) : current.matches('noteLog') ? (
     <Backdrop>
+      <ItemList className="main" items={notes} />
       <ButtonStyled className="buttonLeft" onClick={() => send('HOME')}>
         home
       </ButtonStyled>

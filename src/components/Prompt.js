@@ -1,16 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
-import Prompts from '../Prompts.json'
+import prompts from '../prompts.json'
 import { getRandomInt } from '../utils/utils'
 
 export default function Prompt() {
-  const prompt = JSON.stringify(
-    Prompts[getRandomInt(Prompts.length - 1)]['promptText']
+  const randomPrompt = JSON.stringify(
+    prompts[getRandomInt(prompts.length - 1)]['text']
   )
 
   return (
     <PromptStyled className="prompt" data-testid="prompt">
-      {prompt.slice(1, prompt.length - 1)}
+      {randomPrompt.slice(1, randomPrompt.length - 1)}
     </PromptStyled>
   )
 }

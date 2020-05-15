@@ -55,6 +55,11 @@ const BackdropWrapper = styled.div`
       grid-row: icon-start / icon-end;
     }
 
+    .main {
+      grid-column: main-start / main-end;
+      grid-row: icon-start / prompt-end;
+    }
+
     .prompt {
       grid-column: main-start / main-end;
       grid-row: prompt-start / prompt-end;

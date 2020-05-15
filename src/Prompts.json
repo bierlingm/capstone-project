@@ -1,74 +1,74 @@
 [
   {
-    "promptId": 1,
-    "promptCreationDate": "a date",
-    "promptSet": "default",
-    "promptText": "You and everyone you love will die."
+    "id": 1,
+    "creationDate": "a date",
+    "set": "default",
+    "text": "You and everyone you love will die."
   },
   {
-    "promptId": 2,
-    "promptCreationDate": "a date",
-    "promptSet": "default",
-    "promptText": "A nuke goes off in 5 minutes."
+    "id": 2,
+    "creationDate": "a date",
+    "set": "default",
+    "text": "A nuke goes off in 5 minutes."
   },
   {
-    "promptId": 3,
-    "promptCreationDate": "a date",
-    "promptSet": "default",
-    "promptText": "Where would you rather be right now?"
+    "id": 3,
+    "creationDate": "a date",
+    "set": "default",
+    "text": "Where would you rather be right now?"
   },
   {
-    "promptId": 4,
-    "promptCreationDate": "a date",
-    "promptSet": "default",
-    "promptText": "Do you love yourself enough?"
+    "id": 4,
+    "creationDate": "a date",
+    "set": "default",
+    "text": "Do you love yourself enough?"
   },
   {
-    "promptId": 5,
-    "promptCreationDate": "a date",
-    "promptSet": "default",
-    "promptText": "God is dead. Or is he really?"
+    "id": 5,
+    "creationDate": "a date",
+    "set": "default",
+    "text": "God is dead. Or is he really?"
   },
   {
-    "promptId": 6,
-    "promptCreationDate": "a date",
-    "promptSet": "default",
-    "promptText": "What triggers you in an unreasonable way?"
+    "id": 6,
+    "creationDate": "a date",
+    "set": "default",
+    "text": "What triggers you in an unreasonable way?"
   },
   {
-    "promptId": 7,
-    "promptCreationDate": "a date",
-    "promptSet": "default",
-    "promptText": "Do you have a highest value?"
+    "id": 7,
+    "creationDate": "a date",
+    "set": "default",
+    "text": "Do you have a highest value?"
   },
   {
-    "promptId": 8,
-    "promptCreationDate": "a date",
-    "promptSet": "default",
-    "promptText": "You could leave life right now."
+    "id": 8,
+    "creationDate": "a date",
+    "set": "default",
+    "text": "You could leave life right now."
   },
   {
-    "promptId": 9,
-    "promptCreationDate": "a date",
-    "promptSet": "default",
-    "promptText": "Empty yourself of guilt for a moment."
+    "id": 9,
+    "creationDate": "a date",
+    "set": "default",
+    "text": "Empty yourself of guilt for a moment."
   },
   {
-    "promptId": 10,
-    "promptCreationDate": "a date",
-    "promptSet": "default",
-    "promptText": "Do you have abody to love?"
+    "id": 10,
+    "creationDate": "a date",
+    "set": "default",
+    "text": "Do you have abody to love?"
   },
   {
-    "promptId": 11,
-    "promptCreationDate": "a date",
-    "promptSet": "default",
-    "promptText": "Love is the will to extend yourself for the spiritual growth of another."
+    "id": 11,
+    "creationDate": "a date",
+    "set": "default",
+    "text": "Love is the will to extend yourself for the spiritual growth of another."
   },
   {
-    "promptId": 12,
-    "promptCreationDate": "a date",
-    "promptSet": "default",
-    "promptText": "What is the greatest you ask of yourself?"
+    "id": 12,
+    "creationDate": "a date",
+    "set": "default",
+    "text": "What is the greatest you ask of yourself?"
   }
 ]
