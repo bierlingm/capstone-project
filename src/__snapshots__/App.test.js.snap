@@ -6,7 +6,7 @@ exports[`App should take a snapshot 1`] = `
     class="Backdrop__BackdropWrapper-t2gny5-1 gDUmoH"
   >
     <div
-      class="Backdrop__DivStyled-t2gny5-0 hCmRwe default"
+      class="Backdrop__Container-t2gny5-0 jhoViZ default"
     >
       <img
         alt="Woman in lotus position"
@@ -14,18 +14,18 @@ exports[`App should take a snapshot 1`] = `
         src="lotus_woman.png"
       />
       <p
-        class="sc-AxirZ cuzbHi prompt"
+        class="sc-AxjAm dLXRdF prompt"
         data-testid="prompt"
       >
-        You could leave life right now.
+        Do you love yourself enough?
       </p>
       <button
-        class="App__ButtonStyled-sc-3vbase-1 gSaLlo buttonLeft"
+        class="App__ButtonStyled-sc-3vbase-1 bZOBEr buttonLeft"
       >
         shuffle
       </button>
       <button
-        class="App__ButtonStyled-sc-3vbase-1 gSaLlo buttonRight"
+        class="App__ButtonStyled-sc-3vbase-1 bZOBEr buttonRight"
       >
         start
       </button>

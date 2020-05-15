@@ -32,7 +32,7 @@ const promptWritingMachine = Machine({
     },
     notes: {
       on: {
-        REDO: 'writing',
+        RETRY: 'writing',
         NEW: 'prompt',
       },
     },
@@ -49,7 +49,7 @@ export default function App() {
   ) : current.matches('notes') ? (
     <BackdropNotes>
       <NoteField />
-      <ButtonStyled className="buttonLeft" onClick={() => send('REDO')}>
+      <ButtonStyled className="buttonLeft" onClick={() => send('RETRY')}>
         retry
       </ButtonStyled>
       <ButtonStyled className="buttonRight" onClick={() => send('NEW')}>
@@ -83,7 +83,7 @@ const ButtonStyled = styled.button`
   align-self: center;
   font-size: 28px;
   border: transparent;
-  border-radius: 10px;
+  border-radius: 20px;
   background: linear-gradient(145deg, #4da7db, #5bc6ff);
   box-shadow: 20px 20px 60px #489dcf, -20px -20px 60px #62d5ff;
 `

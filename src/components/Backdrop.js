@@ -6,7 +6,7 @@ import { backdropColor } from '../utils/colors'
 export function Backdrop({ children }) {
   return (
     <BackdropWrapper>
-      <DivStyled className="default">{children}</DivStyled>
+      <Container className="default">{children}</Container>
     </BackdropWrapper>
   )
 }
@@ -14,7 +14,7 @@ export function Backdrop({ children }) {
 export function BackdropTimed({ children }) {
   return (
     <BackdropWrapper>
-      <DivStyled className="timed">{children}</DivStyled>
+      <Container className="timed">{children}</Container>
     </BackdropWrapper>
   )
 }
@@ -22,12 +22,12 @@ export function BackdropTimed({ children }) {
 export function BackdropNotes({ children }) {
   return (
     <BackdropWrapper>
-      <DivStyled className="notes">{children}</DivStyled>
+      <Container className="notes">{children}</Container>
     </BackdropWrapper>
   )
 }
 
-const DivStyled = styled.div`
+const Container = styled.div`
   height: ${fullHeight};
   text-align: center;
   background: ${backdropColor};
