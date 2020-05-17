@@ -8,9 +8,7 @@ describe('Prompt', () => {
   })
 
   it('renders prompt upon startup', () => {
-    const { getByTestId } = render(
-      <Prompt gridClass="prompt" testId="promptPrompt" />
-    )
+    const { getByTestId } = render(<Prompt />)
     const prompt = getByTestId('promptPrompt')
     expect(prompt).toBeInTheDocument()
   })

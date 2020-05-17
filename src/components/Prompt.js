@@ -9,9 +9,11 @@ export default function Prompt() {
   )
 
   return (
-    <PromptStyled>
-      {randomPrompt.slice(1, randomPrompt.length - 1)}
-    </PromptStyled>
+    <DivStyled className="prompt" data-testid="promptPrompt">
+      <PromptStyled>
+        {randomPrompt.slice(1, randomPrompt.length - 1)}
+      </PromptStyled>
+    </DivStyled>
   )
 }
 
@@ -19,4 +21,8 @@ const PromptStyled = styled.p`
   margin: 20px 0 20px 0;
   justify-self: center;
   align-self: center;
+`
+
+const DivStyled = styled.div`
+  display: flex;
 `

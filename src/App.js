@@ -43,7 +43,7 @@ const promptWritingMachine = Machine({
         STOP: 'prompt',
       },
       after: {
-        1000: 'notes',
+        90000: 'notes',
       },
     },
     notes: {
@@ -83,9 +83,7 @@ export default function App() {
   ) : current.matches('prompt') ? (
     <Backdrop data-testid="promptBackdrop">
       <Icon className="icon" src={electricLightBulb} alt="Writing prompt" />
-      <DivStyled className="prompt" data-testid="promptPrompt">
-        <Prompt />
-      </DivStyled>
+      <Prompt />
       <ButtonStyled
         className="buttonLeft"
         onClick={() => send('SHUFFLE')}
@@ -178,8 +176,4 @@ const InputStyled = styled.input`
   border: none;
   padding-left: 24px;
   font-size: 40px;
-`
-
-const DivStyled = styled.div`
-  display: flex;
 `
