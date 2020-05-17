@@ -8,3 +8,7 @@ export const fullHeight = '100vh'
 export function getRandomInt(max) {
   return Math.floor(Math.random() * max)
 }
+
+export function getFromLocalStorage(key) {
+  return JSON.parse(localStorage.getItem(key))
+}

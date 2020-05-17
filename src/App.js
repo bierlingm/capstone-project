@@ -10,6 +10,7 @@ import electricLightBulb from './img/electric_light_bulb.png'
 import gameDie from './img/game_die.png'
 import lotusWoman from './img/lotus_woman.png'
 import notes from './notes.json'
+import { getFromLocalStorage } from './utils/utils'
 
 const promptWritingMachine = Machine({
   id: 'promptWriting',
@@ -113,7 +114,7 @@ export default function App() {
     <BackdropNotes data-testid="noteLogBackdropNotes">
       <ItemList
         gridClass="notefield"
-        items={JSON.parse(localStorage.getItem('notes'))}
+        items={getFromLocalStorage('notes')}
         data-testid="noteLogItemList"
       />
       <ButtonStyled
