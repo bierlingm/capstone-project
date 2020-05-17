@@ -9,7 +9,7 @@ export default function Prompt() {
   )
 
   return (
-    <PromptStyled className="prompt" data-testid="prompt">
+    <PromptStyled>
       {randomPrompt.slice(1, randomPrompt.length - 1)}
     </PromptStyled>
   )

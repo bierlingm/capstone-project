@@ -58,48 +58,92 @@ export default function App() {
   const [current, send] = useMachine(promptWritingMachine)
 
   return current.matches('writing') ? (
-    <BackdropTimed>
-      <InputStyled autoFocus type="text" alt="input" />
+    <BackdropTimed data-testid="writingBackdropTimed">
+      <InputStyled autoFocus type="text" alt="input" data-testid="input" />
     </BackdropTimed>
   ) : current.matches('notes') ? (
-    <BackdropNotes>
-      <NoteField />
-      <ButtonStyled className="buttonLeft" onClick={() => send('RETRY')}>
+    <BackdropNotes data-testid="notesBackdropNotes">
+      <NoteField data-testid="notesNoteField" />
+      <ButtonStyled
+        className="buttonLeft"
+        onClick={() => send('RETRY')}
+        data-testid="notesRetryButton"
+      >
         retry
       </ButtonStyled>
-      <ButtonStyled className="buttonRight" onClick={() => send('SAVE')}>
+      <ButtonStyled
+        className="buttonRight"
+        onClick={() => send('SAVE')}
+        data-testid="notesSaveButton"
+      >
         save
       </ButtonStyled>
     </BackdropNotes>
   ) : current.matches('prompt') ? (
-    <Backdrop>
+    <Backdrop data-testid="promptBackdrop">
       <Icon className="icon" src={electricLightBulb} alt="Writing prompt" />
-      <Prompt />
-      <ButtonStyled className="buttonLeft" onClick={() => send('SHUFFLE')}>
+      <DivStyled className="prompt" data-testid="promptPrompt">
+        <Prompt />
+      </DivStyled>
+      <ButtonStyled
+        className="buttonLeft"
+        onClick={() => send('SHUFFLE')}
+        data-testid="promptShuffleButton"
+      >
         shuffle
       </ButtonStyled>
-      <ButtonStyled className="buttonRight" onClick={() => send('WRITE')}>
+      <ButtonStyled
+        className="buttonRight"
+        onClick={() => send('WRITE')}
+        data-testid="promptStartButton"
+      >
         start
       </ButtonStyled>
     </Backdrop>
   ) : current.matches('shuffle') ? (
     <Backdrop>
-      <Icon className="main" src={gameDie} alt="Die throw" />
+      <Icon
+        className="main"
+        src={gameDie}
+        alt="Die throw"
+        data-testid="shuffleGameDie"
+      />
     </Backdrop>
   ) : current.matches('noteLog') ? (
-    <Backdrop>
-      <ItemList className="main" items={notes} />
-      <ButtonStyled className="buttonLeft" onClick={() => send('HOME')}>
+    <BackdropNotes data-testid="noteLogBackdropNotes">
+      <ItemList
+        gridClass="notefield"
+        items={JSON.parse(localStorage.getItem('notes'))}
+        data-testid="noteLogItemList"
+      />
+      <ButtonStyled
+        className="buttonLeft"
+        onClick={() => send('HOME')}
+        data-testid="noteLogHomeButton"
+      >
         home
       </ButtonStyled>
-    </Backdrop>
+    </BackdropNotes>
   ) : (
-    <Backdrop>
-      <Icon className="icon" src={lotusWoman} alt="Woman in lotus position" />
-      <ButtonStyled className="buttonLeft" onClick={() => send('NOTES')}>
+    <Backdrop data-testid="homeBackdrop">
+      <Icon
+        className="icon"
+        src={lotusWoman}
+        alt="Woman in lotus position"
+        data-testid="homeIcon"
+      />
+      <ButtonStyled
+        className="buttonLeft"
+        onClick={() => send('NOTES')}
+        data-testid="homeNotesButton"
+      >
         notes
       </ButtonStyled>
-      <ButtonStyled className="buttonRight" onClick={() => send('START')}>
+      <ButtonStyled
+        className="buttonRight"
+        onClick={() => send('START')}
+        data-testid="homeWriteButton"
+      >
         write
       </ButtonStyled>
     </Backdrop>
@@ -133,4 +177,8 @@ const InputStyled = styled.input`
   border: none;
   padding-left: 24px;
   font-size: 40px;
+`
+
+const DivStyled = styled.div`
+  display: flex;
 `

@@ -11,15 +11,18 @@ exports[`App should take a snapshot 1`] = `
       <img
         alt="Woman in lotus position"
         class="App__Icon-sc-3vbase-0 icSXeb icon"
+        data-testid="homeIcon"
         src="lotus_woman.png"
       />
       <button
         class="App__ButtonStyled-sc-3vbase-1 bZOBEr buttonLeft"
+        data-testid="homeNotesButton"
       >
         notes
       </button>
       <button
         class="App__ButtonStyled-sc-3vbase-1 bZOBEr buttonRight"
+        data-testid="homeWriteButton"
       >
         write
       </button>

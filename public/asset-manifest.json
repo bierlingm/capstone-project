@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.js": "/static/js/main.addf107b.chunk.js",
+    "main.js.map": "/static/js/main.addf107b.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.838a52b6.js",
+    "runtime-main.js.map": "/static/js/runtime-main.838a52b6.js.map",
+    "static/js/2.9f679a4c.chunk.js": "/static/js/2.9f679a4c.chunk.js",
+    "static/js/2.9f679a4c.chunk.js.map": "/static/js/2.9f679a4c.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.cb0c3f06cdd5d4d5a6b3dc74a4734526.js": "/precache-manifest.cb0c3f06cdd5d4d5a6b3dc74a4734526.js",
+    "service-worker.js": "/service-worker.js",
+    "static/js/2.9f679a4c.chunk.js.LICENSE.txt": "/static/js/2.9f679a4c.chunk.js.LICENSE.txt",
+    "static/media/electric_light_bulb.png": "/static/media/electric_light_bulb.bf314afb.png",
+    "static/media/game_die.png": "/static/media/game_die.007325ca.png",
+    "static/media/lotus_woman.png": "/static/media/lotus_woman.15e6f330.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.838a52b6.js",
+    "static/js/2.9f679a4c.chunk.js",
+    "static/js/main.addf107b.chunk.js"
+  ]
+}

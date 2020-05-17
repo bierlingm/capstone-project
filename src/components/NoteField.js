@@ -22,10 +22,10 @@ export default function NoteField() {
 
   function handleSave(event) {
     const newNote = {
-      noteId: nanoid(),
-      noteCreationDate: Date(),
-      noteSet: 'user',
-      noteText: event.target.value,
+      id: nanoid(),
+      creationDate: Date(),
+      set: 'user',
+      text: event.target.value,
     }
 
     if (notesWasAdded) {
