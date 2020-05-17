@@ -12,3 +12,7 @@ export function getRandomInt(max) {
 export function getFromLocalStorage(key) {
   return JSON.parse(localStorage.getItem(key))
 }
+
+export function ifXthenXElseY(x, y) {
+  return x ? x : y
+}
