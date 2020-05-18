@@ -35,7 +35,7 @@ const promptWritingMachine = Machine({
     },
     shuffle: {
       after: {
-        0: 'prompt',
+        250: 'prompt',
       },
     },
     writing: {
