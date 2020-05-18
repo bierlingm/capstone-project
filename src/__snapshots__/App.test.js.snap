@@ -3,7 +3,7 @@
 exports[`App should take a snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="Backdrop__BackdropWrapper-t2gny5-1 bnwaor"
+    class="Backdrop__BackdropWrapper-t2gny5-1 biuOro"
   >
     <div
       class="Backdrop__Container-t2gny5-0 jhoViZ default"
@@ -14,6 +14,11 @@ exports[`App should take a snapshot 1`] = `
         data-testid="homeIcon"
         src="lotus_woman.png"
       />
+      <p
+        class="App__PStyled-sc-3vbase-3 cdASTg prompt"
+      >
+        Welcome to FloWriter!
+      </p>
       <button
         class="App__ButtonStyled-sc-3vbase-1 bZOBEr buttonLeft"
         data-testid="homeNotesButton"

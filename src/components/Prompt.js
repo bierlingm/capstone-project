@@ -11,6 +11,8 @@ export default function Prompt() {
   return (
     <DivStyled className="prompt" data-testid="promptPrompt">
       <PromptStyled>
+        <SpanStyled>Your prompt:</SpanStyled>
+        <br />
         {randomPrompt.slice(1, randomPrompt.length - 1)}
       </PromptStyled>
     </DivStyled>
@@ -25,4 +27,11 @@ const PromptStyled = styled.p`
 
 const DivStyled = styled.div`
   display: flex;
+`
+
+const SpanStyled = styled.span`
+  margin: 20px 0 20px 0;
+  justify-self: center;
+  align-self: center;
+  font-size: 20px;
 `

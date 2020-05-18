@@ -43,7 +43,7 @@ const promptWritingMachine = Machine({
         STOP: 'prompt',
       },
       after: {
-        90000: 'notes',
+        20000: 'notes',
       },
     },
     notes: {
@@ -131,6 +131,7 @@ export default function App() {
         alt="Woman in lotus position"
         data-testid="homeIcon"
       />
+      <PStyled className="prompt">Welcome to FloWriter!</PStyled>
       <ButtonStyled
         className="buttonLeft"
         onClick={() => send('NOTES')}
@@ -176,4 +177,9 @@ const InputStyled = styled.input`
   border: none;
   padding-left: 24px;
   font-size: 40px;
+`
+
+const PStyled = styled.p`
+  justify-self: center;
+  align-self: center;
 `

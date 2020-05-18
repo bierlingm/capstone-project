@@ -16,6 +16,8 @@ const ListStyled = styled.ul`
 `
 
 const ListItemStyled = styled.li`
+  padding-bottom: 12px;
   color: yellow;
   font-size: 20px;
+  text-align: start;
 `

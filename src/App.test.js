@@ -10,14 +10,14 @@ describe('App', () => {
   })
 
   it('renders notes button', () => {
-    const { getByText } = render(<App />)
-    const notesButton = getByText(/notes/i)
+    const { getByTestId } = render(<App />)
+    const notesButton = getByTestId('homeNotesButton')
     expect(notesButton).toBeInTheDocument()
   })
 
   it('renders write button', () => {
-    const { getByText } = render(<App />)
-    const writeButton = getByText(/write/i)
+    const { getByTestId } = render(<App />)
+    const writeButton = getByTestId('homeWriteButton')
     expect(writeButton).toBeInTheDocument()
   })
 
