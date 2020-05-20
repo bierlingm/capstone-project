@@ -2,6 +2,7 @@ import { nanoid } from 'nanoid'
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components/macro'
 import initialNotes from '../notes.json'
+import { getFromLocalStorage, setToLocalStorage } from '../utils/utils'
 // import { createEditor } from 'slate'
 // import { Slate, Editable, withReact } from 'slate-react'
 
@@ -20,9 +21,9 @@ export default function NoteField({
 
   let localNotes
   try {
-    localNotes = JSON.parse(localStorage.getItem('notes'))
+    localNotes = getFromLocalStorage('notes')
   } catch {
-    console.error('Something bad happened...')
+    console.error('There was nothing in localStorage')
   }
 
   const [notesWasAdded, setNotesWasAdded] = useState(false)
@@ -31,7 +32,7 @@ export default function NoteField({
   )
 
   useEffect(() => {
-    localStorage.setItem('notes', JSON.stringify(notes))
+    setToLocalStorage('notes', notes)
   }, [notes])
 
   function handleSave(event) {
