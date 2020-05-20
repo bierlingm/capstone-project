@@ -11,6 +11,7 @@ import gameDie from './img/game_die.png'
 import lotusWoman from './img/lotus_woman.png'
 import notes from './notes.json'
 import { getFromLocalStorage, ifXthenXElseY } from './utils/utils'
+import NavButton from './components/NavButton'
 
 const promptWritingMachine = Machine({
   id: 'promptWriting',
@@ -43,7 +44,7 @@ const promptWritingMachine = Machine({
         STOP: 'prompt',
       },
       after: {
-        20000: 'notes',
+        1000: 'notes',
       },
     },
     notes: {
@@ -64,40 +65,44 @@ export default function App() {
     </BackdropTimed>
   ) : current.matches('notes') ? (
     <BackdropNotes data-testid="notesBackdropNotes">
-      <NoteField data-testid="notesNoteField" />
-      <ButtonStyled
+      <NoteField
+        placeholder="Write your session notes in here..."
+        gridClass="notefield"
+        data-testid="notesNoteField"
+      />
+      <NavButton
         className="buttonLeft"
         onClick={() => send('RETRY')}
         data-testid="notesRetryButton"
       >
         retry
-      </ButtonStyled>
-      <ButtonStyled
+      </NavButton>
+      <NavButton
         className="buttonRight"
         onClick={() => send('SAVE')}
         data-testid="notesSaveButton"
       >
         save
-      </ButtonStyled>
+      </NavButton>
     </BackdropNotes>
   ) : current.matches('prompt') ? (
     <Backdrop data-testid="promptBackdrop">
       <Icon className="icon" src={electricLightBulb} alt="Writing prompt" />
       <Prompt />
-      <ButtonStyled
+      <NavButton
         className="buttonLeft"
         onClick={() => send('SHUFFLE')}
         data-testid="promptShuffleButton"
       >
         shuffle
-      </ButtonStyled>
-      <ButtonStyled
+      </NavButton>
+      <NavButton
         className="buttonRight"
         onClick={() => send('WRITE')}
         data-testid="promptStartButton"
       >
         start
-      </ButtonStyled>
+      </NavButton>
     </Backdrop>
   ) : current.matches('shuffle') ? (
     <Backdrop>
@@ -115,13 +120,13 @@ export default function App() {
         items={ifXthenXElseY(getFromLocalStorage('notes'), notes)}
         data-testid="noteLogItemList"
       />
-      <ButtonStyled
+      <NavButton
         className="buttonLeft"
         onClick={() => send('HOME')}
         data-testid="noteLogHomeButton"
       >
         home
-      </ButtonStyled>
+      </NavButton>
     </BackdropNotes>
   ) : (
     <Backdrop data-testid="homeBackdrop">
@@ -132,20 +137,20 @@ export default function App() {
         data-testid="homeIcon"
       />
       <PStyled className="prompt">Welcome to FloWriter!</PStyled>
-      <ButtonStyled
+      <NavButton
         className="buttonLeft"
         onClick={() => send('NOTES')}
         data-testid="homeNotesButton"
       >
         notes
-      </ButtonStyled>
-      <ButtonStyled
+      </NavButton>
+      <NavButton
         className="buttonRight"
         onClick={() => send('START')}
         data-testid="homeWriteButton"
       >
         write
-      </ButtonStyled>
+      </NavButton>
     </Backdrop>
   )
 }
@@ -153,19 +158,6 @@ export default function App() {
 const Icon = styled.img`
   justify-self: center;
   align-self: center;
-`
-
-const ButtonStyled = styled.button`
-  width: 80%;
-  padding: 20px;
-  color: yellow;
-  justify-self: center;
-  align-self: center;
-  font-size: 28px;
-  border: transparent;
-  border-radius: 20px;
-  background: linear-gradient(145deg, #4da7db, #5bc6ff);
-  box-shadow: 20px 20px 60px #489dcf, -20px -20px 60px #62d5ff;
 `
 
 const InputStyled = styled.input`

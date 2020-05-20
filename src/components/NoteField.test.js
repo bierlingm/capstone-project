@@ -8,7 +8,7 @@ describe('NoteField', () => {
   })
 
   it('renders note field upon startup', () => {
-    const { getByTestId } = render(<NoteField />)
+    const { getByTestId } = render(<NoteField data-testid="noteField" />)
     const noteField = getByTestId('noteField')
     expect(noteField).toBeInTheDocument()
   })

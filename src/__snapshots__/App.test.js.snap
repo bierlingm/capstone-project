@@ -3,7 +3,7 @@
 exports[`App should take a snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="Backdrop__BackdropWrapper-t2gny5-1 biuOro"
+    class="Backdrop__BackdropWrapper-t2gny5-1 SdMsd"
   >
     <div
       class="Backdrop__Container-t2gny5-0 jhoViZ default"
@@ -15,18 +15,18 @@ exports[`App should take a snapshot 1`] = `
         src="lotus_woman.png"
       />
       <p
-        class="App__PStyled-sc-3vbase-3 cdASTg prompt"
+        class="App__PStyled-sc-3vbase-2 hjdyMZ prompt"
       >
         Welcome to FloWriter!
       </p>
       <button
-        class="App__ButtonStyled-sc-3vbase-1 bZOBEr buttonLeft"
+        class="NavButton__ButtonStyled-sc-1rjtv4n-0 SgKxl buttonLeft"
         data-testid="homeNotesButton"
       >
         notes
       </button>
       <button
-        class="App__ButtonStyled-sc-3vbase-1 bZOBEr buttonRight"
+        class="NavButton__ButtonStyled-sc-1rjtv4n-0 SgKxl buttonRight"
         data-testid="homeWriteButton"
       >
         write

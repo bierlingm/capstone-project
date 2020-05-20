@@ -4,11 +4,14 @@
   "private": true,
   "dependencies": {
     "@xstate/react": "^0.8.1",
+    "core-js": "^3.6.5",
     "nanoid": "^3.1.7",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
+    "slate": "^0.58.1",
+    "slate-react": "^0.58.1",
     "styled-components": "^5.1.0",
     "xstate": "^4.9.1"
   },

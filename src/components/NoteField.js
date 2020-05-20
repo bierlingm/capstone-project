@@ -1,9 +1,23 @@
-import React, { useState, useEffect } from 'react'
+import { nanoid } from 'nanoid'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components/macro'
 import initialNotes from '../notes.json'
-import { nanoid } from 'nanoid'
+// import { createEditor } from 'slate'
+// import { Slate, Editable, withReact } from 'slate-react'
 
-export default function NoteField() {
+export default function NoteField({
+  gridClass,
+  placeholder,
+  'data-testid': datatestid,
+}) {
+  // const editor = useMemo(() => withReact(createEditor()), [])
+  // const [value, setValue] = useState([
+  //   {
+  //     type: 'paragraph',
+  //     children: [{ text: '' }],
+  //   },
+  // ])
+
   let localNotes
   try {
     localNotes = JSON.parse(localStorage.getItem('notes'))
@@ -43,15 +57,25 @@ export default function NoteField() {
   return (
     <TextAreaStyled
       onChange={handleSave}
-      placeholder="Write your session notes in here..."
-      className="notefield"
-      data-testid="noteField"
+      placeholder={placeholder}
+      className={gridClass}
+      data-testid={datatestid}
     />
+    // <DivStyled className="notefield">
+    //   <Slate
+    //     editor={editor}
+    //     value={value}
+    //     placeholder={'Write your session notes in here...'}
+    //     onChange={((value) => setValue(value)) && handleSave}
+    //     data-testid="noteField"
+    //   >
+    //     <Editable />
+    //   </Slate>
+    // </DivStyled>
   )
 }
 
 const TextAreaStyled = styled.textarea`
-  type: text;
   margin: 12px;
   padding: 28px;
   overflow: scroll;

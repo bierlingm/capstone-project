@@ -1,18 +1,24 @@
 import React from 'react'
-import Prompt from '../components/Prompt'
 import GlobalStyles from '../GlobalStyles'
 import { Backdrop } from '../components/Backdrop'
+import NavButton from '../components/NavButton'
 
 export default {
-  title: 'Prompt',
-  component: Prompt,
+  title: 'NavButton',
+  component: NavButton,
 }
 
 export const Default = () => (
   <React.StrictMode>
     <GlobalStyles />
     <Backdrop>
-      <Prompt />
+      <NavButton
+        onClick={() => console.log('clicked the button')}
+        className="buttonLeft"
+        data-testid="storyButton"
+      >
+        click
+      </NavButton>
     </Backdrop>
   </React.StrictMode>
 )

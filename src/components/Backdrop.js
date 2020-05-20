@@ -63,6 +63,7 @@ const BackdropWrapper = styled.div`
     .prompt {
       grid-column: main-start / main-end;
       grid-row: prompt-start / prompt-end;
+      justify-self: center;
     }
 
     .buttonLeft {
@@ -100,6 +101,7 @@ const BackdropWrapper = styled.div`
     .notefield {
       grid-column: main-start / main-end;
       grid-row: notes-start / notes-end;
+      text-align: start;
     }
 
     .buttonLeft {
