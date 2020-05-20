@@ -1,31 +1,19 @@
 import { nanoid } from 'nanoid'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import initialSessions from '../sessions.json'
-import { getFromLocalStorage, setToLocalStorage } from '../utils/utils'
 import { BackdropTimed } from './Backdrop'
 
-export default function WritingSession({ 'data-testid': datatestid }) {
-  let localSessions
-  try {
-    localSessions = getFromLocalStorage('sessions')
-  } catch {
-    console.error('There was nothing in localStorage')
-  }
-
-  const [sessionsWasAdded, setSessionsWasAdded] = useState(false)
-  const [sessions, setSessions] = useState(
-    localSessions !== null ? localSessions : initialSessions
-  )
-
-  useEffect(() => {
-    setToLocalStorage('sessions', sessions)
-  }, [sessions])
-
+export default function WritingSession({
+  sessions,
+  setSessions,
+  sessionsWasAdded,
+  setSessionsWasAdded,
+  'data-testid': datatestid,
+}) {
   function handleSessionSave(event) {
     const newSession = {
       id: nanoid(),
-      creationDate: Date(),
+      created: Date(),
       set: 'user',
       text: event.target.value,
     }

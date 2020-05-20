@@ -1,8 +1,8 @@
 import { useMachine } from '@xstate/react'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components/macro'
 import { Machine } from 'xstate'
-import { Backdrop, BackdropNotes, BackdropTimed } from './components/Backdrop'
+import { Backdrop, BackdropNotes } from './components/Backdrop'
 import ItemList from './components/ItemList'
 import NavButton from './components/NavButton'
 import NoteField from './components/NoteField'
@@ -12,7 +12,12 @@ import electricLightBulb from './img/electric_light_bulb.png'
 import gameDie from './img/game_die.png'
 import lotusWoman from './img/lotus_woman.png'
 import notes from './notes.json'
-import { getFromLocalStorage, ifXthenXElseY } from './utils/utils'
+import initialSessions from './sessions.json'
+import {
+  getFromLocalStorage,
+  ifXthenXElseY,
+  setToLocalStorage,
+} from './utils/utils'
 
 const promptWritingMachine = Machine({
   id: 'promptWriting',
@@ -59,9 +64,30 @@ const promptWritingMachine = Machine({
 
 export default function App() {
   const [current, send] = useMachine(promptWritingMachine)
+  let localSessions
+  try {
+    localSessions = getFromLocalStorage('sessions')
+  } catch {
+    console.error('There was nothing in localStorage')
+  }
+
+  const [sessionsWasAdded, setSessionsWasAdded] = useState(false)
+  const [sessions, setSessions] = useState(
+    localSessions !== null ? localSessions : initialSessions
+  )
+
+  useEffect(() => {
+    setToLocalStorage('sessions', sessions)
+  }, [sessions])
 
   return current.matches('writing') ? (
-    <WritingSession data-testid="writingWritingSession" />
+    <WritingSession
+      sessions={sessions}
+      setSessions={setSessions}
+      sessionsWasAdded={sessionsWasAdded}
+      setSessionsWasAdded={setSessionsWasAdded}
+      data-testid="writingWritingSession"
+    />
   ) : current.matches('notes') ? (
     <BackdropNotes data-testid="notesBackdropNotes">
       <NoteField

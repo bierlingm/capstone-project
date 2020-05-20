@@ -38,7 +38,7 @@ export default function NoteField({
   function handleSave(event) {
     const newNote = {
       id: nanoid(),
-      creationDate: Date(),
+      created: Date(),
       set: 'user',
       text: event.target.value,
     }
