@@ -7,6 +7,10 @@ import { getFromLocalStorage, setToLocalStorage } from '../utils/utils'
 // import { Slate, Editable, withReact } from 'slate-react'
 
 export default function NoteField({
+  notes,
+  setNotes,
+  notesWasAdded,
+  setNotesWasAdded,
   gridClass,
   placeholder,
   'data-testid': datatestid,
@@ -18,22 +22,6 @@ export default function NoteField({
   //     children: [{ text: '' }],
   //   },
   // ])
-
-  let localNotes
-  try {
-    localNotes = getFromLocalStorage('notes')
-  } catch {
-    console.error('There was nothing in localStorage')
-  }
-
-  const [notesWasAdded, setNotesWasAdded] = useState(false)
-  const [notes, setNotes] = useState(
-    localNotes !== null ? localNotes : initialNotes
-  )
-
-  useEffect(() => {
-    setToLocalStorage('notes', notes)
-  }, [notes])
 
   function handleSave(event) {
     const newNote = {

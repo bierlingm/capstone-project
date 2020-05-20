@@ -11,7 +11,7 @@ import WritingSession from './components/WritingSession'
 import electricLightBulb from './img/electric_light_bulb.png'
 import gameDie from './img/game_die.png'
 import lotusWoman from './img/lotus_woman.png'
-import notes from './notes.json'
+import initialNotes from './notes.json'
 import initialSessions from './sessions.json'
 import {
   getFromLocalStorage,
@@ -80,6 +80,22 @@ export default function App() {
     setToLocalStorage('sessions', sessions)
   }, [sessions])
 
+  let localNotes
+  try {
+    localNotes = getFromLocalStorage('notes')
+  } catch {
+    console.error('There was nothing in localStorage')
+  }
+
+  const [notesWasAdded, setNotesWasAdded] = useState(false)
+  const [notes, setNotes] = useState(
+    localNotes !== null ? localNotes : initialNotes
+  )
+
+  useEffect(() => {
+    setToLocalStorage('notes', notes)
+  }, [notes])
+
   return current.matches('writing') ? (
     <WritingSession
       sessions={sessions}
@@ -91,6 +107,10 @@ export default function App() {
   ) : current.matches('notes') ? (
     <BackdropNotes data-testid="notesBackdropNotes">
       <NoteField
+        notes={notes}
+        setNotes={setNotes}
+        notesWasAdded={notesWasAdded}
+        setNotesWasAdded={setNotesWasAdded}
         placeholder="Write your session notes in here..."
         gridClass="notefield"
         data-testid="notesNoteField"
