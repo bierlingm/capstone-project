@@ -1,10 +1,6 @@
 import { nanoid } from 'nanoid'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import styled from 'styled-components/macro'
-import initialNotes from '../notes.json'
-import { getFromLocalStorage, setToLocalStorage } from '../utils/utils'
-// import { createEditor } from 'slate'
-// import { Slate, Editable, withReact } from 'slate-react'
 
 export default function NoteField({
   notes,
@@ -15,14 +11,6 @@ export default function NoteField({
   placeholder,
   'data-testid': datatestid,
 }) {
-  // const editor = useMemo(() => withReact(createEditor()), [])
-  // const [value, setValue] = useState([
-  //   {
-  //     type: 'paragraph',
-  //     children: [{ text: '' }],
-  //   },
-  // ])
-
   function handleSave(event) {
     const newNote = {
       id: nanoid(),
@@ -50,17 +38,6 @@ export default function NoteField({
       className={gridClass}
       data-testid={datatestid}
     />
-    // <DivStyled className="notefield">
-    //   <Slate
-    //     editor={editor}
-    //     value={value}
-    //     placeholder={'Write your session notes in here...'}
-    //     onChange={((value) => setValue(value)) && handleSave}
-    //     data-testid="noteField"
-    //   >
-    //     <Editable />
-    //   </Slate>
-    // </DivStyled>
   )
 }
 
