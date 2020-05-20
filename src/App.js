@@ -67,11 +67,11 @@ export default function App() {
   const [current, send] = useMachine(promptWritingMachine)
 
   setToLocalStorage('prompts', prompts)
-
   const randomPrompt = JSON.stringify(
     prompts[getRandomInt(prompts.length - 1)]['text']
   )
 
+  // #TODO: Abstraction for sessions & notes? Y/N
   let localSessions
   try {
     localSessions = getFromLocalStorage('sessions')
@@ -87,6 +87,21 @@ export default function App() {
   useEffect(() => {
     setToLocalStorage('sessions', sessions)
   }, [sessions])
+
+  let sessionsUpdater = {
+    saveSession: (newSession) => {
+      if (sessionsWasAdded) {
+        setSessions(
+          sessions.map((session, index) =>
+            index === sessions.length - 1 ? newSession : session
+          )
+        )
+      } else {
+        setSessions([...sessions, newSession])
+        setSessionsWasAdded(true)
+      }
+    },
+  }
 
   let localNotes
   try {
@@ -106,10 +121,7 @@ export default function App() {
 
   return current.matches('writing') ? (
     <WritingSession
-      sessions={sessions}
-      setSessions={setSessions}
-      sessionsWasAdded={sessionsWasAdded}
-      setSessionsWasAdded={setSessionsWasAdded}
+      someSessions={sessionsUpdater}
       data-testid="writingWritingSession"
     />
   ) : current.matches('notes') ? (

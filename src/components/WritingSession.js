@@ -5,10 +5,7 @@ import { BackdropTimed } from './Backdrop'
 import { getFromLocalStorage } from '../utils/utils'
 
 export default function WritingSession({
-  sessions,
-  setSessions,
-  sessionsWasAdded,
-  setSessionsWasAdded,
+  sessionsUpdater,
   'data-testid': datatestid,
 }) {
   function handleSessionSave(event) {
@@ -21,16 +18,7 @@ export default function WritingSession({
       text: event.target.value,
     }
 
-    if (sessionsWasAdded) {
-      setSessions(
-        sessions.map((session, index) =>
-          index === sessions.length - 1 ? newSession : session
-        )
-      )
-    } else {
-      setSessions([...sessions, newSession])
-      setSessionsWasAdded(true)
-    }
+    sessionsUpdater.saveSession(newSession)
   }
 
   return (
