@@ -2,6 +2,7 @@ import { nanoid } from 'nanoid'
 import React from 'react'
 import styled from 'styled-components'
 import { BackdropTimed } from './Backdrop'
+import { getFromLocalStorage } from '../utils/utils'
 
 export default function WritingSession({
   sessions,
@@ -14,7 +15,9 @@ export default function WritingSession({
     const newSession = {
       id: nanoid(),
       created: Date(),
-      set: 'user',
+      promptId: getFromLocalStorage('prompts')[
+        getFromLocalStorage('prompts').length - 1
+      ]['id'],
       text: event.target.value,
     }
 

@@ -3,13 +3,12 @@ import React from 'react'
 import Prompt from './Prompt'
 
 describe('Prompt', () => {
-  it('renders without error', () => {
-    render(<Prompt />)
-  })
-
-  it('renders prompt upon startup', () => {
-    const { getByTestId } = render(<Prompt />)
-    const prompt = getByTestId('promptPrompt')
+  it('Renders prompt upon startup', () => {
+    const currentPrompt = 'Hello, this is a random prompt.'
+    const { getByTestId } = render(
+      <Prompt randomPrompt={currentPrompt} data-testid="testPrompt" />
+    )
+    const prompt = getByTestId('testPrompt')
     expect(prompt).toBeInTheDocument()
   })
 })

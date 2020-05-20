@@ -12,10 +12,11 @@ import electricLightBulb from './img/electric_light_bulb.png'
 import gameDie from './img/game_die.png'
 import lotusWoman from './img/lotus_woman.png'
 import initialNotes from './notes.json'
-import initialSessions from './sessions.json'
+import prompts from './prompts.json'
 import {
   getFromLocalStorage,
-  ifXthenXElseY,
+  getRandomInt,
+  ifXThenXElseY,
   setToLocalStorage,
 } from './utils/utils'
 
@@ -64,16 +65,23 @@ const promptWritingMachine = Machine({
 
 export default function App() {
   const [current, send] = useMachine(promptWritingMachine)
+
+  setToLocalStorage('prompts', prompts)
+
+  const randomPrompt = JSON.stringify(
+    prompts[getRandomInt(prompts.length - 1)]['text']
+  )
+
   let localSessions
   try {
     localSessions = getFromLocalStorage('sessions')
   } catch {
-    console.error('There was nothing in localStorage')
+    console.error('There are no sessions in localStorage')
   }
 
   const [sessionsWasAdded, setSessionsWasAdded] = useState(false)
   const [sessions, setSessions] = useState(
-    localSessions !== null ? localSessions : initialSessions
+    localSessions !== null ? localSessions : []
   )
 
   useEffect(() => {
@@ -84,7 +92,7 @@ export default function App() {
   try {
     localNotes = getFromLocalStorage('notes')
   } catch {
-    console.error('There was nothing in localStorage')
+    console.error('There are no notes in localStorage')
   }
 
   const [notesWasAdded, setNotesWasAdded] = useState(false)
@@ -133,7 +141,11 @@ export default function App() {
   ) : current.matches('prompt') ? (
     <Backdrop data-testid="promptBackdrop">
       <Icon className="icon" src={electricLightBulb} alt="Writing prompt" />
-      <Prompt />
+      <Prompt
+        gridClass="prompt"
+        data-testid="promptPrompt"
+        randomPrompt={randomPrompt}
+      />
       <NavButton
         className="buttonLeft"
         onClick={() => send('SHUFFLE')}
@@ -146,7 +158,7 @@ export default function App() {
         onClick={() => send('WRITE')}
         data-testid="promptStartButton"
       >
-        start
+        write
       </NavButton>
     </Backdrop>
   ) : current.matches('shuffle') ? (
@@ -162,7 +174,7 @@ export default function App() {
     <BackdropNotes data-testid="noteLogBackdropNotes">
       <ItemList
         gridClass="notefield"
-        items={ifXthenXElseY(getFromLocalStorage('notes'), notes)}
+        items={ifXThenXElseY(getFromLocalStorage('notes'), notes)}
         data-testid="noteLogItemList"
       />
       <NavButton
@@ -192,9 +204,9 @@ export default function App() {
       <NavButton
         className="buttonRight"
         onClick={() => send('START')}
-        data-testid="homeWriteButton"
+        data-testid="homeStartButton"
       >
-        write
+        start
       </NavButton>
     </Backdrop>
   )

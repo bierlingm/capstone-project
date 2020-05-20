@@ -15,10 +15,10 @@ describe('App', () => {
     expect(notesButton).toBeInTheDocument()
   })
 
-  it('renders write button', () => {
+  it('renders start button', () => {
     const { getByTestId } = render(<App />)
-    const writeButton = getByTestId('homeWriteButton')
-    expect(writeButton).toBeInTheDocument()
+    const startButton = getByTestId('homeStartButton')
+    expect(startButton).toBeInTheDocument()
   })
 
   it('should take a snapshot', () => {

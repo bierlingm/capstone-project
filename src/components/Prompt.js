@@ -1,15 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
-import prompts from '../prompts.json'
-import { getRandomInt } from '../utils/utils'
 
-export default function Prompt() {
-  const randomPrompt = JSON.stringify(
-    prompts[getRandomInt(prompts.length - 1)]['text']
-  )
-
+export default function Prompt({
+  gridClass,
+  'data-testid': datatestid,
+  randomPrompt,
+}) {
   return (
-    <DivStyled className="prompt" data-testid="promptPrompt">
+    <DivStyled className={gridClass} data-testid={datatestid}>
       <PromptStyled>
         <SpanStyled>Your prompt:</SpanStyled>
         <br />

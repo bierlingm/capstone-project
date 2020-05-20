@@ -27,9 +27,9 @@ exports[`App should take a snapshot 1`] = `
       </button>
       <button
         class="NavButton__ButtonStyled-sc-1rjtv4n-0 SgKxl buttonRight"
-        data-testid="homeWriteButton"
+        data-testid="homeStartButton"
       >
-        write
+        start
       </button>
     </div>
   </div>
