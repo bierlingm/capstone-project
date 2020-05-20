@@ -1,6 +1,6 @@
 import React from 'react'
 import GlobalStyles from '../GlobalStyles'
-import { Backdrop } from '../components/Backdrop'
+import Backdrop from '../components/Backdrop'
 import NavButton from '../components/NavButton'
 
 export default {
@@ -13,11 +13,11 @@ export const Default = () => (
     <GlobalStyles />
     <Backdrop>
       <NavButton
-        onClick={() => console.log('clicked the button')}
-        className="buttonLeft"
+        onClick={() => console.log('Clicked the test button')}
+        gridClass="buttonLeft"
         data-testid="storyButton"
       >
-        click
+        test
       </NavButton>
     </Backdrop>
   </React.StrictMode>

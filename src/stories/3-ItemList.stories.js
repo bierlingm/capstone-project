@@ -1,5 +1,5 @@
 import React from 'react'
-import { Backdrop } from '../components/Backdrop'
+import Backdrop from '../components/Backdrop'
 import ItemList from '../components/ItemList'
 import GlobalStyles from '../GlobalStyles'
 import items from '../prompts.json'
@@ -17,7 +17,7 @@ export const Default = () => (
     <GlobalStyles />
     <Backdrop>
       <ItemList
-        gridClass="main"
+        gridClass="icon"
         items={items}
         itemId={itemId}
         itemText={itemText}

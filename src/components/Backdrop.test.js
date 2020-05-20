@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react'
 import React from 'react'
-import { Backdrop, BackdropTimed, BackdropNotes } from './Backdrop'
+import Backdrop, { BackdropTimed, BackdropNotes } from './Backdrop'
 
 describe('Backdrop', () => {
   it('Renders without error', () => {

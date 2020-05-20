@@ -1,16 +1,16 @@
 import React from 'react'
 import GlobalStyles from '../GlobalStyles'
-import WritingSession from '../components/WritingSession'
+import SessionWriting from '../components/SessionWriting'
 
 export default {
-  title: 'WritingSession',
-  component: WritingSession,
+  title: 'SessionWriting',
+  component: SessionWriting,
 }
 
 export const Default = () => (
   <React.StrictMode>
     <GlobalStyles />
-    <WritingSession />
+    <SessionWriting />
   </React.StrictMode>
 )
 

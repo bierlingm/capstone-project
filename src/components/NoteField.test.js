@@ -3,11 +3,11 @@ import React from 'react'
 import NoteField from './NoteField'
 
 describe('NoteField', () => {
-  it('renders without error', () => {
+  it('Renders without error', () => {
     render(<NoteField />)
   })
 
-  it('renders note field upon startup', () => {
+  it('Renders note field upon startup', () => {
     const { getByTestId } = render(<NoteField data-testid="noteField" />)
     const noteField = getByTestId('noteField')
     expect(noteField).toBeInTheDocument()

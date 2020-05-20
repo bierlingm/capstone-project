@@ -3,7 +3,7 @@ import styled from 'styled-components/macro'
 import { currentFade, fullHeight } from '../utils/utils'
 import { backdropColor } from '../utils/colors'
 
-export function Backdrop({ children }) {
+export default function Backdrop({ children }) {
   return (
     <BackdropWrapper>
       <Container className="default">{children}</Container>
@@ -29,6 +29,7 @@ export function BackdropNotes({ children }) {
 
 const Container = styled.div`
   height: ${fullHeight};
+  margin: 0px;
   text-align: center;
   background: ${backdropColor};
 `
@@ -53,17 +54,15 @@ const BackdropWrapper = styled.div`
     .icon {
       grid-column: main-start / main-end;
       grid-row: icon-start / icon-end;
-    }
-
-    .main {
-      grid-column: main-start / main-end;
-      grid-row: icon-start / prompt-end;
+      justify-self: center;
     }
 
     .prompt {
       grid-column: main-start / main-end;
       grid-row: prompt-start / prompt-end;
       justify-self: center;
+      font-size: 32px;
+      overflow: scroll;
     }
 
     .buttonLeft {
@@ -102,6 +101,17 @@ const BackdropWrapper = styled.div`
       grid-column: main-start / main-end;
       grid-row: notes-start / notes-end;
       text-align: start;
+      margin: 20px;
+      padding: 28px;
+      overflow: scroll;
+      resize: none;
+      background: transparent;
+      color: yellow;
+      font-size: 20px;
+      border: transparent;
+      border-radius: 10px;
+      background: #55b9f3;
+      box-shadow: inset 20px 20px 60px #489dcf, inset -20px -20px 60px #62d5ff;
     }
 
     .buttonLeft {

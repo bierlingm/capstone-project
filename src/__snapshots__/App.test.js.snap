@@ -2,35 +2,37 @@
 
 exports[`App should take a snapshot 1`] = `
 <DocumentFragment>
-  <div
-    class="Backdrop__BackdropWrapper-t2gny5-1 SdMsd"
-  >
+  <div>
     <div
-      class="Backdrop__Container-t2gny5-0 jhoViZ default"
+      class="Backdrop__BackdropWrapper-t2gny5-1 kUBjvu"
     >
-      <img
-        alt="Woman in lotus position"
-        class="App__Icon-sc-3vbase-0 icSXeb icon"
-        data-testid="homeIcon"
-        src="lotus_woman.png"
-      />
-      <p
-        class="App__PStyled-sc-3vbase-1 iTFSAG prompt"
+      <div
+        class="Backdrop__Container-t2gny5-0 eNOfja default"
       >
-        Welcome to FloWriter!
-      </p>
-      <button
-        class="NavButton__ButtonStyled-sc-1rjtv4n-0 SgKxl buttonLeft"
-        data-testid="homeNotesButton"
-      >
-        notes
-      </button>
-      <button
-        class="NavButton__ButtonStyled-sc-1rjtv4n-0 SgKxl buttonRight"
-        data-testid="homeStartButton"
-      >
-        start
-      </button>
+        <img
+          alt="Woman in lotus position"
+          class="sc-AxjAm iZVliU icon"
+          data-testid="homeIcon"
+          src="lotus_woman.png"
+        />
+        <p
+          class="sc-AxirZ hbMWzL prompt"
+        >
+          Welcome to FloWriter!
+        </p>
+        <button
+          class="NavButton__ButtonStyled-sc-1rjtv4n-0 SgKxl buttonLeft"
+          data-testid="homeNotesButton"
+        >
+          notes
+        </button>
+        <button
+          class="NavButton__ButtonStyled-sc-1rjtv4n-0 SgKxl buttonRight"
+          data-testid="homeStartButton"
+        >
+          start
+        </button>
+      </div>
     </div>
   </div>
 </DocumentFragment>

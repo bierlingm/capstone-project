@@ -1,5 +1,5 @@
 import React from 'react'
-import { Backdrop, BackdropTimed, BackdropNotes } from '../components/Backdrop'
+import Backdrop, { BackdropTimed, BackdropNotes } from '../components/Backdrop'
 import GlobalStyles from '../GlobalStyles'
 
 export default {

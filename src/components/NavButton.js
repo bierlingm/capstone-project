@@ -4,13 +4,13 @@ import styled from 'styled-components/macro'
 export default function NavButton({
   children,
   onClick,
-  className,
+  gridClass,
   'data-testid': datatestid,
 }) {
   return (
     <ButtonStyled
       onClick={onClick}
-      className={className}
+      className={gridClass}
       data-testid={datatestid}
     >
       {children}

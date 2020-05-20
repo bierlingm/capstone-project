@@ -1,17 +1,45 @@
 import { nanoid } from 'nanoid'
-import React from 'react'
-import styled from 'styled-components/macro'
+import React, { useEffect, useState } from 'react'
+import initialNotes from '../notes.json'
+import { getFromLocalStorage, setToLocalStorage } from '../utils/utils'
 
 export default function NoteField({
-  notes,
-  setNotes,
-  notesWasAdded,
-  setNotesWasAdded,
   gridClass,
   placeholder,
   'data-testid': datatestid,
 }) {
-  function handleSave(event) {
+  let localNotes
+  try {
+    localNotes = getFromLocalStorage('notes')
+  } catch {
+    console.error('There are no notes in localStorage')
+  }
+
+  const [notesWasAdded, setNotesWasAdded] = useState(false)
+  const [notes, setNotes] = useState(
+    localNotes !== null ? localNotes : initialNotes
+  )
+
+  useEffect(() => {
+    setToLocalStorage('notes', notes)
+  }, [notes])
+
+  const notesUpdater = {
+    saveNote: (newNote) => {
+      if (notesWasAdded) {
+        setNotes(
+          notes.map((note, index) =>
+            index === notes.length - 1 ? newNote : note
+          )
+        )
+      } else {
+        setNotes([...notes, newNote])
+        setNotesWasAdded(true)
+      }
+    },
+  }
+
+  function handleNoteSave(event) {
     const newNote = {
       id: nanoid(),
       created: Date(),
@@ -19,38 +47,15 @@ export default function NoteField({
       text: event.target.value,
     }
 
-    if (notesWasAdded) {
-      setNotes(
-        notes.map((note, index) =>
-          index === notes.length - 1 ? newNote : note
-        )
-      )
-    } else {
-      setNotes([...notes, newNote])
-      setNotesWasAdded(true)
-    }
+    notesUpdater.saveNote(newNote)
   }
 
   return (
-    <TextAreaStyled
-      onChange={handleSave}
+    <textarea
+      onChange={handleNoteSave}
       placeholder={placeholder}
       className={gridClass}
       data-testid={datatestid}
     />
   )
 }
-
-const TextAreaStyled = styled.textarea`
-  margin: 12px;
-  padding: 28px;
-  overflow: scroll;
-  resize: none;
-  background: transparent;
-  color: yellow;
-  font-size: 20px;
-  border: transparent;
-  border-radius: 10px;
-  background: #55b9f3;
-  box-shadow: inset 20px 20px 60px #489dcf, inset -20px -20px 60px #62d5ff;
-`
