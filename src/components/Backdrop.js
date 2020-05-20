@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components/macro'
-import { defaultFade, fullHeight } from '../utils/utils'
+import { currentFade, fullHeight } from '../utils/utils'
 import { backdropColor } from '../utils/colors'
 
 export function Backdrop({ children }) {
@@ -80,7 +80,7 @@ const BackdropWrapper = styled.div`
   .timed {
     display: grid;
     grid-template-columns: 50% 50%;
-    animation: timer ${defaultFade};
+    animation: timer ${currentFade};
   }
 
   .notes {

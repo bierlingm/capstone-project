@@ -4,14 +4,15 @@ import styled from 'styled-components/macro'
 import { Machine } from 'xstate'
 import { Backdrop, BackdropNotes, BackdropTimed } from './components/Backdrop'
 import ItemList from './components/ItemList'
+import NavButton from './components/NavButton'
 import NoteField from './components/NoteField'
 import Prompt from './components/Prompt'
+import WritingSession from './components/WritingSession'
 import electricLightBulb from './img/electric_light_bulb.png'
 import gameDie from './img/game_die.png'
 import lotusWoman from './img/lotus_woman.png'
 import notes from './notes.json'
 import { getFromLocalStorage, ifXthenXElseY } from './utils/utils'
-import NavButton from './components/NavButton'
 
 const promptWritingMachine = Machine({
   id: 'promptWriting',
@@ -44,7 +45,7 @@ const promptWritingMachine = Machine({
         STOP: 'prompt',
       },
       after: {
-        1000: 'notes',
+        20000: 'notes',
       },
     },
     notes: {
@@ -60,9 +61,7 @@ export default function App() {
   const [current, send] = useMachine(promptWritingMachine)
 
   return current.matches('writing') ? (
-    <BackdropTimed data-testid="writingBackdropTimed">
-      <InputStyled autoFocus type="text" alt="input" data-testid="input" />
-    </BackdropTimed>
+    <WritingSession data-testid="writingWritingSession" />
   ) : current.matches('notes') ? (
     <BackdropNotes data-testid="notesBackdropNotes">
       <NoteField
@@ -158,17 +157,6 @@ export default function App() {
 const Icon = styled.img`
   justify-self: center;
   align-self: center;
-`
-
-const InputStyled = styled.input`
-  height: 10%;
-  margin: 0;
-  background: transparent;
-  color: yellow;
-  align-self: center;
-  border: none;
-  padding-left: 24px;
-  font-size: 40px;
 `
 
 const PStyled = styled.p`

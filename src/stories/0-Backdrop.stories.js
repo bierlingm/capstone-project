@@ -1,5 +1,5 @@
 import React from 'react'
-import { Backdrop, BackdropTimed } from '../components/Backdrop'
+import { Backdrop, BackdropTimed, BackdropNotes } from '../components/Backdrop'
 import GlobalStyles from '../GlobalStyles'
 
 export default {
@@ -27,4 +27,15 @@ export const Timed = () => (
 
 Timed.story = {
   name: 'Timed',
+}
+
+export const Notes = () => (
+  <React.StrictMode>
+    <GlobalStyles />
+    <BackdropNotes />
+  </React.StrictMode>
+)
+
+Notes.story = {
+  name: 'Notes',
 }
