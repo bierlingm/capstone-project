@@ -1,10 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App should take a snapshot 1`] = `
+exports[`App Should take a snapshot 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    data-testid="homeView"
+  >
     <div
-      class="Backdrop__BackdropWrapper-t2gny5-1 kUBjvu"
+      class="Backdrop__BackdropWrapper-t2gny5-1 fSTUzr"
     >
       <div
         class="Backdrop__Container-t2gny5-0 eNOfja default"
@@ -21,13 +23,13 @@ exports[`App should take a snapshot 1`] = `
           Welcome to FloWriter!
         </p>
         <button
-          class="NavButton__ButtonStyled-sc-1rjtv4n-0 SgKxl buttonLeft"
-          data-testid="homeNotesButton"
+          class="NavButton__ButtonStyled-sc-1rjtv4n-0 kUrdtD buttonLeft"
+          data-testid="homeLogsButton"
         >
-          notes
+          logs
         </button>
         <button
-          class="NavButton__ButtonStyled-sc-1rjtv4n-0 SgKxl buttonRight"
+          class="NavButton__ButtonStyled-sc-1rjtv4n-0 kUrdtD buttonRight"
           data-testid="homeStartButton"
         >
           start

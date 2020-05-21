@@ -19,14 +19,14 @@ export default function NavButton({
 }
 
 const ButtonStyled = styled.button`
-  width: 80%;
-  padding: 20px;
+  width: 70%;
+  height: 70%;
+  padding: 12px;
   color: yellow;
   justify-self: center;
-  align-self: center;
-  font-size: 28px;
+  font-size: 24px;
   border: transparent;
   border-radius: 20px;
   background: linear-gradient(145deg, #4da7db, #5bc6ff);
-  box-shadow: 20px 20px 60px #489dcf, -20px -20px 60px #62d5ff;
+  box-shadow: 8px 8px 22px #499fd1, -8px -8px 22px #61d3ff;
 `

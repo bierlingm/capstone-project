@@ -6,7 +6,7 @@ import lotusWoman from '../img/lotus_woman.png'
 import NavButton from './NavButton'
 
 export default function ({
-  onClickNotes,
+  onClickLogs,
   onClickStart,
   'data-testid': datatestid,
 }) {
@@ -22,10 +22,10 @@ export default function ({
         <PStyled className="prompt">Welcome to FloWriter!</PStyled>
         <NavButton
           gridClass="buttonLeft"
-          onClick={onClickNotes}
-          data-testid="homeNotesButton"
+          onClick={onClickLogs}
+          data-testid="homeLogsButton"
         >
-          notes
+          logs
         </NavButton>
         <NavButton
           gridClass="buttonRight"

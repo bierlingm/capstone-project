@@ -6,7 +6,11 @@ export default function ItemList({ gridClass, items }) {
     <ListItemStyled key={item.id}>{item.text}</ListItemStyled>
   ))
 
-  return <ListStyled className={gridClass}>{listItems}</ListStyled>
+  return (
+    <div className={gridClass}>
+      <ListStyled>{listItems}</ListStyled>
+    </div>
+  )
 }
 
 const ListStyled = styled.ul`

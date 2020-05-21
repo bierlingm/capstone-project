@@ -2,17 +2,17 @@ import { useMachine } from '@xstate/react'
 import React from 'react'
 import { Machine } from 'xstate'
 import HomeView from './components/HomeView'
-import LogNotes from './components/LogNotes'
+import Logs from './components/Logs'
 import SessionNotes from './components/SessionNotes'
 import SessionPrompt from './components/SessionPrompt'
 import SessionShuffle from './components/SessionShuffle'
 import SessionWriting from './components/SessionWriting'
 
 export default function App() {
-  const [current, send] = useMachine(promptWritingMachine)
+  const [current, send] = useMachine(appMachine)
 
   return current.matches('writing') ? (
-    <SessionWriting data-testid="writingSessionWriting" />
+    <SessionWriting data-testid="sessionWriting" />
   ) : current.matches('notes') ? (
     <SessionNotes
       data-testid="sessionNotes"
@@ -27,27 +27,28 @@ export default function App() {
     />
   ) : current.matches('shuffle') ? (
     <SessionShuffle data-testid="sessionShuffle" />
-  ) : current.matches('noteLog') ? (
-    <LogNotes onClickHome={() => send('HOME')} />
+  ) : current.matches('logs') ? (
+    <Logs onClickHome={() => send('HOME')} data-testid="logs" />
   ) : (
     <HomeView
-      onClickNotes={() => send('NOTES')}
+      data-testid="homeView"
+      onClickLogs={() => send('LOGS')}
       onClickStart={() => send('START')}
     />
   )
 }
 
-const promptWritingMachine = Machine({
+const appMachine = Machine({
   id: 'promptWriting',
   initial: 'home',
   states: {
     home: {
       on: {
-        NOTES: 'noteLog',
+        LOGS: 'logs',
         START: 'prompt',
       },
     },
-    noteLog: {
+    logs: {
       on: {
         HOME: 'home',
       },

@@ -8,9 +8,9 @@ import prompts from '../prompts.json'
 import { getRandomInt, setToLocalStorage } from '../utils/utils'
 
 export default function SessionPrompt({
-  'data-testid': datatestid,
   onClickShuffle,
   onClickWrite,
+  'data-testid': datatestid,
 }) {
   setToLocalStorage('prompts', prompts)
   const randomPrompt = JSON.stringify(

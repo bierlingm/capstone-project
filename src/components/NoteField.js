@@ -10,15 +10,13 @@ export default function NoteField({
 }) {
   let localNotes
   try {
-    localNotes = getFromLocalStorage('notes')
+    localNotes = getFromLocalStorage('notes') || initialNotes
   } catch {
-    console.error('There are no notes in localStorage')
+    console.error('There are no notes in localStorage.')
   }
 
   const [notesWasAdded, setNotesWasAdded] = useState(false)
-  const [notes, setNotes] = useState(
-    localNotes !== null ? localNotes : initialNotes
-  )
+  const [notes, setNotes] = useState(localNotes)
 
   useEffect(() => {
     setToLocalStorage('notes', notes)
