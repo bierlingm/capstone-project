@@ -5,6 +5,6 @@ import items from '../prompts.json'
 
 describe('ItemList', () => {
   it('Renders without error', () => {
-    render(<ItemList items={items} />)
+    render(<ItemList gridClass="logsList" items={items} />)
   })
 })

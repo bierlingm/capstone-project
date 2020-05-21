@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import initialNotes from '../notes'
 import initialPrompts from '../prompts.json'
-import { getFromLocalStorage, ifXThenXElseY } from '../utils/utils'
+import { getFromLocalStorage } from '../utils/utils'
 import { BackdropLogs } from './Backdrop'
 import ItemList from './ItemList'
 import NavButton from './NavButton'
@@ -9,28 +9,28 @@ import NavButton from './NavButton'
 export default function Logs({ onClickHome, 'data-testid': datatestid }) {
   let availableNotes
   try {
-    availableNotes = getFromLocalStorage('notes') || initialNotes
+    availableNotes = getFromLocalStorage('notes')
   } catch {
     console.error('There are no notes in localStorage.')
   }
 
   let availableSessions
   try {
-    availableSessions = getFromLocalStorage('sessions') || []
+    availableSessions = getFromLocalStorage('sessions')
   } catch {
     console.error('There are no notes in localStorage.')
   }
 
   let availablePrompts
   try {
-    availablePrompts = getFromLocalStorage('prompts') || initialPrompts
+    availablePrompts = getFromLocalStorage('prompts')
   } catch {
     console.error('There are no notes in localStorage.')
   }
 
-  const notes = useState(availableNotes)
-  const sessions = useState(availableSessions)
-  const prompts = useState(availablePrompts)
+  const [notes] = useState(availableNotes || initialNotes)
+  const [sessions] = useState(availableSessions || [])
+  const [prompts] = useState(availablePrompts || initialPrompts)
 
   const [currentLogSource, setCurrentLogSource] = useState(notes)
 
@@ -52,21 +52,21 @@ export default function Logs({ onClickHome, 'data-testid': datatestid }) {
           </NavButton>
           <NavButton
             gridClass="buttonNotes"
-            onClick={setCurrentLogSource(notes)}
+            onClick={() => setCurrentLogSource(notes)}
             data-testid="logsNotesButton"
           >
             notes
           </NavButton>
           <NavButton
             gridClass="buttonSessions"
-            onClick={setCurrentLogSource(sessions)}
+            onClick={() => setCurrentLogSource(sessions)}
             data-testid="logsSessionsButton"
           >
             sessions
           </NavButton>
           <NavButton
             gridClass="buttonPrompts"
-            onClick={setCurrentLogSource(prompts)}
+            onClick={() => setCurrentLogSource(prompts)}
             data-testid="logsPromptsButton"
           >
             prompts
