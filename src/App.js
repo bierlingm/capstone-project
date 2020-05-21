@@ -69,7 +69,7 @@ const appMachine = Machine({
         STOP: 'prompt',
       },
       after: {
-        20000: 'notes',
+        90000: 'notes',
       },
     },
     notes: {
