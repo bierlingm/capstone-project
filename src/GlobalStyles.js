@@ -1,10 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
-import {
-  backdropColor,
-  backgroundColor,
-  fadeColor,
-  textColor,
-} from './utils/colors'
+import { writingBackdropColor, fadeColor, textColor } from './utils/colors'
 import { defaultFont, defaultFontSize, defaultMargin } from './utils/utils'
 
 export default createGlobalStyle`
@@ -13,7 +8,6 @@ export default createGlobalStyle`
   margin: ${defaultMargin};
   font-family: ${defaultFont};
   font-size: ${defaultFontSize};
-  background: ${backgroundColor};
   color: ${textColor};
   overflow: hidden;
   -webkit-font-smoothing: antialiased;
@@ -22,7 +16,7 @@ export default createGlobalStyle`
 
 @keyframes timer {
   0% {
-    background-color: ${backdropColor};
+    background-color: ${writingBackdropColor};
   }
   100% {
     background-color: ${fadeColor};

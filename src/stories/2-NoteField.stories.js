@@ -1,6 +1,7 @@
 import React from 'react'
 import GlobalStyles from '../GlobalStyles'
 import NoteField from '../components/NoteField'
+import { BackdropNotes } from '../components/Backdrop'
 
 export default {
   title: 'NoteField',
@@ -8,10 +9,12 @@ export default {
 }
 
 export const Default = () => (
-  <React.StrictMode>
+  <>
     <GlobalStyles />
-    <NoteField />
-  </React.StrictMode>
+    <BackdropNotes>
+      <NoteField gridClass="notefield" />
+    </BackdropNotes>
+  </>
 )
 
 Default.story = {
