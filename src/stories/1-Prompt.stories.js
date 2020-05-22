@@ -1,4 +1,5 @@
 import React from 'react'
+import Backdrop from '../components/Backdrop'
 import Prompt from '../components/Prompt'
 import GlobalStyles from '../GlobalStyles'
 
@@ -8,10 +9,16 @@ export default {
 }
 
 export const Default = () => (
-  <React.StrictMode>
+  <>
     <GlobalStyles />
-    <Prompt />
-  </React.StrictMode>
+    <Backdrop>
+      <Prompt
+        gridClass="prompt"
+        data-testid="promptPrompt"
+        randomPrompt="'Do prompts even work? Yeah, think on that, buddy...'"
+      />
+    </Backdrop>
+  </>
 )
 
 Default.story = {
