@@ -8,10 +8,10 @@ export default {
 }
 
 export const Default = () => (
-  <React.StrictMode>
+  <>
     <GlobalStyles />
     <SessionShuffle data-testid="storyShuffle" />
-  </React.StrictMode>
+  </>
 )
 
 Default.story = {

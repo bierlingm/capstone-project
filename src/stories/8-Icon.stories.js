@@ -10,7 +10,7 @@ export default {
 }
 
 export const Default = () => (
-  <React.StrictMode>
+  <>
     <GlobalStyles />
     <Backdrop>
       <Icon
@@ -20,7 +20,7 @@ export const Default = () => (
         data-testid="storyIcon"
       />
     </Backdrop>
-  </React.StrictMode>
+  </>
 )
 
 Default.story = {

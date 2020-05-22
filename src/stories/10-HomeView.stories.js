@@ -8,14 +8,14 @@ export default {
 }
 
 export const Default = () => (
-  <React.StrictMode>
+  <>
     <GlobalStyles />
     <HomeView
       onClickLogs={() => console.log('Clicked the notes button')}
       onClickStart={() => console.log('Clicked the start button')}
       data-testid="storyHomeView"
     />
-  </React.StrictMode>
+  </>
 )
 
 Default.story = {

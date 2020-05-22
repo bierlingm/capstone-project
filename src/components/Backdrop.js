@@ -1,6 +1,10 @@
 import React from 'react'
 import styled from 'styled-components/macro'
-import { backdropColor } from '../utils/colors'
+import {
+  writingBackdropColor,
+  textColor,
+  backgroundColor,
+} from '../utils/colors'
 import { currentFade, fullHeight } from '../utils/utils'
 
 export default function Backdrop({ children }) {
@@ -39,7 +43,7 @@ const Container = styled.div`
   height: ${fullHeight};
   margin: 0px;
   text-align: center;
-  background: ${backdropColor};
+  background: ${writingBackdropColor};
 `
 
 const BackdropWrapper = styled.div`
@@ -58,6 +62,7 @@ const BackdropWrapper = styled.div`
       [prompt-end button-start] 13vh
       [button-end bottom-space-start] 8vh
       [bottom-end];
+    background: ${backgroundColor};
 
     .icon {
       grid-column: main-start / main-end;
@@ -89,6 +94,7 @@ const BackdropWrapper = styled.div`
   .timed {
     display: grid;
     grid-template-columns: 50% 50%;
+    background: ${backgroundColor};
     animation: timer ${currentFade};
   }
 
@@ -106,6 +112,7 @@ const BackdropWrapper = styled.div`
       [notes-end button-start] 21vh
       [button-end bottom-space-start] 8vh
       [bottom-end];
+    background: ${backgroundColor};
 
     .notefield {
       grid-column: main-start / main-end;
@@ -116,11 +123,11 @@ const BackdropWrapper = styled.div`
       overflow: scroll;
       resize: none;
       background: transparent;
-      color: yellow;
+      color: ${textColor};
       font-size: 20px;
       border: transparent;
       border-radius: 10px;
-      background: #55b9f3;
+      background: ${backgroundColor};
       box-shadow: inset 20px 20px 60px #489dcf, inset -20px -20px 60px #62d5ff;
     }
 
@@ -149,6 +156,7 @@ const BackdropWrapper = styled.div`
       [notes-end buttons-start] 4fr
       [buttons-end bottom-space-start] 0.5fr
       [bottom-space-end];
+    background: ${backgroundColor};
 
     .logsList {
       grid-column: left-half-start / right-half-end;
@@ -160,12 +168,12 @@ const BackdropWrapper = styled.div`
       overflow: scroll;
       resize: none;
       background: transparent;
-      color: yellow;
+      color: ${textColor};
       font-size: 20px;
       border: transparent;
       border-radius: 10px;
       border-radius: 20px;
-      background: #55b9f3;
+      background: ${backgroundColor};
       box-shadow: inset 8px 8px 22px #499fd1, inset -8px -8px 22px #61d3ff;
     }
 

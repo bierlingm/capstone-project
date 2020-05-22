@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
-import { backdropColor, fadeColor, textColor } from './utils/colors'
+import { writingBackdropColor, fadeColor, textColor } from './utils/colors'
 import { defaultFont, defaultFontSize, defaultMargin } from './utils/utils'
 
 export default createGlobalStyle`
@@ -16,7 +16,7 @@ export default createGlobalStyle`
 
 @keyframes timer {
   0% {
-    background-color: ${backdropColor};
+    background-color: ${writingBackdropColor};
   }
   100% {
     background-color: ${fadeColor};

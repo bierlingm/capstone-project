@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { getFromLocalStorage, setToLocalStorage } from '../utils/utils'
 import { BackdropTimed } from './Backdrop'
+import { textColor } from '../utils/colors'
 
 export default function SessionWriting({ 'data-testid': datatestid }) {
   let localSessions
@@ -66,7 +67,7 @@ const InputStyled = styled.input`
   height: 10%;
   margin: 0;
   background: transparent;
-  color: yellow;
+  color: ${textColor};
   align-self: center;
   border: none;
   padding-left: 24px;

@@ -6,7 +6,7 @@ exports[`App Should take a snapshot 1`] = `
     data-testid="homeView"
   >
     <div
-      class="Backdrop__BackdropWrapper-t2gny5-1 fgnjuU"
+      class="Backdrop__BackdropWrapper-t2gny5-1 bwNgrH"
     >
       <div
         class="Backdrop__Container-t2gny5-0 eNOfja default"
@@ -23,13 +23,13 @@ exports[`App Should take a snapshot 1`] = `
           Welcome to FloWriter!
         </p>
         <button
-          class="NavButton__ButtonStyled-sc-1rjtv4n-0 kUrdtD buttonLeft"
+          class="NavButton__ButtonStyled-sc-1rjtv4n-0 fKZdoc buttonLeft"
           data-testid="homeLogsButton"
         >
           logs
         </button>
         <button
-          class="NavButton__ButtonStyled-sc-1rjtv4n-0 kUrdtD buttonRight"
+          class="NavButton__ButtonStyled-sc-1rjtv4n-0 fKZdoc buttonRight"
           data-testid="homeStartButton"
         >
           start

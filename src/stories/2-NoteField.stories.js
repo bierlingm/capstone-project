@@ -9,12 +9,12 @@ export default {
 }
 
 export const Default = () => (
-  <React.StrictMode>
+  <>
     <GlobalStyles />
     <BackdropNotes>
       <NoteField gridClass="notefield" />
     </BackdropNotes>
-  </React.StrictMode>
+  </>
 )
 
 Default.story = {

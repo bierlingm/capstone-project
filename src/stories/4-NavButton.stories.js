@@ -9,7 +9,7 @@ export default {
 }
 
 export const Default = () => (
-  <React.StrictMode>
+  <>
     <GlobalStyles />
     <Backdrop>
       <NavButton
@@ -20,7 +20,7 @@ export const Default = () => (
         test
       </NavButton>
     </Backdrop>
-  </React.StrictMode>
+  </>
 )
 
 Default.story = {

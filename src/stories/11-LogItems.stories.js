@@ -9,14 +9,14 @@ export default {
 }
 
 export const Default = () => (
-  <React.StrictMode>
+  <>
     <GlobalStyles />
     <LogItems
       sourceItems={prompts}
       onClickHome={() => console.log('Clicked the home button')}
       data-testid="logNotes"
     />
-  </React.StrictMode>
+  </>
 )
 
 Default.story = {

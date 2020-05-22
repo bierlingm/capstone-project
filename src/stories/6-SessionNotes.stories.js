@@ -8,7 +8,7 @@ export default {
 }
 
 export const Default = () => (
-  <React.StrictMode>
+  <>
     <GlobalStyles />
     <SessionNotes
       onClickRetry={() => console.log('Clicked the retry button')}
@@ -17,7 +17,7 @@ export const Default = () => (
     >
       click
     </SessionNotes>
-  </React.StrictMode>
+  </>
 )
 
 Default.story = {

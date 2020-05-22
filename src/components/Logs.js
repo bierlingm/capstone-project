@@ -7,31 +7,20 @@ import ItemList from './ItemList'
 import NavButton from './NavButton'
 
 export default function Logs({ onClickHome, 'data-testid': datatestid }) {
-  let availableNotes
+  let availableNotes, availableSessions, availablePrompts
   try {
     availableNotes = getFromLocalStorage('notes')
-  } catch {
-    console.error('There are no notes in localStorage.')
-  }
-
-  let availableSessions
-  try {
     availableSessions = getFromLocalStorage('sessions')
-  } catch {
-    console.error('There are no notes in localStorage.')
-  }
-
-  let availablePrompts
-  try {
     availablePrompts = getFromLocalStorage('prompts')
   } catch {
-    console.error('There are no notes in localStorage.')
+    console.error(
+      'Something went wrong with getting content from localStorage.'
+    )
   }
 
   const [notes] = useState(availableNotes || initialNotes)
   const [sessions] = useState(availableSessions || [])
   const [prompts] = useState(availablePrompts || initialPrompts)
-
   const [currentLogSource, setCurrentLogSource] = useState(notes)
 
   return (

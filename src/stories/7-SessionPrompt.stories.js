@@ -8,14 +8,14 @@ export default {
 }
 
 export const Default = () => (
-  <React.StrictMode>
+  <>
     <GlobalStyles />
     <SessionPrompt
       onClickShuffle={() => console.log('Clicked the shuffle button')}
       onClickWrite={() => console.log('Clicked the write button')}
       data-testid="storyButton"
     />
-  </React.StrictMode>
+  </>
 )
 
 Default.story = {

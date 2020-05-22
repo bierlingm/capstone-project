@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components/macro'
+import { textColor } from '../utils/colors'
 
 export default function NavButton({
   children,
@@ -22,7 +23,7 @@ const ButtonStyled = styled.button`
   width: 70%;
   height: 70%;
   padding: 12px;
-  color: yellow;
+  color: ${textColor};
   justify-self: center;
   font-size: 24px;
   border: transparent;

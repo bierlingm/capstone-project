@@ -13,7 +13,7 @@ const itemText = 'promptText'
 const itemId = 'promptId'
 
 export const Default = () => (
-  <React.StrictMode>
+  <>
     <GlobalStyles />
     <Backdrop>
       <ItemList
@@ -23,7 +23,7 @@ export const Default = () => (
         itemText={itemText}
       />
     </Backdrop>
-  </React.StrictMode>
+  </>
 )
 
 Default.story = {

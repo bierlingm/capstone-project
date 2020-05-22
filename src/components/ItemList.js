@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components/macro'
+import { textColor } from '../utils/colors'
 
 export default function ItemList({ gridClass, items }) {
   const listItems = items.map((item) => (
@@ -21,7 +22,7 @@ const ListStyled = styled.ul`
 
 const ListItemStyled = styled.li`
   padding-bottom: 12px;
-  color: yellow;
+  color: ${textColor};
   font-size: 20px;
   text-align: start;
 `

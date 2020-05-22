@@ -8,10 +8,10 @@ export default {
 }
 
 export const Default = () => (
-  <React.StrictMode>
+  <>
     <GlobalStyles />
     <SessionWriting />
-  </React.StrictMode>
+  </>
 )
 
 Default.story = {

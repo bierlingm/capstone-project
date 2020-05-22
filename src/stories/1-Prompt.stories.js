@@ -9,7 +9,7 @@ export default {
 }
 
 export const Default = () => (
-  <React.StrictMode>
+  <>
     <GlobalStyles />
     <Backdrop>
       <Prompt
@@ -18,7 +18,7 @@ export const Default = () => (
         randomPrompt="'Do prompts even work? Yeah, think on that, buddy...'"
       />
     </Backdrop>
-  </React.StrictMode>
+  </>
 )
 
 Default.story = {
