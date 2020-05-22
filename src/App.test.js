@@ -5,29 +5,23 @@ import App from './App'
 afterEach(cleanup)
 
 describe('App', () => {
-  it('Renders without error', () => {
+  it('renders without error', () => {
     render(<App />)
   })
 
-  it('Renders home view', () => {
-    const { getByTestId } = render(<App />)
-    const homeView = getByTestId('homeView')
-    expect(homeView).toBeInTheDocument()
+  it('renders shuffle button screen', () => {
+    const { getByText } = render(<App />)
+    const shuffleButton = getByText(/shuffle/i)
+    expect(shuffleButton).toBeInTheDocument()
   })
 
-  it('Renders logs button', () => {
-    const { getByTestId } = render(<App />)
-    const logsButton = getByTestId('homeLogsButton')
-    expect(logsButton).toBeInTheDocument()
-  })
-
-  it('Renders start button', () => {
-    const { getByTestId } = render(<App />)
-    const startButton = getByTestId('homeStartButton')
+  it('renders start button screen', () => {
+    const { getByText } = render(<App />)
+    const startButton = getByText(/start/i)
     expect(startButton).toBeInTheDocument()
   })
 
-  it('Should take a snapshot', () => {
+  it('should take a snapshot', () => {
     const { asFragment } = render(<App />)
     expect(asFragment(<App />)).toMatchSnapshot()
   })
