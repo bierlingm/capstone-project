@@ -1,5 +1,5 @@
-# Capstone Project: Meditation by Writing App
-4 weeks, 1 app, infinite growth
+# Capstone Project: FloWriter
+Meditation by writing.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
