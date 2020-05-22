@@ -1,9 +1,9 @@
 import { nanoid } from 'nanoid'
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import { getFromLocalStorage, setToLocalStorage } from '../utils/utils'
-import { BackdropTimed } from './Backdrop'
 import { textColor } from '../utils/colors'
+import { getFromLocalStorage, setToLocalStorage } from '../utils/services'
+import { BackdropTimed } from './Backdrop'
 
 export default function SessionWriting({ 'data-testid': datatestid }) {
   let localSessions

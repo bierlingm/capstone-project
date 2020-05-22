@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
-import initialNotes from '../notes'
 import initialPrompts from '../prompts.json'
-import { getFromLocalStorage } from '../utils/utils'
+import { getFromLocalStorage } from '../utils/services'
 import { BackdropLogs } from './Backdrop'
 import ItemList from './ItemList'
 import NavButton from './NavButton'
@@ -18,7 +17,16 @@ export default function Logs({ onClickHome, 'data-testid': datatestid }) {
     )
   }
 
-  const [notes] = useState(availableNotes || initialNotes)
+  const initialNote = [
+    {
+      id: '5oRMd-NPHRLqdEGJ39yCy',
+      created:
+        'Thu May 14 2020 14:46:00 GMT+0200 (Central European Summer Time)',
+      set: 'default',
+      text: 'This is an example note. Edit me!',
+    },
+  ]
+  const [notes] = useState(availableNotes || initialNote)
   const [sessions] = useState(availableSessions || [])
   const [prompts] = useState(availablePrompts || initialPrompts)
   const [currentLogSource, setCurrentLogSource] = useState(notes)

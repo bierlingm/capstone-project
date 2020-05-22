@@ -1,7 +1,7 @@
 import { nanoid } from 'nanoid'
 import React, { useEffect, useState } from 'react'
 import initialNotes from '../notes.json'
-import { getFromLocalStorage, setToLocalStorage } from '../utils/utils'
+import { getFromLocalStorage, setToLocalStorage } from '../utils/services'
 
 export default function NoteField({
   gridClass,
