@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
-import Prompts from '../Prompts.json'
-import { getRandomInt } from '../utils/utils'
+import prompts from '../seed-prompts.json'
+import { getRandomInt } from '../services/math'
 
 export default function Prompt() {
   const prompt = JSON.stringify(
-    Prompts[getRandomInt(Prompts.length - 1)]['promptText']
+    prompts[getRandomInt(prompts.length - 1)]['promptText']
   )
 
   return (

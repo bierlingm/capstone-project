@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import initialPrompts from '../prompts.json'
+import initialPrompts from '../seed-prompts.json'
 import { getFromLocalStorage } from '../services/local-storage'
 import { BackdropLogs } from '../components/Backdrop'
 import ItemList from '../components/ItemList'

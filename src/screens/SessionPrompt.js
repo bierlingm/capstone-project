@@ -1,7 +1,7 @@
 import React from 'react'
 import Prompt from '../components/Prompt'
 import electricLightBulb from '../img/electric_light_bulb.png'
-import prompts from '../prompts.json'
+import prompts from '../seed-prompts.json'
 import { getRandomInt } from '../services/math'
 import { setToLocalStorage } from '../services/local-storage'
 import Backdrop from '../components/Backdrop'
