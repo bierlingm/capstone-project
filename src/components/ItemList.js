@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components/macro'
-import { textColor } from '../utils/colors'
+import { textColor } from '../styles/colors'
 
 export default function ItemList({ gridClass, items }) {
   const listItems = items.map((item) => (

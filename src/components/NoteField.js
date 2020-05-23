@@ -1,16 +1,25 @@
 import { nanoid } from 'nanoid'
 import React, { useEffect, useState } from 'react'
-import initialNotes from '../notes.json'
-import { getFromLocalStorage, setToLocalStorage } from '../utils/services'
+import {
+  getFromLocalStorage,
+  setToLocalStorage,
+} from '../services/local-storage'
 
 export default function NoteField({
   gridClass,
   placeholder,
   'data-testid': datatestid,
 }) {
+  const initialNote = {
+    id: '5oRMd-NPHRLqdEGJ39yCy',
+    created: 'Thu May 14 2020 14:46:00 GMT+0200 (Central European Summer Time)',
+    set: 'default',
+    text: 'This is an example note. Edit me!',
+  }
+
   let localNotes
   try {
-    localNotes = getFromLocalStorage('notes') || initialNotes
+    localNotes = getFromLocalStorage('notes') || initialNote
   } catch {
     console.error('There are no notes in localStorage.')
   }

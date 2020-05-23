@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
 import initialPrompts from '../prompts.json'
-import { getFromLocalStorage } from '../utils/services'
-import { BackdropLogs } from './Backdrop'
-import ItemList from './ItemList'
-import NavButton from './NavButton'
+import { getFromLocalStorage } from '../services/local-storage'
+import { BackdropLogs } from '../components/Backdrop'
+import ItemList from '../components/ItemList'
+import NavButton from '../components/NavButton'
 
 export default function Logs({ onClickHome, 'data-testid': datatestid }) {
   let availableNotes, availableSessions, availablePrompts
   try {
+    // #TODO: getData
     availableNotes = getFromLocalStorage('notes')
     availableSessions = getFromLocalStorage('sessions')
     availablePrompts = getFromLocalStorage('prompts')
@@ -30,7 +31,7 @@ export default function Logs({ onClickHome, 'data-testid': datatestid }) {
   const [sessions] = useState(availableSessions || [])
   const [prompts] = useState(availablePrompts || initialPrompts)
   const [currentLogSource, setCurrentLogSource] = useState(notes)
-
+  // #TODO: navigation?
   return (
     <div data-testid={datatestid}>
       <BackdropLogs data-testid="logItemsBackdropLogs">

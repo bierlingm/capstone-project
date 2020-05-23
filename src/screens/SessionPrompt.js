@@ -2,11 +2,11 @@ import React from 'react'
 import Prompt from '../components/Prompt'
 import electricLightBulb from '../img/electric_light_bulb.png'
 import prompts from '../prompts.json'
-import { getRandomInt } from '../utils/services'
-import { setToLocalStorage } from '../utils/services'
-import Backdrop from './Backdrop'
-import Icon from './Icon'
-import NavButton from './NavButton'
+import { getRandomInt } from '../services/math'
+import { setToLocalStorage } from '../services/local-storage'
+import Backdrop from '../components/Backdrop'
+import Icon from '../components/Icon'
+import NavButton from '../components/NavButton'
 
 export default function SessionPrompt({
   onClickShuffle,

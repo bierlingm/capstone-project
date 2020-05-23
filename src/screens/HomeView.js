@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import Backdrop from './Backdrop'
-import Icon from './Icon'
+import Backdrop from '../components/Backdrop'
+import Icon from '../components/Icon'
 import lotusWoman from '../img/lotus_woman.png'
-import NavButton from './NavButton'
+import NavButton from '../components/NavButton'
 
 export default function ({
   onClickLogs,

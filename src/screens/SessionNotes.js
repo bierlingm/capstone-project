@@ -1,7 +1,7 @@
 import React from 'react'
-import { BackdropNotes } from './Backdrop'
-import NoteField from './NoteField'
-import NavButton from './NavButton'
+import { BackdropNotes } from '../components/Backdrop'
+import NoteField from '../components/NoteField'
+import NavButton from '../components/NavButton'
 
 export default function SessionNotes({
   onClickRetry,

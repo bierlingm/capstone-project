@@ -4,8 +4,8 @@ import {
   writingBackdropColor,
   textColor,
   backgroundColor,
-} from '../utils/colors'
-import { currentFade, fullHeight } from '../utils/utils'
+} from '../styles/colors'
+import { currentFade, fullHeight } from '../styles/default-styles'
 
 export default function Backdrop({ children }) {
   return (
@@ -19,6 +19,14 @@ export function BackdropTimed({ children }) {
   return (
     <BackdropWrapper>
       <Container className="timed">{children}</Container>
+    </BackdropWrapper>
+  )
+}
+
+export function BackdropShuffle({ children }) {
+  return (
+    <BackdropWrapper>
+      <Container className="shuffle">{children}</Container>
     </BackdropWrapper>
   )
 }
@@ -96,6 +104,25 @@ const BackdropWrapper = styled.div`
     grid-template-columns: 50% 50%;
     background: ${backgroundColor};
     animation: timer ${currentFade};
+  }
+
+  .shuffle {
+    display: grid;
+    grid-template-columns:
+      [left-space-start] 1fr
+      [left-space-end icon-start] auto
+      [icon-end right-space-start] 1fr
+      [right-space-end];
+    grid-template-rows:
+      [top-space-start] 1fr
+      [top-space-end icon-start] auto
+      [icon-end bottom-space-start] 1fr
+      [bottom-space-end];
+
+    .icon {
+      grid-column: icon-start / icon-end;
+      grid-row: icon-start / icon-end;
+    }
   }
 
   .notes {

@@ -1,6 +1,10 @@
 import { createGlobalStyle } from 'styled-components'
-import { writingBackdropColor, fadeColor, textColor } from './utils/colors'
-import { defaultFont, defaultFontSize, defaultMargin } from './utils/utils'
+import { writingBackdropColor, fadeColor, textColor } from './styles/colors'
+import {
+  defaultFont,
+  defaultFontSize,
+  defaultMargin,
+} from './styles/default-styles'
 
 export default createGlobalStyle`
 

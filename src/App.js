@@ -1,12 +1,12 @@
 import { useMachine } from '@xstate/react'
 import React from 'react'
 import { Machine } from 'xstate'
-import HomeView from './components/HomeView'
-import Logs from './components/Logs'
-import SessionNotes from './components/SessionNotes'
-import SessionPrompt from './components/SessionPrompt'
-import SessionShuffle from './components/SessionShuffle'
-import SessionWriting from './components/SessionWriting'
+import HomeView from './screens/HomeView'
+import Logs from './screens/Logs'
+import SessionNotes from './screens/SessionNotes'
+import SessionPrompt from './screens/SessionPrompt'
+import SessionShuffle from './screens/SessionShuffle'
+import SessionWriting from './screens/SessionWriting'
 
 export default function App() {
   const [current, send] = useMachine(appMachine)
