@@ -1,67 +1,68 @@
-import React, { useState, useEffect } from 'react'
-import styled from 'styled-components/macro'
-import initialNotes from '../notes.json'
-import { getFromLocalStorage, setToLocalStorage } from '../utils/services'
 import { nanoid } from 'nanoid'
+import React, { useEffect, useState } from 'react'
+import {
+  getFromLocalStorage,
+  setToLocalStorage,
+} from '../services/local-storage'
 
-export default function NoteField() {
+export default function NoteField({
+  gridClass,
+  placeholder,
+  'data-testid': datatestid,
+}) {
+  const initialNote = {
+    id: '5oRMd-NPHRLqdEGJ39yCy',
+    created: 'Thu May 14 2020 14:46:00 GMT+0200 (Central European Summer Time)',
+    set: 'default',
+    text: 'This is an example note. Edit me!',
+  }
+
   let localNotes
   try {
-    localNotes = JSON.parse(localStorage.getItem('notes'))
+    localNotes = getFromLocalStorage('notes') || initialNote
   } catch {
-    console.error('Something bad happened...')
+    console.error('There are no notes in localStorage.')
   }
 
   const [notesWasAdded, setNotesWasAdded] = useState(false)
-  const [notes, setNotes] = useState(
-    localNotes !== null ? localNotes : initialNotes
-  )
+  const [notes, setNotes] = useState(localNotes)
 
   useEffect(() => {
-    localStorage.setItem('notes', JSON.stringify(notes))
+    setToLocalStorage('notes', notes)
   }, [notes])
 
-  function handleSave(event) {
+  const notesUpdater = {
+    saveNote: (newNote) => {
+      if (notesWasAdded) {
+        setNotes(
+          notes.map((note, index) =>
+            index === notes.length - 1 ? newNote : note
+          )
+        )
+      } else {
+        setNotes([...notes, newNote])
+        setNotesWasAdded(true)
+      }
+    },
+  }
+
+  function handleNoteSave(event) {
     const newNote = {
-      noteId: nanoid(),
-      noteCreationDate: Date(),
-      noteSet: 'user',
-      noteText: event.target.value,
+      id: nanoid(),
+      created: Date(),
+      set: 'user',
+      text: event.target.value,
     }
 
-    if (notesWasAdded) {
-      setNotes(
-        notes.map((note, index) =>
-          index === notes.length - 1 ? newNote : note
-        )
-      )
-    } else {
-      setNotes([...notes, newNote])
-      setNotesWasAdded(true)
-    }
+    notesUpdater.saveNote(newNote)
   }
 
   return (
-    <TextAreaStyled
-      onChange={handleSave}
-      placeholder="Write your session notes in here..."
-      className="notefield"
-      data-testid="noteField"
+    <textarea
+      onChange={handleNoteSave}
+      placeholder={placeholder}
+      className={gridClass}
+      data-testid={datatestid}
     />
   )
 }
-
-const TextAreaStyled = styled.textarea`
-  type: text;
-  margin: 12px;
-  padding: 28px;
-  overflow: scroll;
-  resize: none;
-  background: transparent;
-  color: yellow;
-  font-size: 20px;
-  border: transparent;
-  border-radius: 10px;
-  background: #55b9f3;
-  box-shadow: inset 20px 20px 60px #489dcf, inset -20px -20px 60px #62d5ff;
-`

@@ -1,5 +1,10 @@
 import React from 'react'
-import { Backdrop, BackdropTimed } from '../components/Backdrop'
+import Backdrop, {
+  BackdropTimed,
+  BackdropShuffle,
+  BackdropNotes,
+  BackdropLogs,
+} from '../components/Backdrop'
 import GlobalStyles from '../GlobalStyles'
 
 export default {
@@ -8,10 +13,10 @@ export default {
 }
 
 export const Default = () => (
-  <React.StrictMode>
+  <>
     <GlobalStyles />
     <Backdrop />
-  </React.StrictMode>
+  </>
 )
 
 Default.story = {
@@ -19,12 +24,45 @@ Default.story = {
 }
 
 export const Timed = () => (
-  <React.StrictMode>
+  <>
     <GlobalStyles />
     <BackdropTimed />
-  </React.StrictMode>
+  </>
 )
 
 Timed.story = {
   name: 'Timed',
+}
+
+export const Shuffle = () => (
+  <>
+    <GlobalStyles />
+    <BackdropShuffle />
+  </>
+)
+
+Shuffle.story = {
+  name: 'Shuffle',
+}
+
+export const Notes = () => (
+  <>
+    <GlobalStyles />
+    <BackdropNotes />
+  </>
+)
+
+Notes.story = {
+  name: 'Notes',
+}
+
+export const Logs = () => (
+  <>
+    <GlobalStyles />
+    <BackdropLogs />
+  </>
+)
+
+Notes.story = {
+  name: 'Notes',
 }
