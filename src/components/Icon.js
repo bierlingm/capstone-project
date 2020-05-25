@@ -20,4 +20,7 @@ export default function Icon({
 const IconStyled = styled.img`
   justify-self: center;
   align-self: center;
+  animation-name: hover-up;
+  animation-duration: 3.5s;
+  animation-iteration-count: infinite;
 `

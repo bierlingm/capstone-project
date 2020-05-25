@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 import {
-  writingBackdropColor,
-  textColor,
   backgroundColor,
+  textColor,
+  writingBackdropColor,
 } from '../styles/colors'
-import { currentFade, fullHeight } from '../styles/default-styles'
+import { currentFadeTime, fullHeight } from '../styles/default-styles'
 
 export default function Backdrop({ children }) {
   return (
@@ -98,7 +98,7 @@ const BackdropWrapper = styled.div`
     display: grid;
     grid-template-columns: 50% 50%;
     background: ${backgroundColor};
-    animation: timer ${currentFade};
+    animation: timer ${currentFadeTime};
   }
   .shuffle {
     display: grid;

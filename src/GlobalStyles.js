@@ -16,6 +16,7 @@ export default createGlobalStyle`
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 @keyframes timer {
   0% {
     background-color: ${writingBackdropColor};
@@ -24,4 +25,25 @@ export default createGlobalStyle`
     background-color: ${fadeColor};
   }
 }
+
+@keyframes hover-up {
+  from {
+    margin-top: 10%;
+  }
+  50% {
+    margin-top: 0;
+  }
+  to {
+    margin-top: 10%;
+  }
+}
+
+// @keyframes hover-down {
+//   from {
+//     margin-bottom: 10%;
+//   }
+//   to {
+//     margin-bottom: 0%
+//   }
+// }
 `
