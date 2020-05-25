@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
-import initialPrompts from '../seed-prompts.json'
-import { getFromLocalStorage } from '../services/local-storage'
+import styled from 'styled-components'
 import { BackdropLogs } from '../components/Backdrop'
 import ItemList from '../components/ItemList'
 import NavButton from '../components/NavButton'
+import initialPrompts from '../seed-prompts.json'
+import { getFromLocalStorage } from '../services/local-storage'
 
 export default function Logs({ onClickHome, 'data-testid': datatestid }) {
   let availableNotes, availableSessions, availablePrompts
@@ -35,6 +36,7 @@ export default function Logs({ onClickHome, 'data-testid': datatestid }) {
   return (
     <div data-testid={datatestid}>
       <BackdropLogs data-testid="logItemsBackdropLogs">
+        <H2Styled className="title">Logs</H2Styled>
         <ItemList
           gridClass="logsList"
           items={currentLogSource}
@@ -74,3 +76,9 @@ export default function Logs({ onClickHome, 'data-testid': datatestid }) {
     </div>
   )
 }
+
+const H2Styled = styled.h2`
+  justify-self: center;
+  align-self: center;
+  font-size: 50px;
+`
