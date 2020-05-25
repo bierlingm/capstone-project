@@ -9,8 +9,8 @@ export default function Prompt({
   return (
     <div className={gridClass} data-testid={datatestid}>
       <PStyled>Your prompt:</PStyled>
-      <PromptStyled className="prompt" data-testid="prompt">
-        {randomPrompt.slice(1, randomPrompt.length - 1)}
+      <PromptStyled data-testid="prompt">
+        <strong>{randomPrompt.slice(1, randomPrompt.length - 1)}</strong>
       </PromptStyled>
     </div>
   )
@@ -23,7 +23,7 @@ const PStyled = styled.p`
 `
 
 const PromptStyled = styled.p`
-  margin: 20px 0 20px 0;
+  margin: 10px 0 20px 0;
   justify-self: center;
   align-self: center;
 `

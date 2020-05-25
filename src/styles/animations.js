@@ -11,15 +11,12 @@ export const timer = keyframes`
 `
 
 export const hover = keyframes`
-  from {
-  margin-top: 10%;
+  from, to {
+  margin-top: 5%;
+  width: 200px;
   }
   50% {
   margin-top: 0;
-  }
-  to {
-  margin-top: 10%;
-  }
 `
 
 export const grow = keyframes`

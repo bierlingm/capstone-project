@@ -4,7 +4,7 @@ import electricLightBulb from '../img/electric_light_bulb.png'
 import prompts from '../seed-prompts.json'
 import { getRandomInt } from '../services/math'
 import { setToLocalStorage } from '../services/local-storage'
-import Backdrop from '../components/Backdrop'
+import { BackdropPrompt } from '../components/Backdrop'
 import Icon from '../components/Icon'
 import NavButton from '../components/NavButton'
 import { grow } from '../styles/animations'
@@ -21,12 +21,13 @@ export default function SessionPrompt({
 
   return (
     <div data-testid={datatestid}>
-      <Backdrop data-testid="promptBackdrop">
+      <BackdropPrompt data-testid="promptBackdrop">
         <Icon
           animation={grow}
-          animationLength={'.5s'}
+          animationLength={'.25s'}
           animationIteration={''}
           animationTiming={'ease-in-out'}
+          shadow={'drop-shadow(0 0 .75rem #f4e8be)'}
           gridClass="icon"
           src={electricLightBulb}
           alt="Writing prompt"
@@ -51,7 +52,7 @@ export default function SessionPrompt({
         >
           write
         </NavButton>
-      </Backdrop>
+      </BackdropPrompt>
     </div>
   )
 }

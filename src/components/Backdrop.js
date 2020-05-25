@@ -16,6 +16,14 @@ export default function Backdrop({ children }) {
   )
 }
 
+export function BackdropPrompt({ children }) {
+  return (
+    <BackdropWrapper>
+      <Container className="prompt">{children}</Container>
+    </BackdropWrapper>
+  )
+}
+
 export function BackdropTimed({ children }) {
   return (
     <BackdropWrapper>
@@ -57,6 +65,42 @@ const Container = styled.div`
 
 const BackdropWrapper = styled.div`
   .default {
+    display: grid;
+    grid-template-columns:
+      [left-space-start] 8vw
+      [left-space-end main-start] 42vw
+      [left-half right-half] 42vw
+      [main-end right-space-start] 8vw
+      [right-space-end];
+    grid-template-rows:
+      [top-space-start] 8vh
+      [top-space-end title-start] 24vh
+      [title-end icon-start] 47vh
+      [icon-end button-start] 13vh
+      [button-end bottom-space-start] 8vh
+      [bottom-end];
+    background: ${backgroundColor};
+    .title {
+      grid-column: main-start / main-end;
+      grid-row: title-start / title-end;
+      align-self: start;
+    }
+    .icon {
+      grid-column: main-start / main-end;
+      grid-row: icon-start / prompt-end;
+      justify-self: center;
+      align-self: start;
+    }
+    .buttonLeft {
+      grid-column: main-start / left-half;
+      grid-row: button-start / button-end;
+    }
+    .buttonRight {
+      grid-column: right-half / main-end;
+      grid-row: button-start / button-end;
+    }
+  }
+  .prompt {
     display: grid;
     grid-template-columns:
       [left-space-start] 8vw

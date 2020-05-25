@@ -14,17 +14,18 @@ export default function({
   return (
     <div data-testid={datatestid}>
       <Backdrop data-testid="homeBackdrop">
+        <H1Styled className="title">FloWriter</H1Styled>
         <Icon
           animation={hover}
           animationLength={'5s'}
           animationIteration={'infinite'}
           animationTiming={'ease-in-out'}
+          shadow={'drop-shadow(0 0 0.75rem crimson)'}
           gridClass="icon"
           src={lotusWoman}
           alt="Woman in lotus position"
           data-testid="homeIcon"
         />
-        <PStyled className="prompt">Welcome to FloWriter!</PStyled>
         <NavButton
           gridClass="buttonLeft"
           onClick={onClickLogs}
@@ -44,7 +45,8 @@ export default function({
   )
 }
 
-const PStyled = styled.p`
+const H1Styled = styled.h1`
   justify-self: center;
   align-self: center;
+  font-size: 60px;
 `

@@ -6,6 +6,7 @@ export default function Icon({
   animationLength,
   animationIteration,
   animationTiming,
+  shadow,
   gridClass,
   src,
   alt,
@@ -17,6 +18,7 @@ export default function Icon({
       animationLength={animationLength}
       animationIteration={animationIteration}
       animationTiming={animationTiming}
+      shadow={shadow}
       className={gridClass}
       src={src}
       alt={alt}
@@ -28,6 +30,7 @@ export default function Icon({
 const IconStyled = styled.img`
   justify-self: center;
   align-self: center;
+  filter: ${props => props.shadow};
   animation: ${props => props.animation} ${props => props.animationLength}
     ${props => props.animationIteration} ${props => props.animationTiming};
 `
