@@ -31,6 +31,6 @@ const ListItemStyled = styled.li`
 `
 
 const PStyled = styled.p`
-  font-size: 10px;
+  font-size: 14px;
   text-align: left;
 `
