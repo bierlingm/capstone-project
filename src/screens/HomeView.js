@@ -4,8 +4,9 @@ import Backdrop from '../components/Backdrop'
 import Icon from '../components/Icon'
 import lotusWoman from '../img/lotus_woman.png'
 import NavButton from '../components/NavButton'
+import { hover } from '../styles/animations'
 
-export default function ({
+export default function({
   onClickLogs,
   onClickStart,
   'data-testid': datatestid,
@@ -14,6 +15,7 @@ export default function ({
     <div data-testid={datatestid}>
       <Backdrop data-testid="homeBackdrop">
         <Icon
+          animation={hover}
           gridClass="icon"
           src={lotusWoman}
           alt="Woman in lotus position"

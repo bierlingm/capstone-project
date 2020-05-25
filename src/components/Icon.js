@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import { hover } from '../styles/animations'
 
 export default function Icon({
+  animation,
   gridClass,
   src,
   alt,
@@ -10,6 +10,7 @@ export default function Icon({
 }) {
   return (
     <IconStyled
+      animation={animation}
       className={gridClass}
       src={src}
       alt={alt}
@@ -21,5 +22,5 @@ export default function Icon({
 const IconStyled = styled.img`
   justify-self: center;
   align-self: center;
-  animation: ${hover} 3.5s infinite;
+  animation: ${props => props.animation} 5s infinite ease-in-out;
 `
