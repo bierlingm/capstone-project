@@ -5,6 +5,7 @@ import {
   textColor,
   writingBackdropColor,
 } from '../styles/colors'
+import { timer } from '../styles/animations'
 import { currentFadeTime, fullHeight } from '../styles/default-styles'
 
 export default function Backdrop({ children }) {
@@ -98,7 +99,7 @@ const BackdropWrapper = styled.div`
     display: grid;
     grid-template-columns: 50% 50%;
     background: ${backgroundColor};
-    animation: timer ${currentFadeTime};
+    animation: ${timer} ${currentFadeTime};
   }
   .shuffle {
     display: grid;

@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { hover } from '../styles/animations'
 
 export default function Icon({
   gridClass,
@@ -20,7 +21,5 @@ export default function Icon({
 const IconStyled = styled.img`
   justify-self: center;
   align-self: center;
-  animation-name: hover-up;
-  animation-duration: 3.5s;
-  animation-iteration-count: infinite;
+  animation: ${hover} 3.5s infinite;
 `
