@@ -16,6 +16,9 @@ export default function({
       <Backdrop data-testid="homeBackdrop">
         <Icon
           animation={hover}
+          animationLength={'5s'}
+          animationIteration={'infinite'}
+          animationTiming={'ease-in-out'}
           gridClass="icon"
           src={lotusWoman}
           alt="Woman in lotus position"

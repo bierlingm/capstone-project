@@ -7,7 +7,7 @@ import { setToLocalStorage } from '../services/local-storage'
 import Backdrop from '../components/Backdrop'
 import Icon from '../components/Icon'
 import NavButton from '../components/NavButton'
-import { hover } from '../styles/animations'
+import { grow } from '../styles/animations'
 
 export default function SessionPrompt({
   onClickShuffle,
@@ -23,7 +23,10 @@ export default function SessionPrompt({
     <div data-testid={datatestid}>
       <Backdrop data-testid="promptBackdrop">
         <Icon
-          animation={hover}
+          animation={grow}
+          animationLength={'.5s'}
+          animationIteration={''}
+          animationTiming={'ease-in-out'}
           gridClass="icon"
           src={electricLightBulb}
           alt="Writing prompt"

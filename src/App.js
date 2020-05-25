@@ -61,7 +61,7 @@ const appMachine = Machine({
     },
     shuffle: {
       after: {
-        250: 'prompt',
+        200: 'prompt',
       },
     },
     writing: {

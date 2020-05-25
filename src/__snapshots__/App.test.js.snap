@@ -13,7 +13,7 @@ exports[`App Should take a snapshot 1`] = `
       >
         <img
           alt="Woman in lotus position"
-          class="sc-AxjAm fzOXgT icon"
+          class="sc-AxjAm kVsmba icon"
           data-testid="homeIcon"
           src="lotus_woman.png"
         />

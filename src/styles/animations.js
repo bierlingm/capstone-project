@@ -21,3 +21,21 @@ export const hover = keyframes`
   margin-top: 10%;
   }
 `
+
+export const grow = keyframes`
+  from {
+    height: 50%;
+  }
+  to {
+    height: 100%;
+  }
+`
+
+export const pop = keyframes`
+  from, to {
+    margin-right: -200px;
+  }
+  50% {
+    margin-right: 200px;
+  }
+`
