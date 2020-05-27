@@ -26,7 +26,7 @@ export default function SessionWriting({ 'data-testid': datatestid }) {
   }, [sessions])
 
   const sessionsUpdater = {
-    saveSession: (newSession) => {
+    saveSession: newSession => {
       if (sessionsWasAdded) {
         setSessions(
           sessions.map((session, index) =>

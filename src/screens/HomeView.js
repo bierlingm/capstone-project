@@ -28,6 +28,7 @@ export default function({
         />
         <NavButton
           gridClass="buttonLeft"
+          alt="visit logs screen"
           onClick={onClickLogs}
           data-testid="homeLogsButton"
         >
@@ -35,6 +36,7 @@ export default function({
         </NavButton>
         <NavButton
           gridClass="buttonRight"
+          alt="start a writing session"
           onClick={onClickStart}
           data-testid="homeStartButton"
         >

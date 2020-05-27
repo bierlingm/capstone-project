@@ -40,6 +40,7 @@ export default function SessionPrompt({
         />
         <NavButton
           gridClass="buttonLeft"
+          alt="shuffle the prompt for this session"
           onClick={onClickShuffle}
           data-testid="promptShuffleButton"
         >
@@ -47,6 +48,7 @@ export default function SessionPrompt({
         </NavButton>
         <NavButton
           gridClass="buttonRight"
+          alt="begin writing"
           onClick={onClickWrite}
           data-testid="promptStartButton"
         >

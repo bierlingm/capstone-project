@@ -22,6 +22,7 @@ export default function SessionNotes({
         />
         <NavButton
           gridClass="buttonLeft"
+          alt="restart the session"
           onClick={onClickRetry}
           data-testid="notesRetryButton"
         >
@@ -29,6 +30,7 @@ export default function SessionNotes({
         </NavButton>
         <NavButton
           gridClass="buttonRight"
+          alt="save your note and complete session"
           onClick={onClickSave}
           data-testid="notesSaveButton"
         >

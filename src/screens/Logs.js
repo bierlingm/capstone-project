@@ -28,6 +28,7 @@ export default function Logs({
         <div className="buttons">
           <NavButton
             gridClass="buttonHome"
+            alt="return to home screen"
             onClick={onClickHome}
             data-testid="logsHomeButton"
           >
@@ -35,6 +36,7 @@ export default function Logs({
           </NavButton>
           <NavButton
             gridClass="buttonNotes"
+            alt="view list of notes"
             onClick={() => setCurrentLogSource(notes)}
             data-testid="logsNotesButton"
           >
@@ -42,6 +44,7 @@ export default function Logs({
           </NavButton>
           <NavButton
             gridClass="buttonSessions"
+            alt="view list of sessions"
             onClick={() => setCurrentLogSource(sessions)}
             data-testid="logsSessionsButton"
           >
@@ -49,6 +52,7 @@ export default function Logs({
           </NavButton>
           <NavButton
             gridClass="buttonPrompts"
+            alt="view list of prompts"
             onClick={() => setCurrentLogSource(prompts)}
             data-testid="logsPromptsButton"
           >
