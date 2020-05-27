@@ -7,14 +7,18 @@ export default function Prompt({
   'data-testid': datatestid,
 }) {
   return (
-    <div className={gridClass} data-testid={datatestid}>
+    <DivStyled className={gridClass} data-testid={datatestid}>
       <PStyled>Your prompt:</PStyled>
       <PromptStyled data-testid="prompt">
         <strong>{randomPrompt}</strong>
       </PromptStyled>
-    </div>
+    </DivStyled>
   )
 }
+
+const DivStyled = styled.div`
+  overflow: hidden;
+`
 
 const PStyled = styled.p`
   justify-self: center;
