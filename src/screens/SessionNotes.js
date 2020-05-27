@@ -5,6 +5,7 @@ import NavButton from '../components/NavButton'
 import NoteField from '../components/NoteField'
 
 export default function SessionNotes({
+  localNotes,
   onClickRetry,
   onClickSave,
   'data-testid': datatestid,
@@ -14,6 +15,7 @@ export default function SessionNotes({
       <BackdropNotes data-testid="notesBackdropNotes">
         <H2Styled className="title">Session Note</H2Styled>
         <NoteField
+          localNotes={localNotes}
           gridClass="notefield"
           placeholder="Write your session notes in here..."
           data-testid="notesNoteField"

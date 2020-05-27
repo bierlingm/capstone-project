@@ -3,34 +3,17 @@ import styled from 'styled-components'
 import { BackdropLogs } from '../components/Backdrop'
 import ItemList from '../components/ItemList'
 import NavButton from '../components/NavButton'
-import initialPrompts from '../seed-prompts.json'
-import { getFromLocalStorage } from '../services/local-storage'
 
-export default function Logs({ onClickHome, 'data-testid': datatestid }) {
-  let availableNotes, availableSessions, availablePrompts
-  try {
-    // #TODO: getData
-    availableNotes = getFromLocalStorage('notes')
-    availableSessions = getFromLocalStorage('sessions')
-    availablePrompts = getFromLocalStorage('prompts')
-  } catch {
-    console.error(
-      'Something went wrong with getting content from localStorage.'
-    )
-  }
-
-  const initialNote = [
-    {
-      id: '5oRMd-NPHRLqdEGJ39yCy',
-      created:
-        'Thu May 14 2020 14:46:00 GMT+0200 (Central European Summer Time)',
-      set: 'default',
-      text: 'This is an example note. Edit me!',
-    },
-  ]
-  const [notes] = useState(availableNotes || initialNote)
-  const [sessions] = useState(availableSessions || [])
-  const [prompts] = useState(availablePrompts || initialPrompts)
+export default function Logs({
+  onClickHome,
+  localNotes,
+  localPrompts,
+  localSessions,
+  'data-testid': datatestid,
+}) {
+  const [notes] = useState(localNotes)
+  const [prompts] = useState(localPrompts)
+  const [sessions] = useState(localSessions)
   const [currentLogSource, setCurrentLogSource] = useState(notes)
   // #TODO: navigation?
   return (

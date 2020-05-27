@@ -7,33 +7,61 @@ import SessionNotes from './screens/SessionNotes'
 import SessionPrompt from './screens/SessionPrompt'
 import SessionShuffle from './screens/SessionShuffle'
 import SessionWriting from './screens/SessionWriting'
+import initialNote from './seed-note.json'
+import initialPrompts from './seed-prompts.json'
+import {
+  getFromLocalStorage,
+  setToLocalStorage,
+} from './services/local-storage'
 
 export default function App() {
   const [current, send] = useMachine(appMachine)
+  getFromLocalStorage('notes') || setToLocalStorage('notes', initialNote)
+  getFromLocalStorage('prompts') || setToLocalStorage('prompts', initialPrompts)
+  getFromLocalStorage('sessions') || setToLocalStorage('sessions', [])
+
+  let localNotes, localSessions, localPrompts
+  try {
+    // #TODO: getData
+    localNotes = getFromLocalStorage('notes')
+    localPrompts = getFromLocalStorage('prompts')
+    localSessions = getFromLocalStorage('sessions')
+  } catch {
+    console.error(
+      'Something went wrong with getting content from localStorage.'
+    )
+  }
 
   return current.matches('writing') ? (
     <SessionWriting data-testid="sessionWriting" />
   ) : current.matches('notes') ? (
     <SessionNotes
-      data-testid="sessionNotes"
+      localNotes={localNotes}
       onClickRetry={() => send('RETRY')}
       onClickSave={() => send('SAVE')}
+      data-testid="sessionNotes"
     />
   ) : current.matches('prompt') ? (
     <SessionPrompt
-      data-testid="sessionPrompt"
       onClickShuffle={() => send('SHUFFLE')}
       onClickWrite={() => send('WRITE')}
+      data-testid="sessionPrompt"
     />
   ) : current.matches('shuffle') ? (
     <SessionShuffle data-testid="sessionShuffle" />
   ) : current.matches('logs') ? (
-    <Logs onClickHome={() => send('HOME')} data-testid="logs" />
+    <Logs
+      localNotes={localNotes}
+      localPrompts={localPrompts}
+      localSessions={localSessions}
+      onClickHome={() => send('HOME')}
+      data-testid="logs"
+    />
   ) : (
     <HomeView
-      data-testid="homeView"
       onClickLogs={() => send('LOGS')}
       onClickStart={() => send('START')}
+      data-testid="homeView"
     />
   )
 }
@@ -69,7 +97,7 @@ const appMachine = Machine({
         STOP: 'prompt',
       },
       after: {
-        90000: 'notes',
+        5000: 'notes',
       },
     },
     notes: {
