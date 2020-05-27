@@ -19,7 +19,7 @@ export default function NoteField({
 
   let localNotes
   try {
-    localNotes = getFromLocalStorage('notes') || initialNote
+    localNotes = getFromLocalStorage('notes') || [initialNote]
   } catch {
     console.error('There are no notes in localStorage.')
   }
@@ -32,7 +32,7 @@ export default function NoteField({
   }, [notes])
 
   const notesUpdater = {
-    saveNote: (newNote) => {
+    saveNote: newNote => {
       if (notesWasAdded) {
         setNotes(
           notes.map((note, index) =>
