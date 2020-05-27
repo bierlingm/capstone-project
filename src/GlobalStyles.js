@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
-import { writingBackdropColor, fadeColor, textColor } from './styles/colors'
+import { textColor } from './styles/colors'
 import {
   defaultFont,
   defaultFontSize,
@@ -15,13 +15,5 @@ export default createGlobalStyle`
   overflow: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-@keyframes timer {
-  0% {
-    background-color: ${writingBackdropColor};
-  }
-  100% {
-    background-color: ${fadeColor};
-  }
 }
 `

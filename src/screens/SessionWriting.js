@@ -8,7 +8,12 @@ import {
 } from '../services/local-storage'
 import { BackdropTimed } from '../components/Backdrop'
 
-export default function SessionWriting({ 'data-testid': datatestid }) {
+export default function SessionWriting({
+  currentPromptId,
+  'data-testid': datatestid,
+}) {
+  const savedPromptId = currentPromptId
+
   let localSessions
   try {
     localSessions = getFromLocalStorage('sessions')
@@ -26,7 +31,7 @@ export default function SessionWriting({ 'data-testid': datatestid }) {
   }, [sessions])
 
   const sessionsUpdater = {
-    saveSession: (newSession) => {
+    saveSession: newSession => {
       if (sessionsWasAdded) {
         setSessions(
           sessions.map((session, index) =>
@@ -44,9 +49,7 @@ export default function SessionWriting({ 'data-testid': datatestid }) {
     const newSession = {
       id: nanoid(),
       created: Date(),
-      promptId: getFromLocalStorage('prompts')[
-        getFromLocalStorage('prompts').length - 1
-      ]['id'],
+      promptId: savedPromptId,
       text: event.target.value,
     }
 

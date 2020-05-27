@@ -1,6 +1,6 @@
 # FloWriter
 
-An app for flow entry through digital writing.
+An app for flow entry through ephemeral writing.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -39,19 +39,31 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-## Tech stack
+## Dependencies
 
-- React
-
-## Additional dependencies
-
-- Storybook
-- styled-components
+- react
+- react-dom
 - react-router-dom
+- react-scripts
+- xstate
+- @xstate/react
+- nanoid
+- storybook
+- styled-components
 - testing-library
 - cypress
-- nanoid
-- xstate
-- xstate/react
+
+## Dev dependencies
+
+- @babel/preset-react
+- @storybook/addon-actions
+- @storybook/addon-links
+- @storybook/addons
+- @storybook/preset-create-react-app
+- @storybook/react
+- @testing-library/jest-dom
+- @testing-library/react
+- cypress
+- eslint-plugin-cypress
 
 #### A live demo is available [here](https://capstone-project.bierlingm.now.sh/).

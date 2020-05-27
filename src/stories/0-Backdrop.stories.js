@@ -1,6 +1,7 @@
 import React from 'react'
 import Backdrop, {
   BackdropTimed,
+  BackdropPrompt,
   BackdropShuffle,
   BackdropNotes,
   BackdropLogs,
@@ -32,6 +33,17 @@ export const Timed = () => (
 
 Timed.story = {
   name: 'Timed',
+}
+
+export const Prompt = () => (
+  <>
+    <GlobalStyles />
+    <BackdropPrompt />
+  </>
+)
+
+Prompt.story = {
+  name: 'Prompt',
 }
 
 export const Shuffle = () => (

@@ -1,40 +1,25 @@
 import React, { useState } from 'react'
-import initialPrompts from '../seed-prompts.json'
-import { getFromLocalStorage } from '../services/local-storage'
+import styled from 'styled-components'
 import { BackdropLogs } from '../components/Backdrop'
 import ItemList from '../components/ItemList'
 import NavButton from '../components/NavButton'
 
-export default function Logs({ onClickHome, 'data-testid': datatestid }) {
-  let availableNotes, availableSessions, availablePrompts
-  try {
-    // #TODO: getData
-    availableNotes = getFromLocalStorage('notes')
-    availableSessions = getFromLocalStorage('sessions')
-    availablePrompts = getFromLocalStorage('prompts')
-  } catch {
-    console.error(
-      'Something went wrong with getting content from localStorage.'
-    )
-  }
-
-  const initialNote = [
-    {
-      id: '5oRMd-NPHRLqdEGJ39yCy',
-      created:
-        'Thu May 14 2020 14:46:00 GMT+0200 (Central European Summer Time)',
-      set: 'default',
-      text: 'This is an example note. Edit me!',
-    },
-  ]
-  const [notes] = useState(availableNotes || initialNote)
-  const [sessions] = useState(availableSessions || [])
-  const [prompts] = useState(availablePrompts || initialPrompts)
+export default function Logs({
+  onClickHome,
+  localNotes,
+  localPrompts,
+  localSessions,
+  'data-testid': datatestid,
+}) {
+  const [notes] = useState(localNotes)
+  const [prompts] = useState(localPrompts)
+  const [sessions] = useState(localSessions)
   const [currentLogSource, setCurrentLogSource] = useState(notes)
   // #TODO: navigation?
   return (
     <div data-testid={datatestid}>
       <BackdropLogs data-testid="logItemsBackdropLogs">
+        <H2Styled className="title">Logs</H2Styled>
         <ItemList
           gridClass="logsList"
           items={currentLogSource}
@@ -43,6 +28,7 @@ export default function Logs({ onClickHome, 'data-testid': datatestid }) {
         <div className="buttons">
           <NavButton
             gridClass="buttonHome"
+            alt="return to home screen"
             onClick={onClickHome}
             data-testid="logsHomeButton"
           >
@@ -50,6 +36,7 @@ export default function Logs({ onClickHome, 'data-testid': datatestid }) {
           </NavButton>
           <NavButton
             gridClass="buttonNotes"
+            alt="view list of notes"
             onClick={() => setCurrentLogSource(notes)}
             data-testid="logsNotesButton"
           >
@@ -57,6 +44,7 @@ export default function Logs({ onClickHome, 'data-testid': datatestid }) {
           </NavButton>
           <NavButton
             gridClass="buttonSessions"
+            alt="view list of sessions"
             onClick={() => setCurrentLogSource(sessions)}
             data-testid="logsSessionsButton"
           >
@@ -64,6 +52,7 @@ export default function Logs({ onClickHome, 'data-testid': datatestid }) {
           </NavButton>
           <NavButton
             gridClass="buttonPrompts"
+            alt="view list of prompts"
             onClick={() => setCurrentLogSource(prompts)}
             data-testid="logsPromptsButton"
           >
@@ -74,3 +63,9 @@ export default function Logs({ onClickHome, 'data-testid': datatestid }) {
     </div>
   )
 }
+
+const H2Styled = styled.h2`
+  justify-self: center;
+  align-self: center;
+  font-size: 50px;
+`

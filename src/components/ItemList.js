@@ -3,8 +3,11 @@ import styled from 'styled-components/macro'
 import { textColor } from '../styles/colors'
 
 export default function ItemList({ gridClass, items }) {
-  const listItems = items.map((item) => (
-    <ListItemStyled key={item.id}>{item.text}</ListItemStyled>
+  const listItems = items.map(item => (
+    <ListItemStyled key={item.id}>
+      <PStyled>{item.created.slice(0, 21)}</PStyled>
+      {item.text}
+    </ListItemStyled>
   ))
 
   return (
@@ -25,4 +28,9 @@ const ListItemStyled = styled.li`
   color: ${textColor};
   font-size: 20px;
   text-align: start;
+`
+
+const PStyled = styled.p`
+  font-size: 14px;
+  text-align: left;
 `

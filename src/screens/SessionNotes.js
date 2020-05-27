@@ -1,9 +1,11 @@
 import React from 'react'
+import styled from 'styled-components'
 import { BackdropNotes } from '../components/Backdrop'
-import NoteField from '../components/NoteField'
 import NavButton from '../components/NavButton'
+import NoteField from '../components/NoteField'
 
 export default function SessionNotes({
+  localNotes,
   onClickRetry,
   onClickSave,
   'data-testid': datatestid,
@@ -11,13 +13,16 @@ export default function SessionNotes({
   return (
     <div data-testid={datatestid}>
       <BackdropNotes data-testid="notesBackdropNotes">
+        <H2Styled className="title">Session Note</H2Styled>
         <NoteField
+          localNotes={localNotes}
           gridClass="notefield"
           placeholder="Write your session notes in here..."
           data-testid="notesNoteField"
         />
         <NavButton
           gridClass="buttonLeft"
+          alt="restart the session"
           onClick={onClickRetry}
           data-testid="notesRetryButton"
         >
@@ -25,6 +30,7 @@ export default function SessionNotes({
         </NavButton>
         <NavButton
           gridClass="buttonRight"
+          alt="save your note and complete session"
           onClick={onClickSave}
           data-testid="notesSaveButton"
         >
@@ -34,3 +40,9 @@ export default function SessionNotes({
     </div>
   )
 }
+
+const H2Styled = styled.h2`
+  justify-self: center;
+  align-self: center;
+  font-size: 50px;
+`

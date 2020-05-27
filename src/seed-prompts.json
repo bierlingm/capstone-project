@@ -1,74 +1,74 @@
 [
   {
-    "promptId": 1,
-    "promptCreationDate": "a date",
-    "promptSet": "default",
-    "promptText": "You and everyone you love will die."
+    "id": "qlH4bBVHojbpBSoZygBmQ",
+    "created": "Thu May 14 2020 14:46:00 GMT+0200 (Central European Summer Time)",
+    "set": "default",
+    "text": "You and everyone you love will die."
   },
   {
-    "promptId": 2,
-    "promptCreationDate": "a date",
-    "promptSet": "default",
-    "promptText": "A nuke goes off in 5 minutes."
+    "id": "iPP-ZnhyNI93bY8YhDNt6",
+    "created": "Thu May 14 2020 14:46:00 GMT+0200 (Central European Summer Time)",
+    "set": "default",
+    "text": "A nuke goes off in 5 minutes."
   },
   {
-    "promptId": 3,
-    "promptCreationDate": "a date",
-    "promptSet": "default",
-    "promptText": "Where would you rather be right now?"
+    "id": "Rszd2W8EYfQYUhDtT4X5i",
+    "created": "Thu May 14 2020 14:46:00 GMT+0200 (Central European Summer Time)",
+    "set": "default",
+    "text": "Where would you rather be right now?"
   },
   {
-    "promptId": 4,
-    "promptCreationDate": "a date",
-    "promptSet": "default",
-    "promptText": "Do you love yourself enough?"
+    "id": "Cwd5Icb6on10nC_Bwd0GY",
+    "created": "Thu May 14 2020 14:46:00 GMT+0200 (Central European Summer Time)",
+    "set": "default",
+    "text": "Do you love yourself enough?"
   },
   {
-    "promptId": 5,
-    "promptCreationDate": "a date",
-    "promptSet": "default",
-    "promptText": "God is dead. Or is he really?"
+    "id": "J1VvZjQS8DelXuQC82mxC",
+    "created": "Thu May 14 2020 14:46:00 GMT+0200 (Central European Summer Time)",
+    "set": "default",
+    "text": "God is dead. Or is he really?"
   },
   {
-    "promptId": 6,
-    "promptCreationDate": "a date",
-    "promptSet": "default",
-    "promptText": "What triggers you in an unreasonable way?"
+    "id": "J9bMeKOmIU-Zb_hAYbpQz",
+    "created": "Thu May 14 2020 14:46:00 GMT+0200 (Central European Summer Time)",
+    "set": "default",
+    "text": "What triggers you in an unreasonable way?"
   },
   {
-    "promptId": 7,
-    "promptCreationDate": "a date",
-    "promptSet": "default",
-    "promptText": "Do you have a highest value?"
+    "id": "XNVxNS5Cy34ibuz93HPhq",
+    "created": "Thu May 14 2020 14:46:00 GMT+0200 (Central European Summer Time)",
+    "set": "default",
+    "text": "Do you have a highest value?"
   },
   {
-    "promptId": 8,
-    "promptCreationDate": "a date",
-    "promptSet": "default",
-    "promptText": "You could leave life right now."
+    "id": "DSQkPqbf59-1ZHhf1RveU",
+    "created": "Thu May 14 2020 14:46:00 GMT+0200 (Central European Summer Time)",
+    "set": "default",
+    "text": "You could leave life right now."
   },
   {
-    "promptId": 9,
-    "promptCreationDate": "a date",
-    "promptSet": "default",
-    "promptText": "Empty yourself of guilt for a moment."
+    "id": "kUhVsH958Mtmw7aqXD1k0",
+    "created": "Thu May 14 2020 14:46:00 GMT+0200 (Central European Summer Time)",
+    "set": "default",
+    "text": "Empty yourself of guilt for a moment."
   },
   {
-    "promptId": 10,
-    "promptCreationDate": "a date",
-    "promptSet": "default",
-    "promptText": "Do you have abody to love?"
+    "id": "YGPY-6shPAsHMEp4roC3a",
+    "created": "Thu May 14 2020 14:46:00 GMT+0200 (Central European Summer Time)",
+    "set": "default",
+    "text": "Do you have somebody to love?"
   },
   {
-    "promptId": 11,
-    "promptCreationDate": "a date",
-    "promptSet": "default",
-    "promptText": "Love is the will to extend yourself for the spiritual growth of another."
+    "id": "WO93oJHEV4xzOSNBTDSjb",
+    "created": "Thu May 14 2020 14:46:00 GMT+0200 (Central European Summer Time)",
+    "set": "default",
+    "text": "Love is the will to extend yourself for the spiritual growth of another."
   },
   {
-    "promptId": 12,
-    "promptCreationDate": "a date",
-    "promptSet": "default",
-    "promptText": "What is the greatest you ask of yourself?"
+    "id": "Qg-JqRoJSdC2kjq0SQTQy",
+    "created": "Thu May 14 2020 14:46:00 GMT+0200 (Central European Summer Time)",
+    "set": "default",
+    "text": "What is the greatest you ask of yourself?"
   }
 ]

@@ -4,14 +4,16 @@ import { textColor } from '../styles/colors'
 
 export default function NavButton({
   children,
-  onClick,
   gridClass,
+  alt,
+  onClick,
   'data-testid': datatestid,
 }) {
   return (
     <ButtonStyled
-      onClick={onClick}
       className={gridClass}
+      alt={alt}
+      onClick={onClick}
       data-testid={datatestid}
     >
       {children}
