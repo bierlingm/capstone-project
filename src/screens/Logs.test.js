@@ -33,6 +33,9 @@ describe('Logs', () => {
 
     const { getByTestId } = render(
       <Logs
+        localNotes={dummyItems}
+        localPrompts={dummyItems}
+        localSessions={dummyItems}
         sourceItems={dummyItems}
         onClickHome={onClickShuffle}
         data-testid="testLogs"

@@ -23,13 +23,15 @@ exports[`App Should take a snapshot 1`] = `
           src="lotus_woman.png"
         />
         <button
-          class="NavButton__ButtonStyled-sc-1rjtv4n-0 fKZdoc buttonLeft"
+          alt="visit logs screen"
+          class="NavButton__ButtonStyled-sc-17o3q8z-0 fBCJus buttonLeft"
           data-testid="homeLogsButton"
         >
           logs
         </button>
         <button
-          class="NavButton__ButtonStyled-sc-1rjtv4n-0 fKZdoc buttonRight"
+          alt="start a writing session"
+          class="NavButton__ButtonStyled-sc-17o3q8z-0 fBCJus buttonRight"
           data-testid="homeStartButton"
         >
           start

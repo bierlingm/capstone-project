@@ -10,7 +10,7 @@ export default function Prompt({
     <div className={gridClass} data-testid={datatestid}>
       <PStyled>Your prompt:</PStyled>
       <PromptStyled data-testid="prompt">
-        <strong>{randomPrompt.slice(1, randomPrompt.length - 1)}</strong>
+        <strong>{randomPrompt}</strong>
       </PromptStyled>
     </div>
   )
